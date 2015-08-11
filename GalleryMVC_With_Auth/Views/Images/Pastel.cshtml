@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Пастель";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="grid">
+    
+
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/pastel/kondatuk_andr")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/pastel/kondatuk_andr/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Пастель</span></h2>
+                <p style="color: red">Автор - Кондатюк Андрей.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @*@for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/pastel/kondatuk_andr")).Length; i++)
+    {
+        <figure class="effect-dexter">
+            <img src="~/Content/images/pastel/kondatuk_andr/@string.Format("{0}.jpg",i)" alt="img0@i">
+            <figcaption>
+                <h2>О <span>Пастель</span></h2>
+                <p>Автор - Кондатюк Андрей. Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }*@
+</div>

@@ -1,0 +1,40 @@
+﻿@using System.Globalization
+@using Jmelosegui.Mvc.Googlemap
+@model string
+@{
+    ViewBag.Title = "Контакты";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    Беларусь<br />
+    Брест, набярэжная Францыска Скарыны 2<br />
+    <abbr title="Phone">Тел:</abbr>
+    8 0162 20-45-95
+    @(Html.GoogleMap().Name("Brest")
+          .Width(600)
+          .Height(500)
+          .Center(c => c.Address("Беларусь, Брест, набярэжная Францыска Скарыны 2"))
+          .Markers(m => m.Add()).Zoom(15)
+          .Culture(CultureInfo.GetCultureInfoByIetfLanguageTag(Model ?? "ru")))
+
+</address>
+@using (Html.BeginForm())
+{
+    @*<input name="lang" type="text"/>*@
+    @*@Html.TextBox("lang")*@
+    @Html.DropDownList("lang", new SelectList(new[] {"ru", "en"}), "Выбрерите язык карты")
+    <button type="submit" class="btn btn-default">Применить</button>
+}
+
+@*<input type="text" value="@Model" />*@
+@*<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>*@
+
+@section scripts
+{
+    @(Html.GoogleMap().ScriptRegistrar())
+}

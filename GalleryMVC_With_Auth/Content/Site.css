@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/*.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand {
+    color: #E18728;
+}*/
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    background-color: #E18728;
+    color: white;
+}
+
+/*.navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home {
+    color: #BE4C39;
+}*/
+
+.navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home:focus {
+    background-color: #BE4C39;
+    color: white;
+}
+
+/*.navbar-inverse .navbar-nav > li > .about:hover, .navbar-inverse .navbar-nav > li > .about {
+    color: #9351A6;
+}*/
+
+.navbar-inverse .navbar-nav > li > .about:hover, .navbar-inverse .navbar-nav > li > .about:focus {
+    background-color: #9351A6;
+    color: white;
+}
+
+/*.navbar-inverse .navbar-nav > li > .contacts:hover, .navbar-inverse .navbar-nav > li > .contacts {
+    color: #4472B9;
+}*/
+
+.navbar-inverse .navbar-nav > li > .contacts:hover, .navbar-inverse .navbar-nav > li > .contacts:focus {
+    background-color: #4472B9;
+    color: white;
+}
+
+/*.navbar-inverse .navbar-nav > li > .logs:hover, .navbar-inverse .navbar-nav > li > .logs {
+    color: #4CA454;
+}*/
+
+.navbar-inverse .navbar-nav > li > .logs:hover, .navbar-inverse .navbar-nav > li > .logs:focus {
+    background-color: #4CA454;
+    color: white;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}

@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Живопись";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="grid">
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/kondratuk_alina")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/kondratuk_alina/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Кондатюк Алина.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/kozlov")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/kozlov/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Козлов.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/melexov")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/melexov/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Мелихов.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/patvor")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/patvor/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Патров.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/romanchuk")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/romanchuk/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Романчук.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/ulubin")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/ulubin/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Улюбин.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/vorob")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/vorob/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Вороб.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/xorochun")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/xorochun/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Зорочин.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+    
+    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/zivopis/zerelo")).Length; i++)
+    {
+        <figure class="effect-milo">
+            <img src="~/Content/images/zivopis/zerelo/@string.Format("{0}.jpg",i)" alt="img0@i" />
+            <figcaption>
+                <h2><span>Живопись</span></h2>
+                <p style="color: red">Автор - Зерело.</p>
+                <p style="color: red">Цена - 999$!</p>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+    }
+</div>

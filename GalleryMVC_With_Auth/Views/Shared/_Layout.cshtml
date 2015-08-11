@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @*@Styles.Render("~/Content/css")*@
+        @*<link href="~/Content/hover_effects/component.css" rel="stylesheet" />
+    <link href="~/Content/hover_effects/demo.css" rel="stylesheet" />
+    <link href="~/Content/hover_effects/normalize.css" rel="stylesheet" />*@
+        @Styles.Render("~/Content/css")
+        @*<link href="~/Content/bootstrap.slate.min.css" rel="stylesheet" />*@
+        
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    @*<body id="home" class="splash">*@
+    <body id="home">
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Галерея", "Index", "StartHome", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Домой", "Index", new { controller = "StartHome" }, new { @class = "home" })</li>
+                    <li>@Html.ActionLink("О нас", "About", new { controller = "StartHome" }, new { @class = "about" })</li>
+                    <li>@Html.ActionLink("Контакты", "Contact", new { controller = "StartHome" }, new { @class = "contacts" })</li>
+                    <li>@Html.ActionLink("Логи", "Index", new { controller = "elmah" }, new { style = "font-size: 200%;", @class = "logs" })</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+        <div class="splash">
+            <div class="container" style="color: gray;">
+                <h1>Художественная галерея</h1>
+                <p class="lead">"Беларт"</p>
+                @*<p><a href="#" class="btn btn-primary btn-large">Узнать больше &raquo;</a></p>*@
+            </div>
+        </div>
+        @*<div class="container body-content" style="background: rgba(128, 128, 128, 0.50)">*@
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+        </div>
+    <div class="splash">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ramzzzay@gmail.com ASP.NET Application</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/magic")
+    @RenderSection("scripts", false)
+    @Html.Partial("_GoogleAnalytics")
+</body>
+</html>
