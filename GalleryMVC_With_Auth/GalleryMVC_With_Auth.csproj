@@ -182,16 +182,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bg2_opt.jpg" />
-    <Content Include="Content\bg2_opt_mon.jpg" />
-    <Content Include="Content\bg7_opt.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.lumen.css" />
     <Content Include="Content\bootstrap.lumen.min.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.slate.css" />
     <Content Include="Content\bootstrap.slate.min.css" />
-    <Content Include="Content\bg4.jpg" />
     <Content Include="Content\hover_effects\component.css" />
     <Content Include="Content\hover_effects\normalize.css" />
     <Content Include="Content\images\akvarel\kozlov\0.JPG" />
@@ -283,12 +279,6 @@
     <Content Include="Content\images\zivopis\zerelo\1.JPG" />
     <Content Include="Content\images\zivopis\zerelo\2.JPG" />
     <Content Include="Content\images\zivopis\zerelo\3.JPG" />
-    <Content Include="Content\bg.jpg" />
-    <Content Include="Content\bg2.jpg" />
-    <Content Include="Content\bg3.jpg" />
-    <Content Include="Content\bg5.jpg" />
-    <Content Include="Content\bg6.jpg" />
-    <Content Include="Content\bg7.jpg" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -422,7 +412,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>14155</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
