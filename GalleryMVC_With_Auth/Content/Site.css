@@ -11,41 +11,44 @@ footer {
     color: #E18728;
 }*/
 
+/*.navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home {
+    color: #BE4C39;
+}*/
+
+/*.navbar-inverse .navbar-nav > li > .about:hover, .navbar-inverse .navbar-nav > li > .about {
+    color: #9351A6;
+}*/
+
+/*.navbar-inverse .navbar-nav > li > .contacts:hover, .navbar-inverse .navbar-nav > li > .contacts {
+    color: #4472B9;
+}*/
+
+/*.navbar-inverse .navbar-nav > li > .logs:hover, .navbar-inverse .navbar-nav > li > .logs {
+    color: #4CA454;
+}*/
+
+
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
     background-color: #E18728;
     color: white;
 }
 
-/*.navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home {
-    color: #BE4C39;
-}*/
+
 
 .navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home:focus {
     background-color: #BE4C39;
     color: white;
 }
 
-/*.navbar-inverse .navbar-nav > li > .about:hover, .navbar-inverse .navbar-nav > li > .about {
-    color: #9351A6;
-}*/
-
 .navbar-inverse .navbar-nav > li > .about:hover, .navbar-inverse .navbar-nav > li > .about:focus {
     background-color: #9351A6;
     color: white;
 }
 
-/*.navbar-inverse .navbar-nav > li > .contacts:hover, .navbar-inverse .navbar-nav > li > .contacts {
-    color: #4472B9;
-}*/
-
 .navbar-inverse .navbar-nav > li > .contacts:hover, .navbar-inverse .navbar-nav > li > .contacts:focus {
     background-color: #4472B9;
     color: white;
 }
-
-/*.navbar-inverse .navbar-nav > li > .logs:hover, .navbar-inverse .navbar-nav > li > .logs {
-    color: #4CA454;
-}*/
 
 .navbar-inverse .navbar-nav > li > .logs:hover, .navbar-inverse .navbar-nav > li > .logs:focus {
     background-color: #4CA454;
