@@ -449,7 +449,7 @@ namespace GalleryMVC_With_Auth.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "StartHome");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
