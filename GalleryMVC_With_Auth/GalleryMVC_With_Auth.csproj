@@ -390,6 +390,7 @@
     <Content Include="Views\StartHome\Index.cshtml" />
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\Errors\NotFound.cshtml" />
+    <Content Include="Views\Errors\BadRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
