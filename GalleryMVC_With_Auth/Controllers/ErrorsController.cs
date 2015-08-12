@@ -12,7 +12,7 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult Index()
         {
             var error = Server.GetLastError();
-            return View();
+            return View((object)error);
         }
     }
 }
