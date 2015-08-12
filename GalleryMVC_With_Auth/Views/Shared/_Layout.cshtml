@@ -38,10 +38,11 @@
         <div class="container body-content">
             @RenderBody()
             <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - ramzzzay@gmail.com ASP.NET Application</p>
-            </footer>
+
         </div>
+        <footer style="background: #2E2E2E; padding: 50px">
+            <p>&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
+        </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/magic")
