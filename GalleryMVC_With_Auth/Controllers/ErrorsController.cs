@@ -14,5 +14,17 @@ namespace GalleryMVC_With_Auth.Controllers
             var error = Server.GetLastError();
             return View((object)error);
         }
+
+        public ActionResult NotFound()
+        {
+            var error = Server.GetLastError();
+            return View((object)error);
+        }
+
+        public ActionResult BadRequest()
+        {
+            var error = Server.GetLastError();
+            return View((object)error);
+        }
     }
 }
