@@ -24,6 +24,7 @@
                     <li>@Html.ActionLink("О нас", "About", new { controller = "StartHome" }, new { @class = "about" })</li>
                     <li>@Html.ActionLink("Контакты", "Contact", new { controller = "StartHome" }, new { @class = "contacts" })</li>
                     <li>@Html.ActionLink("Логи", "Index", new { controller = "elmah" }, new { style = "font-size: 200%;", @class = "logs" })</li>
+                    <li>@Html.ActionLink("Статистика", "Index", new { controller = "glimpse.axd" }, new { style = "font-size: 200%;", @class = "stat" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
