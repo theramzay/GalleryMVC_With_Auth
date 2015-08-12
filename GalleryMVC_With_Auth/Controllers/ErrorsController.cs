@@ -11,20 +11,17 @@ namespace GalleryMVC_With_Auth.Controllers
         // GET: Errors
         public ActionResult Index()
         {
-            var error = Server.GetLastError();
-            return View((object)error);
+            return View();
         }
 
         public ActionResult NotFound()
         {
-            var error = Server.GetLastError();
-            return View((object)error);
+            return View();
         }
 
         public ActionResult BadRequest()
         {
-            var error = Server.GetLastError();
-            return View((object)error);
+            return View();
         }
     }
 }
