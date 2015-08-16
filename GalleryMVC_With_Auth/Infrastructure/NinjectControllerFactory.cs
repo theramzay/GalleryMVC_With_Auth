@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
+using GalleryMVC_With_Auth.Domain.Abstract;
 using Ninject;
+using GalleryMVC_With_Auth.Domain.Concrete;
 
 namespace GalleryMVC_With_Auth.Infrastructure
 {
@@ -29,6 +31,7 @@ namespace GalleryMVC_With_Auth.Infrastructure
         private void AddBindings()
         {
             // конфигурирование контейнера 
+            ninjectKernel.Bind<IPicturesRepository>().To<EFPictureRepository>();
         }
     }
 }
