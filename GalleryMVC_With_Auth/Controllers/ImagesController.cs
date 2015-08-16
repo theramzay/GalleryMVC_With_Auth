@@ -17,7 +17,7 @@ namespace GalleryMVC_With_Auth.Controllers
         // GET: Images
         public ActionResult Jivopis()
         {
-            return View(repository.Pictures.Where(x=>x.Category=="Живопись"));
+            return View((object)repository.Pictures.Where(p=>p.Category=="Живопись"));
         }
 
         public ActionResult Akvarel()
