@@ -21,7 +21,7 @@ namespace GalleryMVC_With_Auth.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DBcon", throwIfV1Schema: false)
         {
         }
 
