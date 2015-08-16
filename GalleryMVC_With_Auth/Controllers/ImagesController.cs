@@ -1,4 +1,6 @@
 ﻿using System.Web.Mvc;
+using GalleryMVC_With_Auth.Domain.Abstract;
+using GalleryMVC_With_Auth.Domain.Entities;
 
 namespace GalleryMVC_With_Auth.Controllers
 {
