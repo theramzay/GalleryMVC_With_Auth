@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalleryMVC_With_Auth", "GalleryMVC_With_Auth\GalleryMVC_With_Auth.csproj", "{DC0A5D71-9153-47B5-B5D0-2612752127E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{52F491F3-6D90-4B7A-AC88-0D0E5B18AD99} = {52F491F3-6D90-4B7A-AC88-0D0E5B18AD99}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalleryMVC_With_Auth.Domain", "GalleryMVC_With_Auth.Domain\GalleryMVC_With_Auth.Domain.csproj", "{52F491F3-6D90-4B7A-AC88-0D0E5B18AD99}"
 EndProject
 Global
 	GlobalSection(Performance) = preSolution
@@ -18,6 +23,10 @@ Global
 		{DC0A5D71-9153-47B5-B5D0-2612752127E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC0A5D71-9153-47B5-B5D0-2612752127E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC0A5D71-9153-47B5-B5D0-2612752127E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52F491F3-6D90-4B7A-AC88-0D0E5B18AD99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52F491F3-6D90-4B7A-AC88-0D0E5B18AD99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52F491F3-6D90-4B7A-AC88-0D0E5B18AD99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52F491F3-6D90-4B7A-AC88-0D0E5B18AD99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

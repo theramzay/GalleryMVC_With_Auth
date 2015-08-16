@@ -11,7 +11,7 @@ namespace GalleryMVC_With_Auth.App_Start
     using Ninject;
     using Ninject.Web.Common;
 
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
