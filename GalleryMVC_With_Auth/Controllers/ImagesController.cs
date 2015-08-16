@@ -6,6 +6,13 @@ namespace GalleryMVC_With_Auth.Controllers
 {
     public class ImagesController : Controller
     {
+        private IPicturesRepository repository;
+
+        public ImagesController(IPicturesRepository repository)
+        {
+            this.repository = repository;
+        }
+
         // GET: Images
         public ActionResult Jivopis()
         {
