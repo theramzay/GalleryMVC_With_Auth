@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 
@@ -16,7 +17,7 @@ namespace GalleryMVC_With_Auth.Controllers
         // GET: Images
         public ActionResult Jivopis()
         {
-            return View();
+            return View(repository.Pictures.Where(x=>x.Category=="Живопись"));
         }
 
         public ActionResult Akvarel()
