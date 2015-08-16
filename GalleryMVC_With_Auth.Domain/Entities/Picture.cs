@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace GalleryMVC_With_Auth.Domain.Entities
 {
@@ -11,6 +6,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
     {
         [Key]
         public int ImgId { get; set; }
+
         public string Path { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
