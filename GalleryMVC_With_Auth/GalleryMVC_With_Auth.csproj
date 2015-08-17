@@ -429,15 +429,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\zivopis\kondratuk_alina\" />
-    <Folder Include="Content\images\zivopis\kozlov\" />
-    <Folder Include="Content\images\zivopis\melexov\" />
-    <Folder Include="Content\images\zivopis\patvor\" />
-    <Folder Include="Content\images\zivopis\romanchuk\" />
-    <Folder Include="Content\images\zivopis\ulubin\" />
-    <Folder Include="Content\images\zivopis\vorob\" />
-    <Folder Include="Content\images\zivopis\xorochun\" />
-    <Folder Include="Content\images\zivopis\zerelo\" />
+    <Folder Include="Content\images\zivopis\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

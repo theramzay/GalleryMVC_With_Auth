@@ -21,7 +21,7 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult Akvarel()
         {
-            return View();
+            return View(_repository.Pictures.Where(p => p.Category == "Акварель"));
         }
 
         public ActionResult Guash()
