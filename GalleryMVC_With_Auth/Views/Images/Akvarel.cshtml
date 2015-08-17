@@ -1,61 +1,33 @@
-﻿
+﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Picture>
 @{
     ViewBag.Title = "Акварель";
 }
 
 <h2>@ViewBag.Title</h2>
 
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
 <div class="grid">
-    
-    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/akvarel/kozlov")).Length; i++)
-    {
-        <figure class="effect-milo">
-            <img src="~/Content/images/akvarel/kozlov/@string.Format("{0}.jpg",i)" alt="img0@i" />
-            <figcaption>
-                <h2><span>Акварель</span></h2>
-                <p style="color: red">Автор - Козлов.</p>
-                <p style="color: red">Цена - 999$!</p>
-                <a href="#">View more</a>
-            </figcaption>
-        </figure>
-    }
-
-    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/akvarel/petrovna")).Length; i++)
-    {
-        <figure class="effect-milo">
-            <img src="~/Content/images/akvarel/petrovna/@string.Format("{0}.jpg",i)" alt="img0@i" />
-            <figcaption>
-                <h2><span>Акварель</span></h2>
-                <p style="color: red">Автор - Петровна.</p>
-                <p style="color: red">Цена - 999$!</p>
-                <a href="#">View more</a>
-            </figcaption>
-        </figure>
-    }
-
-    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/akvarel/tatarin")).Length; i++)
-    {
-        <figure class="effect-milo">
-            <img src="~/Content/images/akvarel/tatarin/@string.Format("{0}.jpg",i)" alt="img0@i" />
-            <figcaption>
-                <h2><span>Акварель</span></h2>
-                <p style="color: red">Автор - Татарин.</p>
-                <p style="color: red">Цена - 999$!</p>
-                <a href="#">View more</a>
-            </figcaption>
-        </figure>
-    }
-
-    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/akvarel/ulubin")).Length; i++)
-    {
-        <figure class="effect-milo">
-            <img src="~/Content/images/akvarel/ulubin/@string.Format("{0}.jpg",i)" alt="img0@i" />
-            <figcaption>
-                <h2><span>Акварель</span></h2>
-                <p style="color: red">Автор - Улюбин.</p>
-                <p style="color: red">Цена - 999$!</p>
-                <a href="#">View more</a>
-            </figcaption>
-        </figure>
-    }
+    <div id="links">
+        @foreach (var p in Model)
+        {
+            <figure class="effect-milo">
+                <img src="@p.TmbPath" alt="@p.Category" />
+                <figcaption>
+                    <h2><span>@p.Category</span></h2>
+                    <p style="color: red">Автор - @p.Name.</p>
+                    <p style="color: red">Цена - @p.Price$!</p>
+                    <a href="@p.Path" title="@p.Name"></a>
+                </figcaption>
+            </figure>
+        }
+    </div>
 </div>
