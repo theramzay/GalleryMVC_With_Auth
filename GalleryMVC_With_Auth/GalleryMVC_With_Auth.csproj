@@ -256,15 +256,6 @@
     <Content Include="Content\bootstrap.slate.min.css" />
     <Content Include="Content\hover_effects\component.css" />
     <Content Include="Content\hover_effects\normalize.css" />
-    <Content Include="Content\images\batik\krivit\0.JPG" />
-    <Content Include="Content\images\batik\krivit\1.JPG" />
-    <Content Include="Content\images\batik\krivit\2.JPG" />
-    <Content Include="Content\images\batik\krivit\3.JPG" />
-    <Content Include="Content\images\batik\krivit\4.JPG" />
-    <Content Include="Content\images\batik\krivit\5.jpg" />
-    <Content Include="Content\images\batik\krivit\6.jpg" />
-    <Content Include="Content\images\batik\krivit\7.jpg" />
-    <Content Include="Content\images\batik\krivit\8.jpg" />
     <Content Include="Content\images\hover_test\1.jpg" />
     <Content Include="Content\images\hover_test\10.jpg" />
     <Content Include="Content\images\hover_test\11.jpg" />
@@ -285,7 +276,6 @@
     <Content Include="Content\images\icons\3_opt.jpg" />
     <Content Include="Content\images\icons\4_opt.jpg" />
     <Content Include="Content\images\icons\9_opt.jpg" />
-    <Content Include="Content\images\pastel\kondatuk_andr\0.jpg" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -415,6 +405,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\akvarel\" />
+    <Folder Include="Content\images\batik\" />
+    <Folder Include="Content\images\pastel\" />
     <Folder Include="Content\images\zivopis\" />
   </ItemGroup>
   <ItemGroup>
