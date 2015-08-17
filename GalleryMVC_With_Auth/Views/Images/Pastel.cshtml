@@ -1,23 +1,33 @@
-﻿
+﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Picture>
 @{
     ViewBag.Title = "Пастель";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<div class="grid">
-    
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
 
-    @for (int i = 0; i < Directory.GetFiles(Server.MapPath("/Content/images/pastel/kondatuk_andr")).Length; i++)
-    {
-        <figure class="effect-milo">
-            <img src="~/Content/images/pastel/kondatuk_andr/@string.Format("{0}.jpg",i)" alt="img0@i" />
-            <figcaption>
-                <h2><span>Пастель</span></h2>
-                <p style="color: red">Автор - Кондатюк Андрей.</p>
-                <p style="color: red">Цена - 999$!</p>
-                <a href="#">View more</a>
-            </figcaption>
-        </figure>
-    }
+<div class="grid">
+    <div id="links">
+        @foreach (var p in Model)
+        {
+            <figure class="effect-milo">
+                <img src="@p.TmbPath" alt="@p.Category" />
+                <figcaption>
+                    <h2><span>@p.Category</span></h2>
+                    <p style="color: red">Автор - @p.Name.</p>
+                    <p style="color: red">Цена - @p.Price$!</p>
+                    <a href="@p.Path" title="@p.Name"></a>
+                </figcaption>
+            </figure>
+        }
+    </div>
 </div>

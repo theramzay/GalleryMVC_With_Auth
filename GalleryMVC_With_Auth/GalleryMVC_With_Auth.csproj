@@ -256,21 +256,6 @@
     <Content Include="Content\bootstrap.slate.min.css" />
     <Content Include="Content\hover_effects\component.css" />
     <Content Include="Content\hover_effects\normalize.css" />
-    <Content Include="Content\images\akvarel\kozlov\0.JPG" />
-    <Content Include="Content\images\akvarel\kozlov\1.JPG" />
-    <Content Include="Content\images\akvarel\kozlov\2.JPG" />
-    <Content Include="Content\images\akvarel\kozlov\3.JPG" />
-    <Content Include="Content\images\akvarel\petrovna\0.JPG" />
-    <Content Include="Content\images\akvarel\petrovna\1.JPG" />
-    <Content Include="Content\images\akvarel\petrovna\2.JPG" />
-    <Content Include="Content\images\akvarel\petrovna\3.JPG" />
-    <Content Include="Content\images\akvarel\petrovna\4.JPG" />
-    <Content Include="Content\images\akvarel\petrovna\5.JPG" />
-    <Content Include="Content\images\akvarel\tatarin\0.JPG" />
-    <Content Include="Content\images\akvarel\tatarin\1.JPG" />
-    <Content Include="Content\images\akvarel\tatarin\2.JPG" />
-    <Content Include="Content\images\akvarel\ulubin\0.JPG" />
-    <Content Include="Content\images\akvarel\ulubin\1.JPG" />
     <Content Include="Content\images\batik\krivit\0.JPG" />
     <Content Include="Content\images\batik\krivit\1.JPG" />
     <Content Include="Content\images\batik\krivit\2.JPG" />
@@ -429,6 +414,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\akvarel\" />
     <Folder Include="Content\images\zivopis\" />
   </ItemGroup>
   <ItemGroup>
