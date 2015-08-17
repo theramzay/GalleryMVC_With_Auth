@@ -28,7 +28,7 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult Contact(string lang)
         {
             ViewBag.Message = "Наши контакты.";
-            return View((object) lang);
+            return View(model:lang);
         }
     }
 }
