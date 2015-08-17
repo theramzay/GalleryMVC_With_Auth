@@ -6,11 +6,21 @@
 <h2>@ViewBag.Title</h2>
 
 
-<div class="grid">
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+@*<div class="grid">
     @foreach (var p in Model)
     {
         <figure class="effect-milo">
-            <img src="@p.Path" alt="@p.Category" />
+            <img src="@p.Path" alt="@p.Category"/>
             <figcaption>
                 <h2><span>@p.Category</span></h2>
                 <p style="color: red">Автор - @p.Name.</p>
@@ -19,4 +29,13 @@
             </figcaption>
         </figure>
     }
+</div>*@
+<div id="links">
+    @foreach (var p in Model)
+{
+
+        <a href="@p.Path" title="@p.Name">
+            <img src="@p.Path" alt="@p.Tag" />
+        </a>
+}
 </div>

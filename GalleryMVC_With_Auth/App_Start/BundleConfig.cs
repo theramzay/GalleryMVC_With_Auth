@@ -20,14 +20,17 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/magic").Include(
-                "~/Scripts/transp_menu_magic.js"));
+                "~/Scripts/transp_menu_magic.js",
+                "~/Content/blueimp-gallery2/js/blueimp-gallery.min.js",
+                "~/Scripts/BlueimpGal.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/hover_effects/component.css",
                 "~/Content/hover_effects/normalize.css",
                 "~/Content/bootstrap.css",
                 "~/Content/site.css",
-                "~/Content/transp_menu.css"));
+                "~/Content/transp_menu.css",
+                "~/Content/blueimp-gallery2/css/blueimp-gallery.min.css"));
         }
     }
 }
