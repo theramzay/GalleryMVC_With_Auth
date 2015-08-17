@@ -8,6 +8,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
         public int ImgId { get; set; }
 
         public string Path { get; set; }
+        public string TmbPath { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Tag { get; set; }

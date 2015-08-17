@@ -30,11 +30,28 @@
         </figure>
     }
 </div>*@
-<div id="links">
+<div class="grid">
+    <div id="links">
+        @foreach (var p in Model)
+        {
+            <figure class="effect-milo">
+                <img src="@p.Path" alt="@p.Category" />
+                <figcaption>
+                    <h2><span>@p.Category</span></h2>
+                    <p style="color: red">Автор - @p.Name.</p>
+                    <p style="color: red">Цена - @p.Price$!</p>
+                    <a href="@p.Path" title="@p.Name" ></a>
+                </figcaption>
+            </figure>
+        }
+</div>
+</div>
+
+@*<div id="links">
     @foreach (var p in Model)
 {
     <a href="@p.Path" title="@p.Name">
         <img src="@p.Path" alt="@p.Tag" style="width: 250px; height: 250px; margin-right: 2.5px; margin-bottom: 5px;"/>
     </a>
 }
-</div>
+</div>*@

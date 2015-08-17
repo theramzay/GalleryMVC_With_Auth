@@ -301,50 +301,6 @@
     <Content Include="Content\images\icons\4_opt.jpg" />
     <Content Include="Content\images\icons\9_opt.jpg" />
     <Content Include="Content\images\pastel\kondatuk_andr\0.jpg" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\0.JPG" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\1.JPG" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\2.JPG" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\3.JPG" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\4.jpg" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\5.jpg" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\6.jpg" />
-    <Content Include="Content\images\zivopis\kondratuk_alina\7.jpg" />
-    <Content Include="Content\images\zivopis\kozlov\0.JPG" />
-    <Content Include="Content\images\zivopis\kozlov\1.JPG" />
-    <Content Include="Content\images\zivopis\melexov\0.JPG" />
-    <Content Include="Content\images\zivopis\melexov\1.JPG" />
-    <Content Include="Content\images\zivopis\melexov\2.JPG" />
-    <Content Include="Content\images\zivopis\melexov\3.jpg" />
-    <Content Include="Content\images\zivopis\melexov\4.jpg" />
-    <Content Include="Content\images\zivopis\melexov\5.jpg" />
-    <Content Include="Content\images\zivopis\melexov\6.jpg" />
-    <Content Include="Content\images\zivopis\melexov\7.jpg" />
-    <Content Include="Content\images\zivopis\melexov\8.jpg" />
-    <Content Include="Content\images\zivopis\patvor\0.jpg" />
-    <Content Include="Content\images\zivopis\patvor\1.jpg" />
-    <Content Include="Content\images\zivopis\patvor\2.jpg" />
-    <Content Include="Content\images\zivopis\romanchuk\0.JPG" />
-    <Content Include="Content\images\zivopis\romanchuk\1.JPG" />
-    <Content Include="Content\images\zivopis\romanchuk\2.jpg" />
-    <Content Include="Content\images\zivopis\romanchuk\3.jpg" />
-    <Content Include="Content\images\zivopis\romanchuk\4.jpg" />
-    <Content Include="Content\images\zivopis\romanchuk\5.jpg" />
-    <Content Include="Content\images\zivopis\romanchuk\6.jpg" />
-    <Content Include="Content\images\zivopis\ulubin\0.JPG" />
-    <Content Include="Content\images\zivopis\ulubin\1.JPG" />
-    <Content Include="Content\images\zivopis\vorob\0.JPG" />
-    <Content Include="Content\images\zivopis\vorob\1.jpg" />
-    <Content Include="Content\images\zivopis\vorob\2.jpg" />
-    <Content Include="Content\images\zivopis\vorob\3.jpg" />
-    <Content Include="Content\images\zivopis\vorob\4.jpg" />
-    <Content Include="Content\images\zivopis\vorob\5.jpg" />
-    <Content Include="Content\images\zivopis\vorob\6.jpg" />
-    <Content Include="Content\images\zivopis\xorochun\0.JPG" />
-    <Content Include="Content\images\zivopis\xorochun\1.JPG" />
-    <Content Include="Content\images\zivopis\zerelo\0.JPG" />
-    <Content Include="Content\images\zivopis\zerelo\1.JPG" />
-    <Content Include="Content\images\zivopis\zerelo\2.JPG" />
-    <Content Include="Content\images\zivopis\zerelo\3.JPG" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -473,6 +429,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\zivopis\kondratuk_alina\" />
+    <Folder Include="Content\images\zivopis\kozlov\" />
+    <Folder Include="Content\images\zivopis\melexov\" />
+    <Folder Include="Content\images\zivopis\patvor\" />
+    <Folder Include="Content\images\zivopis\romanchuk\" />
+    <Folder Include="Content\images\zivopis\ulubin\" />
+    <Folder Include="Content\images\zivopis\vorob\" />
+    <Folder Include="Content\images\zivopis\xorochun\" />
+    <Folder Include="Content\images\zivopis\zerelo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
