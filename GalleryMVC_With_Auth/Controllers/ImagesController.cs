@@ -16,12 +16,12 @@ namespace GalleryMVC_With_Auth.Controllers
         // GET: Images
         public ActionResult Painting()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Живопись"));
+            return View(_repository.Pictures.Where(p => p.Category == "Живопись" || p.Category == "zivopis"));
         }
 
         public ActionResult Watercolor()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Акварель"));
+            return View(_repository.Pictures.Where(p => p.Category == "Акварель" || p.Category == "akvarel"));
         }
 
         public ActionResult Gouache()
@@ -36,12 +36,12 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult Batik()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Батик"));
+            return View(_repository.Pictures.Where(p => p.Category == "Батик" || p.Category == "batik"));
         }
 
         public ActionResult Pastel()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Пастель"));
+            return View(_repository.Pictures.Where(p => p.Category == "Пастель" || p.Category == "pastel"));
         }
     }
 }
