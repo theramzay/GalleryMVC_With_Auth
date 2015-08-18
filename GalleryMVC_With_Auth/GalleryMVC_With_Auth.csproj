@@ -387,11 +387,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Images\Akvarel.cshtml" />
+    <Content Include="Views\Images\Watercolor.cshtml" />
     <Content Include="Views\Images\Batik.cshtml" />
-    <Content Include="Views\Images\Grafica.cshtml" />
-    <Content Include="Views\Images\Guash.cshtml" />
-    <Content Include="Views\Images\Jivopis.cshtml" />
+    <Content Include="Views\Images\Graphics.cshtml" />
+    <Content Include="Views\Images\Gouache.cshtml" />
+    <Content Include="Views\Images\Painting.cshtml" />
     <Content Include="Views\Images\Pastel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <Content Include="Views\StartHome\About.cshtml" />

@@ -14,22 +14,22 @@ namespace GalleryMVC_With_Auth.Controllers
         }
 
         // GET: Images
-        public ActionResult Jivopis()
+        public ActionResult Painting()
         {
             return View(_repository.Pictures.Where(p => p.Category == "Живопись"));
         }
 
-        public ActionResult Akvarel()
+        public ActionResult Watercolor()
         {
             return View(_repository.Pictures.Where(p => p.Category == "Акварель"));
         }
 
-        public ActionResult Guash()
+        public ActionResult Gouache()
         {
             return View();
         }
 
-        public ActionResult Grafica()
+        public ActionResult Graphics()
         {
             return View();
         }
