@@ -1,0 +1,26 @@
+﻿@model GalleryMVC_With_Auth.Domain.Entities.Picture
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+
+@using (Html.BeginForm())
+{
+    <title>Path</title>
+    @Html.TextBox("path")<p/>
+    <title>TmbPath</title>
+    @Html.TextBox("tmbpath")<p/>
+    <title>Name</title>
+    @Html.TextBox("name")<p/>
+    <title>Desctiption</title>
+    @Html.TextBox("desc")<p/>
+    <title>Tag</title>
+    @Html.TextBox("tag")<p/>
+    <title>Category</title>
+    @Html.TextBox("cat")<p/>
+    <title>Price</title>
+    @Html.TextBox("prc",null,new {type = "number"})<p/>
+    <button type="submit" class="btn btn-default">Применить</button>
+}
