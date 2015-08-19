@@ -1,7 +1,33 @@
-﻿
+﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Picture>
 @{
     ViewBag.Title = "Гуашь";
 }
 
 <h2>@ViewBag.Title</h2>
 
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<div class="grid">
+    <div id="links">
+        @foreach (var p in Model)
+        {
+            <figure class="effect-milo">
+                <img src="@p.TmbPath" alt="@p.Category" />
+                <figcaption>
+                    @*<h2><span>@p.Category</span></h2>*@
+                    <p style="color: red">Автор - @p.Name.</p>
+                    <p style="color: red">Цена - @p.Price$!</p>
+                    <a href="@p.Path" title="@p.Name"></a>
+                </figcaption>
+            </figure>
+        }
+    </div>
+</div>
