@@ -63,8 +63,7 @@ namespace GalleryMVC_With_Auth.Controllers
                     Tag = tag,
                     Category = "blob",
                     Price = prc,
-
-                    AlbumAlbId = 3
+                    AlbumAlbId = Albums
                 };
                 _repository.context.Pictures.Add(p);
                 _repository.context.SaveChanges();
