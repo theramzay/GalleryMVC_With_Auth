@@ -195,6 +195,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminPanelController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ThumbnailCreater.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -386,11 +388,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Images\Akvarel.cshtml" />
+    <Content Include="Views\Images\Watercolor.cshtml" />
     <Content Include="Views\Images\Batik.cshtml" />
-    <Content Include="Views\Images\Grafica.cshtml" />
-    <Content Include="Views\Images\Guash.cshtml" />
-    <Content Include="Views\Images\Jivopis.cshtml" />
+    <Content Include="Views\Images\Graphics.cshtml" />
+    <Content Include="Views\Images\Gouache.cshtml" />
+    <Content Include="Views\Images\Painting.cshtml" />
     <Content Include="Views\Images\Pastel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <Content Include="Views\StartHome\About.cshtml" />
@@ -401,13 +403,17 @@
     <Content Include="Views\Errors\BadRequest.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\AdminPanel\Index.cshtml" />
+    <Content Include="Views\AdminPanel\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\akvarel\" />
-    <Folder Include="Content\images\batik\" />
-    <Folder Include="Content\images\pastel\" />
-    <Folder Include="Content\images\zivopis\" />
+    <Folder Include="Content\images\Batik\tmb\" />
+    <Folder Include="Content\images\Graphics\tmb\" />
+    <Folder Include="Content\images\Guache\tmb\" />
+    <Folder Include="Content\images\Painting\tmb\" />
+    <Folder Include="Content\images\Pastel\tmb\" />
+    <Folder Include="Content\images\Watercolor\tmb\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
