@@ -14,6 +14,7 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
             set { DB = value; }
         }
 
+        public IQueryable<Album> Albums => context.Albums;
         public IQueryable<Picture> Pictures => context.Pictures;
     }
 }

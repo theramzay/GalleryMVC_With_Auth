@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using GalleryMVC_With_Auth.Domain.Concrete;
 using GalleryMVC_With_Auth.Domain.Entities;
 
@@ -10,6 +6,7 @@ namespace GalleryMVC_With_Auth.Domain.Abstract
 {
     public interface IPicturesRepository
     {
+        IQueryable<Album> Albums { get; }
         IQueryable<Picture> Pictures { get; }
         DBcon context { get; set; }
     }
