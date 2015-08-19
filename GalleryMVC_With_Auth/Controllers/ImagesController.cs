@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using GalleryMVC_With_Auth.Domain.Abstract;
+using GalleryMVC_With_Auth.Domain.Entities;
 
 namespace GalleryMVC_With_Auth.Controllers
 {
@@ -14,34 +15,34 @@ namespace GalleryMVC_With_Auth.Controllers
         }
 
         // GET: Images
-        public ActionResult Jivopis()
+        public ActionResult Painting()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Живопись"));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId ==3));
         }
 
-        public ActionResult Akvarel()
+        public ActionResult Watercolor()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Акварель"));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 5));
         }
 
-        public ActionResult Guash()
+        public ActionResult Gouache()
         {
             return View();
         }
 
-        public ActionResult Grafica()
+        public ActionResult Graphics()
         {
             return View();
         }
 
         public ActionResult Batik()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Батик"));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 2));
         }
 
         public ActionResult Pastel()
         {
-            return View(_repository.Pictures.Where(p => p.Category == "Пастель"));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 4));
         }
     }
 }

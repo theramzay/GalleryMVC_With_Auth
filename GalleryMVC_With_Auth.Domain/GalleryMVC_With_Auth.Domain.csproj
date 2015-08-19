@@ -53,6 +53,7 @@
     <Compile Include="Abstract\IPicturesRepository.cs" />
     <Compile Include="Concrete\DBcon.cs" />
     <Compile Include="Concrete\EFPictureRepository.cs" />
+    <Compile Include="Entities\Album.cs" />
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

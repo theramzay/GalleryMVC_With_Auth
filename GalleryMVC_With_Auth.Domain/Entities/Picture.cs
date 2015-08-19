@@ -14,5 +14,8 @@ namespace GalleryMVC_With_Auth.Domain.Entities
         public string Tag { get; set; }
         public string Category { get; set; }
         public decimal Price { get; set; }
+        public int AlbumAlbId { get; set; }
+
+        public virtual Album Album { get; set; }
     }
 }
