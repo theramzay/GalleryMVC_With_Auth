@@ -408,10 +408,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\akvarel\tmb\" />
-    <Folder Include="Content\images\batik\tmb\" />
-    <Folder Include="Content\images\pastel\tmb\" />
-    <Folder Include="Content\images\zivopis\tmb\" />
+    <Folder Include="Content\images\Batik\tmb\" />
+    <Folder Include="Content\images\Graphics\tmb\" />
+    <Folder Include="Content\images\Guache\tmb\" />
+    <Folder Include="Content\images\Painting\tmb\" />
+    <Folder Include="Content\images\Pastel\tmb\" />
+    <Folder Include="Content\images\Watercolor\tmb\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

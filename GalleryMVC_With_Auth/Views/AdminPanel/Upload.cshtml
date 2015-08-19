@@ -1,7 +1,9 @@
-﻿
+﻿@using GalleryMVC_With_Auth.Domain.Entities
+@model GalleryMVC_With_Auth.Domain.Abstract.IPicturesRepository
 
 @{
     ViewBag.Title = "Upload";
+    List<Album> a = ViewBag.alb as List<Album>;
 }
 
 <h2>Upload</h2>
@@ -17,6 +19,7 @@
     @Html.TextBox("tag")<p />
     <h5>Price</h5>
     @Html.TextBox("prc", null, new { type = "number" })<p />
-    @Html.DropDownList("album", new List<SelectListItem> { new SelectListItem { Text = "Акварель", Value = "akvarel" }, new SelectListItem { Text = "Батик", Value = "batik" }, new SelectListItem { Text = "Пастель", Value = "pastel" }, new SelectListItem { Text = "Живопись", Value = "zivopis" } })
+    @*@Html.DropDownList("Albums", new List<SelectListItem> { new SelectListItem { Text = "Акварель", Value = "akvarel" }, new SelectListItem { Text = "Батик", Value = "batik" }, new SelectListItem { Text = "Пастель", Value = "pastel" }, new SelectListItem { Text = "Живопись", Value = "zivopis" } })*@
+    @Html.DropDownListFor(m=>m.Albums,new SelectList(a,"AlbId","Name",a.First().AlbId))
     <button type="submit" class="btn btn-default">Применить</button>
     }

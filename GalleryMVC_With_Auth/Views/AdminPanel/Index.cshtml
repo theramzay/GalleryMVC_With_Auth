@@ -1,17 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Панель Администрирования";
 }
 
 <h2>Index</h2>
 
-    <div class="dropdown">
-      <!-- Link or button to toggle dropdown -->
-      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <li><a tabindex="-1" href="#">Действие</a></li>
-        <li><a tabindex="-1" href="#">Другое действие</a></li>
-        <li><a tabindex="-1" href="#">Еще ссылка</a></li>
-        <li class="divider"></li>
-        <li><a tabindex="-1" href="#">Доп. ссылка</a></li>
-      </ul>
-    </div>
+<li>@Html.ActionLink("Логи", "Index", new { controller = "elmah" })</li>
+<li>@Html.ActionLink("Статистика", "Index", new {controller = "glimpse.axd"})</li>
+<li>@Html.ActionLink("Заливка фотографий", "Upload", new { controller = "AdminPanel" })</li>
