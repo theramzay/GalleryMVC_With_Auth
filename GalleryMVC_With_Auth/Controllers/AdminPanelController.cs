@@ -43,7 +43,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             if (file != null)
             {
-                var pic = Path.GetFileName(file.FileName);
+                var pic = Path.GetFileName($"{(file.FileName+DateTime.Now.Ticks).GetHashCode()}.jpg");
                 var path = Path.Combine(
                     Server.MapPath($"~/Content/images/{_repository.Albums.Where(x=>x.AlbId == Albums).Select(x=>x.Name).FirstOrDefault()}/"), pic);
                 var tmbpath = Path.Combine(
