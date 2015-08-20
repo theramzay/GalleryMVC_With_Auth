@@ -27,12 +27,12 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult Gouache()
         {
-            return View();
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 6));
         }
 
         public ActionResult Graphics()
         {
-            return View();
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 1));
         }
 
         public ActionResult Batik()
