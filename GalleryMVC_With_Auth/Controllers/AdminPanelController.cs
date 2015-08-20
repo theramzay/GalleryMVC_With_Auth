@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -30,7 +28,7 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult Upload()
         {
             ViewBag.alb = new List<Album>();
-            foreach (Album a in _repository.Albums)
+            foreach (var a in _repository.Albums)
             {
                 ViewBag.alb.Add(a);
             }
@@ -39,34 +37,43 @@ namespace GalleryMVC_With_Auth.Controllers
 
         [HttpPost]
         public ActionResult Upload(string name, string desc, string tag, string cat, decimal prc, int Albums,
-            HttpPostedFileBase file)
+            HttpPostedFileBase[] files)
         {
-            if (file != null)
+            if (files != null)
             {
-                var pic = Path.GetFileName($"{(file.FileName+DateTime.Now.Ticks).GetHashCode()}.jpg");
-                var path = Path.Combine(
-                    Server.MapPath($"~/Content/images/{_repository.Albums.Where(x=>x.AlbId == Albums).Select(x=>x.Name).FirstOrDefault()}/"), pic);
-                var tmbpath = Path.Combine(
-                    Server.MapPath($"~/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/tmb"), pic);
-                // file is uploaded
-                file.SaveAs(path);
-
-                ThumbnailCreater.ToTmb(path, tmbpath);
-
-                //Upload info to DB
-                var p = new Picture
+                foreach (var file in files)
                 {
-                    Path = $"/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/{pic}",
-                    TmbPath = $"/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/tmb/{pic}",
-                    Name = name,
-                    Description = desc,
-                    Tag = tag,
-                    Category = "blob",
-                    Price = prc,
-                    AlbumAlbId = Albums
-                };
-                _repository.context.Pictures.Add(p);
-                _repository.context.SaveChanges();
+                    var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
+                    var path = Path.Combine(
+                        Server.MapPath(
+                            $"~/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/"),
+                        pic);
+                    var tmbpath = Path.Combine(
+                        Server.MapPath(
+                            $"~/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/tmb"),
+                        pic);
+                    // file is uploaded
+                    file.SaveAs(path);
+
+                    ThumbnailCreater.ToTmb(path, tmbpath);
+
+                    //Upload info to DB
+                    var p = new Picture
+                    {
+                        Path =
+                            $"/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/{pic}",
+                        TmbPath =
+                            $"/Content/images/{_repository.Albums.Where(x => x.AlbId == Albums).Select(x => x.Name).FirstOrDefault()}/tmb/{pic}",
+                        Name = name,
+                        Description = desc,
+                        Tag = tag,
+                        Category = "blob",
+                        Price = prc,
+                        AlbumAlbId = Albums
+                    };
+                    _repository.context.Pictures.Add(p);
+                    _repository.context.SaveChanges();
+                }
             }
 
             return RedirectToAction("Upload");

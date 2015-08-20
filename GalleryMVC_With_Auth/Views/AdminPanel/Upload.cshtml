@@ -10,7 +10,7 @@
 
 @using (Html.BeginForm("Upload", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <input type="file" name="file" id="file" style="width: 100%;" multiple accept="image/*,image/jpeg"/><p />
+    <input type="file" name="files" id="files" style="width: 100%;" multiple="multiple" accept="image/*"/><p />
     <h5>Name</h5>
     @Html.TextBox("name")<p />
     <h5>Desctiption</h5>

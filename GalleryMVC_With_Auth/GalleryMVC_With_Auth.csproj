@@ -295,6 +295,7 @@
     <Content Include="Content\images\icons\2_opt.jpg" />
     <Content Include="Content\images\icons\3_opt.jpg" />
     <Content Include="Content\images\icons\4_opt.jpg" />
+    <Content Include="Content\images\icons\7_opt.jpg" />
     <Content Include="Content\images\icons\9_opt.jpg" />
     <Content Include="Content\images\Pastel\0.jpg" />
     <Content Include="Content\images\Pastel\tmb\0.thumb.jpg" />
@@ -428,8 +429,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\Gouache\tmb\" />
     <Folder Include="Content\images\Graphics\tmb\" />
-    <Folder Include="Content\images\Guache\tmb\" />
     <Folder Include="Content\images\Painting\tmb\" />
     <Folder Include="Content\images\Watercolor\tmb\" />
   </ItemGroup>
