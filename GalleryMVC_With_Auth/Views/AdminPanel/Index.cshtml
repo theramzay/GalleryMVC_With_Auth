@@ -3,7 +3,7 @@
     ViewBag.Title = "Панель Администрирования";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <li>@Html.ActionLink("Логи", "Index", new { controller = "elmah" })</li>
 <li>@Html.ActionLink("Статистика", "Index", new {controller = "glimpse.axd"})</li>
