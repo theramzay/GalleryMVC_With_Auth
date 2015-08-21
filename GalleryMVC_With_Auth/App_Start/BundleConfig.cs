@@ -30,6 +30,7 @@ namespace GalleryMVC_With_Auth
                 "~/Content/bootstrap.css",
                 "~/Content/site.css",
                 "~/Content/transp_menu.css",
+                "~/Content/sticky-footer.css",
                 "~/Content/blueimp-gallery2/css/blueimp-gallery.min.css"));
         }
     }

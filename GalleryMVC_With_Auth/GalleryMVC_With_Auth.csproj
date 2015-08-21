@@ -299,6 +299,7 @@
     <Content Include="Content\images\icons\9_opt.jpg" />
     <Content Include="Content\images\Pastel\0.jpg" />
     <Content Include="Content\images\Pastel\tmb\0.thumb.jpg" />
+    <Content Include="Content\sticky-footer.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
