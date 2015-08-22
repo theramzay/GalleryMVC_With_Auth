@@ -2,8 +2,8 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using GalleryMVC_With_Auth.Domain.Abstract;
-using Ninject;
 using GalleryMVC_With_Auth.Domain.Concrete;
+using Ninject;
 
 namespace GalleryMVC_With_Auth.Infrastructure
 {
@@ -11,7 +11,8 @@ namespace GalleryMVC_With_Auth.Infrastructure
     // наследуясь от фабрики используемой по умолчанию
     public class NinjectControllerFactory : DefaultControllerFactory
     {
-        private IKernel ninjectKernel;
+        private readonly IKernel ninjectKernel;
+
         public NinjectControllerFactory()
         {
             // создание контейнера 
@@ -20,14 +21,15 @@ namespace GalleryMVC_With_Auth.Infrastructure
         }
 
         protected override IController GetControllerInstance(RequestContext requestContext,
-    Type controllerType)
+            Type controllerType)
         {
             // получение объекта контроллера из контейнера
             // используя его тип
             return controllerType == null
-              ? null
-              : (IController)ninjectKernel.Get(controllerType);
+                ? null
+                : (IController) ninjectKernel.Get(controllerType);
         }
+
         private void AddBindings()
         {
             // конфигурирование контейнера 
