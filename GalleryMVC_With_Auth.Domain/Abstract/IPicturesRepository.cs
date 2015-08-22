@@ -8,6 +8,7 @@ namespace GalleryMVC_With_Auth.Domain.Abstract
     {
         IQueryable<Album> Albums { get; }
         IQueryable<Picture> Pictures { get; }
+        Picture Picture { get; }
         DBcon context { get; set; }
     }
 }

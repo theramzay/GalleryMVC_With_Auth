@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
 
 namespace GalleryMVC_With_Auth.Helpers
 {
@@ -25,14 +26,7 @@ namespace GalleryMVC_With_Auth.Helpers
         {
             var codecs = ImageCodecInfo.GetImageDecoders();
 
-            foreach (var codec in codecs)
-            {
-                if (codec.FormatID == format.Guid)
-                {
-                    return codec;
-                }
-            }
-            return null;
+            return codecs.FirstOrDefault(codec => codec.FormatID == format.Guid);
         }
     }
 }

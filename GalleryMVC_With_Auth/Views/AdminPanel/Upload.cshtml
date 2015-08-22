@@ -10,16 +10,45 @@
 
 @using (Html.BeginForm("Upload", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <input type="file" name="file" id="file" style="width: 100%;" /><p />
-    <h5>Name</h5>
-    @Html.TextBox("name")<p />
-    <h5>Desctiption</h5>
-    @Html.TextBox("desc")<p />
-    <h5>Tag</h5>
-    @Html.TextBox("tag")<p />
-    <h5>Price</h5>
-    @Html.TextBox("prc", null, new { type = "number" })<p />
+    @Html.AntiForgeryToken()
+
+    <input type="file" name="files" id="files" style="width: 100%;" multiple="multiple" accept="image/*"/><p/>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Picture.Name, new { @class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Picture.Name, new { @class = "form-control", Name = "Name", id = "Name" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Picture.Description, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Picture.Description, new { @class = "form-control", Name = "Description", id = "Description" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Picture.Tag, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Picture.Tag, new { @class = "form-control", Name = "Tag", id = "Tag" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Picture.Category, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Picture.Category, new { @class = "form-control", Name = "Category", id = "Category" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Picture.Price, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Picture.Price, new { @class = "form-control", Name = "Price", id= "Price" })
+        </div>
+    </div>
     @*@Html.DropDownList("Albums", new List<SelectListItem> { new SelectListItem { Text = "Акварель", Value = "akvarel" }, new SelectListItem { Text = "Батик", Value = "batik" }, new SelectListItem { Text = "Пастель", Value = "pastel" }, new SelectListItem { Text = "Живопись", Value = "zivopis" } })*@
-    @Html.DropDownListFor(m=>m.Albums,new SelectList(a,"AlbId","Name",a.First().AlbId))
+    @Html.DropDownListFor(m=>m.Albums,new SelectList(a,"AlbId","Name",a.First().AlbId), new {Name = "AlbumAlbId", id= "AlbumAlbId" })
     <button type="submit" class="btn btn-default">Применить</button>
     }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

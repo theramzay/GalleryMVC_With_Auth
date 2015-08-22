@@ -90,21 +90,6 @@ body>.navbar{
 	margin-bottom:10px
 }
 
-footer{
-	margin:5em 0
-}
-
-footer li{
-	float:left;
-	margin-right:1.5em;
-	margin-bottom:1.5em
-}
-
-footer p{
-	clear:left;
-	margin-bottom:0
-}
-
 .splash {
     padding: 3em 0 2em;
     background-color: rgb(46, 46, 46);
