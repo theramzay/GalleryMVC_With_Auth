@@ -23,10 +23,10 @@ namespace GalleryMVC_With_Auth
 
             bundles.Add(new ScriptBundle("~/bundles/magic").Include(
                 "~/Scripts/transp_menu_magic.js"
-));
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/galmagic").Include(
-                                "~/Content/blueimp-gallery2/js/blueimp-gallery.min.js",
+                "~/Content/blueimp-gallery2/js/blueimp-gallery.min.js",
                 "~/Scripts/BlueimpGal.js",
                 "~/Scripts/jquery.lazyload.js"));
 
