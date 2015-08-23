@@ -6,6 +6,7 @@
         <title>@ViewBag.Title - My ASP.NET Application</title>
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
     </head>
     <body id="home">
     <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
@@ -45,7 +46,7 @@
             <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
         </div>
     </footer>
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/magic")
     @RenderSection("scripts", false)
