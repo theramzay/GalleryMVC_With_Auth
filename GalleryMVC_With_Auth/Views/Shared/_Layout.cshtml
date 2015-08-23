@@ -1,55 +1,56 @@
-﻿<!DOCTYPE html>
+﻿@using System
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@ViewBag.Title - My ASP.NET Application</title>
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/bundles/jquery")
-    </head>
-    <body id="home">
-    <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Галерея", "Index", "StartHome", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домой", "Index", new { controller = "StartHome" }, new { @class = "home" })</li>
-                    <li>@Html.ActionLink("О нас", "About", new { controller = "StartHome" }, new { @class = "about" })</li>
-                    <li>@Html.ActionLink("Контакты", "Contact", new {controller = "StartHome"}, new {@class = "contacts"})</li>
-                    <li>@Html.ActionLink("Админ панель", "Index", new { controller = "AdminPanel" }, new { @class = "admin" })</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body id="home">
+<div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Галерея", "Index", "StartHome", null, new {@class = "navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Домой", "Index", new {controller = "StartHome"}, new {@class = "home"})</li>
+                <li>@Html.ActionLink("О нас", "About", new {controller = "StartHome"}, new {@class = "about"})</li>
+                <li>@Html.ActionLink("Контакты", "Contact", new {controller = "StartHome"}, new {@class = "contacts"})</li>
+                <li>@Html.ActionLink("Админ панель", "Index", new {controller = "AdminPanel"}, new {@class = "admin"})</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
-        <div class="splash">
-            <div class="container" style="color: gray;">
-                <h1>Художественная галерея</h1>
-                <p class="lead">"Беларт"</p>
-            </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
+</div>
+<div class="splash">
+    <div class="container" style="color: gray;">
+        <h1>Художественная галерея</h1>
+        <p class="lead">"Беларт"</p>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
 
-        </div>
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
-        </div>
-    </footer>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
+    </div>
+</footer>
 
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/magic")
-    @RenderSection("scripts", false)
-    @Html.Partial("_GoogleAnalytics")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/magic")
+@RenderSection("scripts", false)
+@Html.Partial("_GoogleAnalytics")
 </body>
 </html>
