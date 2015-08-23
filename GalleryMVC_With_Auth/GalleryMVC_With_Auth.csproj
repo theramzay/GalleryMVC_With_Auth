@@ -297,7 +297,6 @@
     <Content Include="Content\images\icons\4_opt.jpg" />
     <Content Include="Content\images\icons\7_opt.jpg" />
     <Content Include="Content\images\icons\9_opt.jpg" />
-    <Content Include="Content\images\icons\blank.gif" />
     <Content Include="Content\images\Pastel\0.jpg" />
     <Content Include="Content\images\Pastel\tmb\0.thumb.jpg" />
     <Content Include="Content\sticky-footer.css" />
