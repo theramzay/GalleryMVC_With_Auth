@@ -1,6 +1,6 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
+using GalleryMVC_With_Auth.Resources;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -21,7 +21,7 @@ namespace GalleryMVC_With_Auth.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DBcon", throwIfV1Schema: false)
+            : base(Defines.DbConnName, false)
         {
         }
 

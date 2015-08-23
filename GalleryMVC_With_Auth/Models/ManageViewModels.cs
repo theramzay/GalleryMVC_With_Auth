@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using GalleryMVC_With_Auth.Resources;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
@@ -28,13 +29,13 @@ namespace GalleryMVC_With_Auth.Models
     public class SetPasswordViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Defines.PassMinLength)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = Defines.NPasswd)]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
+        [Display(Name = Defines.ConfNewPasswd)]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
@@ -43,17 +44,17 @@ namespace GalleryMVC_With_Auth.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = Defines.CurPasswd)]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Defines.PassMinLength)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = Defines.NPasswd)]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
+        [Display(Name = Defines.ConfNewPasswd)]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
@@ -62,19 +63,19 @@ namespace GalleryMVC_With_Auth.Models
     {
         [Required]
         [Phone]
-        [Display(Name = "Phone Number")]
+        [Display(Name = Defines.PhNumb)]
         public string Number { get; set; }
     }
 
     public class VerifyPhoneNumberViewModel
     {
         [Required]
-        [Display(Name = "Code")]
+        [Display(Name = Defines.Code)]
         public string Code { get; set; }
 
         [Required]
         [Phone]
-        [Display(Name = "Phone Number")]
+        [Display(Name = Defines.PhNumb)]
         public string PhoneNumber { get; set; }
     }
 

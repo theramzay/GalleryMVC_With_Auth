@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace GalleryMVC_With_Auth
@@ -13,11 +9,9 @@ namespace GalleryMVC_With_Auth
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "StartHome", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.MapRoute("Default", "{controller}/{action}/{id}",
+                new {controller = "StartHome", action = "Index", id = UrlParameter.Optional}
+                );
         }
     }
 }
