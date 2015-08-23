@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Живопись";
 }
-
 <h2>@ViewBag.Title</h2>
 
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
@@ -20,14 +19,26 @@
         @foreach (var p in Model)
         {
             <figure class="effect-milo">
-                <img src="@p.TmbPath" alt="@p.Category" />
+                <img class="lazy" data-original="@p.TmbPath" alt="@p.Category"/>
                 <figcaption>
-                    @*<h2><span>@p.Category</span></h2>*@
+                    <h2><span>@p.Category</span></h2>
                     <p style="color: red">Автор - @p.Name.</p>
                     <p style="color: red">Цена - @p.Price$!</p>
-                    <a href="@p.Path" title="@p.Name" ></a>
+                    <a href="@p.Path" title="@p.Name"></a>
                 </figcaption>
             </figure>
         }
+    </div>
 </div>
-</div>
+
+<script>
+    $(function () {
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
+    });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/galmagic")
+}

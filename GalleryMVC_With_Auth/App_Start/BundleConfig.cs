@@ -10,7 +10,7 @@ namespace GalleryMVC_With_Auth
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js"));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-    "~/Scripts/jquery.validate.js"));
+                "~/Scripts/jquery.validate.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -22,9 +22,13 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/magic").Include(
-                "~/Scripts/transp_menu_magic.js",
-                "~/Content/blueimp-gallery2/js/blueimp-gallery.min.js",
-                "~/Scripts/BlueimpGal.js"));
+                "~/Scripts/transp_menu_magic.js"
+));
+
+            bundles.Add(new ScriptBundle("~/bundles/galmagic").Include(
+                                "~/Content/blueimp-gallery2/js/blueimp-gallery.min.js",
+                "~/Scripts/BlueimpGal.js",
+                "~/Scripts/jquery.lazyload.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/hover_effects/component.css",
