@@ -25,6 +25,7 @@
                 <li>@Html.ActionLink("Домой", "Index", new {controller = "StartHome"}, new {@class = "home"})</li>
                 <li>@Html.ActionLink("О нас", "About", new {controller = "StartHome"}, new {@class = "about"})</li>
                 <li>@Html.ActionLink("Контакты", "Contact", new {controller = "StartHome"}, new {@class = "contacts"})</li>
+                <li>@Html.ActionLink("Поиск", "Find", new { controller = "Images" }, new { @class = "find" })</li>
                 <li>@Html.ActionLink("Админ панель", "Index", new {controller = "AdminPanel"}, new {@class = "admin"})</li>
             </ul>
             @Html.Partial("_LoginPartial")
