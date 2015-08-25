@@ -34,11 +34,11 @@ namespace GalleryMVC_With_Auth
                 "~/Content/hover_effects/component.css",
                 "~/Content/hover_effects/normalize.css",
                 "~/Content/bootstrap.css",
-                "~/Content/search.css",
                 "~/Content/site.css",
                 "~/Content/transp_menu.css",
                 "~/Content/sticky-footer.css",
-                "~/Content/blueimp-gallery2/css/blueimp-gallery.min.css"));
+                "~/Content/blueimp-gallery2/css/blueimp-gallery.min.css",
+                "~/Content/search.css"));
         }
     }
 }
