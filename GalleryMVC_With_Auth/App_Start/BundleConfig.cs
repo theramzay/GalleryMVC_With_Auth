@@ -34,6 +34,7 @@ namespace GalleryMVC_With_Auth
                 "~/Content/hover_effects/component.css",
                 "~/Content/hover_effects/normalize.css",
                 "~/Content/bootstrap.css",
+                "~/Content/search.css",
                 "~/Content/site.css",
                 "~/Content/transp_menu.css",
                 "~/Content/sticky-footer.css",
