@@ -40,10 +40,10 @@ namespace GalleryMVC_With_Auth.Controllers
         }
 
         [HttpPost]
-        public ActionResult Found(string value)
+        public ActionResult Found(string search)
         {
-            if (value == "") return View();
-            return View("Found", value[0] == '#' ? _repository.Pictures.Where(p => p.Tag.Contains(value)) : _repository.Pictures.Where(p => p.Name.Contains(value)));
+            if (search == "") return View();
+            return View("Found", search[0] == '#' ? _repository.Pictures.Where(p => p.Tag.Contains(search)) : _repository.Pictures.Where(p => p.Name.Contains(search)));
         }
     }
 }
