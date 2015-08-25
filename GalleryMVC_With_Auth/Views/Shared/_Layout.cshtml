@@ -1,5 +1,4 @@
-﻿@using System
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -26,7 +25,13 @@
                 <li>@Html.ActionLink("О нас", "About", new {controller = "StartHome"}, new {@class = "about"})</li>
                 <li>@Html.ActionLink("Контакты", "Contact", new {controller = "StartHome"}, new {@class = "contacts"})</li>
                 <li>@Html.ActionLink("Админ панель", "Index", new {controller = "AdminPanel"}, new {@class = "admin"})</li>
-            </ul>
+                <li>
+                    @using (Html.BeginForm("Found", "StartHome", FormMethod.Post))
+                {
+                    @Html.TextBox("value")
+                    <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+                    }</li>
+</ul>
             @Html.Partial("_LoginPartial")
         </div>
     </div>
