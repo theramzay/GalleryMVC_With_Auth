@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using GalleryMVC_With_Auth.Models;
+using GalleryMVC_With_Auth.Resources;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -12,13 +13,13 @@ namespace GalleryMVC_With_Auth.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private readonly ApplicationDbContext context;
+        private readonly ApplicationDbContext _context;
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
-            context = new ApplicationDbContext();
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -68,9 +69,9 @@ namespace GalleryMVC_With_Auth.Controllers
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
+                    return View(Defines.LockOutView);
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new {ReturnUrl = returnUrl, model.RememberMe});
+                    return RedirectToAction(Defines.SendCodeView, new {ReturnUrl = returnUrl, model.RememberMe});
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
@@ -86,7 +87,7 @@ namespace GalleryMVC_With_Auth.Controllers
             // Require that the user has already logged in via username/password or external login
             if (!await SignInManager.HasBeenVerifiedAsync())
             {
-                return View("Error");
+                return View(Defines.ErrView);
             }
             return View(new VerifyCodeViewModel {Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe});
         }
@@ -116,7 +117,7 @@ namespace GalleryMVC_With_Auth.Controllers
                 case SignInStatus.Success:
                     return RedirectToLocal(model.ReturnUrl);
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
+                    return View(Defines.LockOutView);
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid code.");
@@ -129,7 +130,7 @@ namespace GalleryMVC_With_Auth.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(_context.Roles.ToList(), Defines.RolesName, Defines.RolesName);
             return View();
         }
 
@@ -140,7 +141,7 @@ namespace GalleryMVC_With_Auth.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(_context.Roles.ToList(), Defines.RolesName, Defines.RolesName);
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser {UserName = model.Email, Email = model.Email};
@@ -158,7 +159,7 @@ namespace GalleryMVC_With_Auth.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "StartHome");
+                    return RedirectToAction(Defines.IndexView, Defines.HomeControllerName);
                 }
                 AddErrors(result);
             }
@@ -174,10 +175,10 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             if (userId == null || code == null)
             {
-                return View("Error");
+                return View(Defines.ErrView);
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            return View(result.Succeeded ? Defines.ConfEmailView : Defines.ErrView);
         }
 
         //
@@ -201,7 +202,7 @@ namespace GalleryMVC_With_Auth.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    return View(Defines.ForgotPasswdConfView);
                 }
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -229,7 +230,7 @@ namespace GalleryMVC_With_Auth.Controllers
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
-            return code == null ? View("Error") : View();
+            return code == null ? View(Defines.ErrView) : View();
         }
 
         //
@@ -247,12 +248,12 @@ namespace GalleryMVC_With_Auth.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction(Defines.ResetPasswdConfView, Defines.AccountControllName);
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction(Defines.ResetPasswdConfView, Defines.AccountControllName);
             }
             AddErrors(result);
             return View();
@@ -275,7 +276,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             // Request a redirect to the external login provider
             return new ChallengeResult(provider,
-                Url.Action("ExternalLoginCallback", "Account", new {ReturnUrl = returnUrl}));
+                Url.Action(Defines.ExtLoginCallbackView, Defines.AccountControllName, new {ReturnUrl = returnUrl}));
         }
 
         //
@@ -286,7 +287,7 @@ namespace GalleryMVC_With_Auth.Controllers
             var userId = await SignInManager.GetVerifiedUserIdAsync();
             if (userId == null)
             {
-                return View("Error");
+                return View(Defines.ErrView);
             }
             var userFactors = await UserManager.GetValidTwoFactorProvidersAsync(userId);
             var factorOptions =
@@ -310,7 +311,7 @@ namespace GalleryMVC_With_Auth.Controllers
             // Generate the token and send it
             if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
             {
-                return View("Error");
+                return View(Defines.ErrView);
             }
             return RedirectToAction("VerifyCode",
                 new {Provider = model.SelectedProvider, model.ReturnUrl, model.RememberMe});
@@ -324,7 +325,7 @@ namespace GalleryMVC_With_Auth.Controllers
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
-                return RedirectToAction("Login");
+                return RedirectToAction(Defines.LoginView);
             }
 
             // Sign in the user with this external login provider if the user already has a login
@@ -334,15 +335,15 @@ namespace GalleryMVC_With_Auth.Controllers
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
+                    return View(Defines.LockOutView);
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new {ReturnUrl = returnUrl, RememberMe = false});
+                    return RedirectToAction(Defines.SendCodeView, new {ReturnUrl = returnUrl, RememberMe = false});
                 case SignInStatus.Failure:
                 default:
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation",
+                    return View(Defines.ExtLogiConfView,
                         new ExternalLoginConfirmationViewModel {Email = loginInfo.Email});
             }
         }
@@ -357,7 +358,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction(Defines.IndexView, Defines.ManageControllerName);
             }
 
             if (ModelState.IsValid)
@@ -366,7 +367,7 @@ namespace GalleryMVC_With_Auth.Controllers
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
-                    return View("ExternalLoginFailure");
+                    return View(Defines.ExtLoginFailView);
                 }
                 var user = new ApplicationUser {UserName = model.Email, Email = model.Email};
                 var result = await UserManager.CreateAsync(user);
@@ -393,7 +394,7 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "StartHome");
+            return RedirectToAction(Defines.IndexView, Defines.HomeControllerName);
         }
 
         //
@@ -448,7 +449,7 @@ namespace GalleryMVC_With_Auth.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "StartHome");
+            return RedirectToAction(Defines.IndexView, Defines.HomeControllerName);
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

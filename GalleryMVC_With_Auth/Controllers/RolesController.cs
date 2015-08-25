@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GalleryMVC_With_Auth.Models;
+using GalleryMVC_With_Auth.Resources;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GalleryMVC_With_Auth.Controllers
@@ -48,7 +49,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             context.Roles.Add(Role);
             context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction(Defines.IndexView);
         }
     }
 }

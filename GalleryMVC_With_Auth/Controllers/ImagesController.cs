@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using GalleryMVC_With_Auth.Domain.Abstract;
+using GalleryMVC_With_Auth.Resources;
 
 namespace GalleryMVC_With_Auth.Controllers
 {
@@ -16,32 +17,32 @@ namespace GalleryMVC_With_Auth.Controllers
         // GET: Images
         public ActionResult Painting()
         {
-            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 3));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == Defines.Painting));
         }
 
         public ActionResult Watercolor()
         {
-            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 5));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == Defines.Watercolor));
         }
 
         public ActionResult Gouache()
         {
-            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 6));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == Defines.Gouache));
         }
 
         public ActionResult Graphics()
         {
-            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 1));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == Defines.Graphics));
         }
 
         public ActionResult Batik()
         {
-            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 2));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == Defines.Batik));
         }
 
         public ActionResult Pastel()
         {
-            return View(_repository.Pictures.Where(p => p.AlbumAlbId == 4));
+            return View(_repository.Pictures.Where(p => p.AlbumAlbId == Defines.Pastel));
         }
     }
 }
