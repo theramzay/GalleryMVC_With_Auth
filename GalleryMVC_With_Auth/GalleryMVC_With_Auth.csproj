@@ -430,6 +430,9 @@
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\AdminPanel\Index.cshtml" />
     <Content Include="Views\AdminPanel\Upload.cshtml" />
+    <Content Include="Views\Images\Find.cshtml" />
+    <Content Include="Views\Images\Found.cshtml" />
+    <Content Include="Views\Shared\_GalleryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
