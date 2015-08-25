@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 using GalleryMVC_With_Auth.Helpers;
@@ -17,13 +18,13 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             _repository = repository;
         }
-
+        [AuthLog(Roles = "Administrator")]
         // GET: AdminPanel
         public ActionResult Index()
         {
             return View();
         }
-
+        [AuthLog(Roles = "Administrator")]
         public ActionResult Upload()
         {
             ViewBag.alb = new List<Album>();
@@ -33,7 +34,7 @@ namespace GalleryMVC_With_Auth.Controllers
             }
             return View(_repository);
         }
-
+        [AuthLog(Roles = "Administrator")]
         [HttpPost]
         public ActionResult Upload(Picture model)
         {
