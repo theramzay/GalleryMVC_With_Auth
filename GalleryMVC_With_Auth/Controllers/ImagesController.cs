@@ -43,25 +43,5 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             return View(_repository.Pictures.Where(p => p.AlbumAlbId == 4));
         }
-
-        public ActionResult Find()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Find(string type,string value)
-        {
-            switch (type)
-            {
-                case "Имя":
-                    return View("Found", _repository.Pictures.Where(p => p.Name.Contains(value)));
-                case "Тэг":
-                    return View("Found", _repository.Pictures.Where(p => p.Tag.Contains(value)));
-                case "Категория":
-                    return View("Found", _repository.Pictures.Where(p => p.Category.Contains(value)));
-                default:
-                    return View("Found", _repository.Pictures.Where(p => p.Name.Contains(value)));
-            }
-        }
     }
 }
