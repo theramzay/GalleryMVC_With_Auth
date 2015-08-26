@@ -9,24 +9,14 @@ namespace GalleryMVC_With_Auth.Helpers
     {
         public static void ToTmb(string path, string tmbpath)
         {
-            var image = Image.FromFile(path);
-            var thumb = image.GetThumbnailImage(250, 250, () => false, IntPtr.Zero);
-            var jpgEncoder = GetEncoder(ImageFormat.Jpeg);
-
-            var myEncoder =
-                Encoder.Quality;
-            var myEncoderParameters = new EncoderParameters(1);
-            var myEncoderParameter = new EncoderParameter(myEncoder, 50L);
-            myEncoderParameters.Param[0] = myEncoderParameter;
-
-            thumb.Save(tmbpath, jpgEncoder, myEncoderParameters);
+            var thumb = Image.FromFile(path).GetThumbnailImage(250, 250, () => false, IntPtr.Zero);
+            var myEncoderParameters = new EncoderParameters(1){Param = {[0] = new EncoderParameter(Encoder.Quality, 50L)}};
+            thumb.Save(tmbpath, GetEncoder(ImageFormat.Jpeg), myEncoderParameters);
         }
 
         private static ImageCodecInfo GetEncoder(ImageFormat format)
         {
-            var codecs = ImageCodecInfo.GetImageDecoders();
-
-            return codecs.FirstOrDefault(codec => codec.FormatID == format.Guid);
+            return ImageCodecInfo.GetImageDecoders().FirstOrDefault(codec => codec.FormatID == format.Guid);
         }
     }
 }
