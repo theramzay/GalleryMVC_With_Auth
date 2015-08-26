@@ -18,7 +18,7 @@
         public const string SendCodeView = "SendCode";
         public const string RolesName = "Name";
         public const string IndexView = "Index";
-        public const string HomeControllerName = "StartHome";
+        public const string HomeControllerName = "Home";
         public const string AccountControllName = "Account";
         public const string ResetPasswdConfView = "ResetPasswordConfirmation";
         public const string ConfEmailView = "ConfirmEmail";
