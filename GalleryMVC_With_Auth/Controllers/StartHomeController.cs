@@ -39,7 +39,7 @@ namespace GalleryMVC_With_Auth.Controllers
             return View(model:lang);
         }
 
-        [HttpPost]
+        
         public ActionResult Found(string search)
         {
             if (search == "") return View();
