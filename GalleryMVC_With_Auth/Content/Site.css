@@ -50,13 +50,8 @@ footer {
     color: white;
 }
 
-.navbar-inverse .navbar-nav > li > .find:hover, .navbar-inverse .navbar-nav > li > .find:focus {
-    background-color: #4CA454;
-    color: white;
-}
-
 .navbar-inverse .navbar-nav > li > .admin:hover, .navbar-inverse .navbar-nav > li > .admin:focus {
-    background-color: #D49B00;
+    background-color: #4CA454;
     color: white;
 }
 
