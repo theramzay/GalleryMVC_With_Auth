@@ -45,7 +45,7 @@
         </div>
     </div>
     @*@Html.DropDownList("Albums", new List<SelectListItem> { new SelectListItem { Text = "Акварель", Value = "akvarel" }, new SelectListItem { Text = "Батик", Value = "batik" }, new SelectListItem { Text = "Пастель", Value = "pastel" }, new SelectListItem { Text = "Живопись", Value = "zivopis" } })*@
-    @Html.DropDownListFor(m=>m.Albums,new SelectList(a,"AlbId","Name",a.First().AlbId), new {Name = "AlbumAlbId", id= "AlbumAlbId" })
+    @Html.DropDownListFor(m=>m.Albums,new SelectList(a,"Id","Name",a.First().Id), new {Name = "AlbumId", id= "AlbumId" })
     <button type="submit" class="btn btn-default">Применить</button>
     }
 

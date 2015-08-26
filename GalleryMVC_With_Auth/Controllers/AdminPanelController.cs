@@ -45,11 +45,11 @@ namespace GalleryMVC_With_Auth.Controllers
                     var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
                     var path = Path.Combine(
                         Server.MapPath(
-                            $"~/Content/images/{_repository.Albums.Where(x => x.AlbId == model.AlbumAlbId).Select(x => x.Name).FirstOrDefault()}/"),
+                            $"~/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/"),
                         pic);
                     var tmbpath = Path.Combine(
                         Server.MapPath(
-                            $"~/Content/images/{_repository.Albums.Where(x => x.AlbId == model.AlbumAlbId).Select(x => x.Name).FirstOrDefault()}/tmb"),
+                            $"~/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/tmb"),
                         pic);
                     // file is uploaded
                     file.SaveAs(path);
@@ -60,15 +60,15 @@ namespace GalleryMVC_With_Auth.Controllers
                     var p = new Picture
                     {
                         Path =
-                            $"/Content/images/{_repository.Albums.Where(x => x.AlbId == model.AlbumAlbId).Select(x => x.Name).FirstOrDefault()}/{pic}",
+                            $"/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/{pic}",
                         TmbPath =
-                            $"/Content/images/{_repository.Albums.Where(x => x.AlbId == model.AlbumAlbId).Select(x => x.Name).FirstOrDefault()}/tmb/{pic}",
+                            $"/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/tmb/{pic}",
                         Name = model.Name,
                         Description = model.Description,
                         Tag = model.Tag,
                         Category = model.Category,
                         Price = model.Price,
-                        AlbumAlbId = model.AlbumAlbId
+                        AlbumId = model.AlbumId
                     };
                     _repository.context.Pictures.Add(p);
                     _repository.context.SaveChanges();
