@@ -1,16 +1,16 @@
 ﻿@model GalleryMVC_With_Auth.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Панель управления учетной записью";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    <h4>Смена настроек вашей учётной записи</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>Пароль:</dt>
         <dd>
             [
             @if (Model.HasPassword)
