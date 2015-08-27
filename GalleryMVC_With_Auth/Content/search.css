@@ -19,6 +19,7 @@
     box-shadow: none;
     display: block;
     padding-right: 30px;
+    color: #ffffff;
 }
 
 .search-form .form-group input.form-control::-webkit-input-placeholder { display: none; }
