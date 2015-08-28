@@ -18,8 +18,8 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             _repository = repository;
         }
+
         [AuthLog(Roles = "Administrator")]
-        // GET: AdminPanel
         public ActionResult Index()
         {
             return View();
