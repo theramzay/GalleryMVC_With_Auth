@@ -16,6 +16,13 @@ namespace GalleryMVC_With_Auth
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+
+            MvcHandler.DisableMvcResponseHeader = true;
+        }
+
+        protected void Application_PreSendRequestHeaders()
+        {
+            Response.Headers.Remove("Server");
         }
     }
 }
