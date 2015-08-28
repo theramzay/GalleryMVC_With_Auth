@@ -30,7 +30,7 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/BlueimpGal.js",
                 "~/Scripts/jquery.lazyload.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/css/hover_effects/component.css",
                 "~/Content/css/hover_effects/normalize.css",
                 "~/Content/css/bootstrap.css",
