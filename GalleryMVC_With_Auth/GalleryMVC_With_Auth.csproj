@@ -47,6 +47,14 @@
     <Reference Include="Elmah.Mvc">
       <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
@@ -141,12 +149,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -200,7 +202,8 @@
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\StartHomeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomFilters\AuthLogAttribute.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,14 +254,10 @@
     <Content Include="Content\blueimp-gallery2\js\jquery.blueimp-gallery.js" />
     <Content Include="Content\blueimp-gallery2\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Content\blueimp-gallery2\___version.txt" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.lumen.css" />
-    <Content Include="Content\bootstrap.lumen.min.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.slate.css" />
-    <Content Include="Content\bootstrap.slate.min.css" />
-    <Content Include="Content\hover_effects\component.css" />
-    <Content Include="Content\hover_effects\normalize.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\hover_effects\component.css" />
+    <Content Include="Content\css\hover_effects\normalize.css" />
     <Content Include="Content\images\Batik\0.JPG" />
     <Content Include="Content\images\Batik\1.JPG" />
     <Content Include="Content\images\Batik\2.JPG" />
@@ -300,7 +299,7 @@
     <Content Include="Content\images\icons\9_opt.jpg" />
     <Content Include="Content\images\Pastel\0.jpg" />
     <Content Include="Content\images\Pastel\tmb\0.thumb.jpg" />
-    <Content Include="Content\sticky-footer.css" />
+    <Content Include="Content\css\sticky-footer.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -334,24 +333,24 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="Content\search.css" />
-    <Content Include="Content\transp_menu.css" />
+    <Content Include="Content\css\search.css" />
+    <Content Include="Content\css\transp_menu.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\codropsicons\codropsicons.svg" />
-    <Content Include="fonts\codropsicons\license.txt" />
-    <Content Include="fonts\feathericons\feathericons.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\codropsicons\codropsicons.svg" />
+    <Content Include="Content\fonts\codropsicons\license.txt" />
+    <Content Include="Content\fonts\feathericons\feathericons.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\BlueimpGal.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="fonts\codropsicons\codropsicons.eot" />
-    <Content Include="fonts\codropsicons\codropsicons.ttf" />
-    <Content Include="fonts\codropsicons\codropsicons.woff" />
-    <Content Include="fonts\feathericons\feathericons.eot" />
-    <Content Include="fonts\feathericons\feathericons.ttf" />
-    <Content Include="fonts\feathericons\feathericons.woff" />
+    <Content Include="Content\fonts\codropsicons\codropsicons.eot" />
+    <Content Include="Content\fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="Content\fonts\codropsicons\codropsicons.woff" />
+    <Content Include="Content\fonts\feathericons\feathericons.eot" />
+    <Content Include="Content\fonts\feathericons\feathericons.ttf" />
+    <Content Include="Content\fonts\feathericons\feathericons.woff" />
     <Content Include="Content\blueimp-gallery2\_install\_Layout.cshtml" />
     <Content Include="Content\blueimp-gallery2\js\jquery.blueimp-gallery.min.js.map" />
     <Content Include="Content\blueimp-gallery2\js\demo.min.js.map" />
@@ -379,6 +378,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\markerclusterer.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\transp_menu_magic.js" />
@@ -414,16 +414,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Images\Watercolor.cshtml" />
-    <Content Include="Views\Images\Batik.cshtml" />
-    <Content Include="Views\Images\Graphics.cshtml" />
-    <Content Include="Views\Images\Gouache.cshtml" />
-    <Content Include="Views\Images\Painting.cshtml" />
-    <Content Include="Views\Images\Pastel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
-    <Content Include="Views\StartHome\About.cshtml" />
-    <Content Include="Views\StartHome\Contact.cshtml" />
-    <Content Include="Views\StartHome\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\Errors\NotFound.cshtml" />
     <Content Include="Views\Errors\BadRequest.cshtml" />
@@ -431,8 +425,10 @@
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\AdminPanel\Index.cshtml" />
     <Content Include="Views\AdminPanel\Upload.cshtml" />
-    <Content Include="Views\StartHome\Found.cshtml" />
+    <Content Include="Views\Home\Found.cshtml" />
     <Content Include="Views\Shared\_GalleryPartial.cshtml" />
+    <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+    <Content Include="Views\Images\Universal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -442,9 +438,9 @@
     <Folder Include="Content\images\Watercolor\tmb\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

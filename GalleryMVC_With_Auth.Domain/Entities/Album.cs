@@ -11,9 +11,12 @@ namespace GalleryMVC_With_Auth.Domain.Entities
         }
 
         [Key]
-        public int AlbId { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
+        public string Description { get; set; }
+        public string ImgPath { get; set; }
+        public string Link { get; set; }
         public virtual ICollection<Picture> Pictures { get; set; }
     }
 }

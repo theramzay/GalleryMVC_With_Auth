@@ -3,28 +3,28 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Available Roles For Application</h2>
+<h2>Виды ролей</h2>
 
-@Html.ActionLink("Create Role", "Create", "Roles")
+@Html.ActionLink("Создать роль", "Create", "Roles")
 
-<style type="text/css">
-    #tbrole, .c {
-        border: double;
-    }
-</style>
-
-<table id="tbrole">
-    <tr>
-        <td class="c">
-            Role Name
-        </td>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div class="container">
+    <table class="table table-striped">
+        <thead>
         <tr>
-            <td class="c">
-                @item.Name
-            </td>
+            <th>
+                Роль
+            </th>
         </tr>
-    }
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </tbody>
 </table>
+</div>

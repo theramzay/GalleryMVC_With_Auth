@@ -4,7 +4,6 @@ namespace GalleryMVC_With_Auth.Controllers
 {
     public class ErrorsController : Controller
     {
-        // GET: Errors
         public ActionResult Index()
         {
             return View();

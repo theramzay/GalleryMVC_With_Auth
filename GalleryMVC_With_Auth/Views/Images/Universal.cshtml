@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Picture>
 @{
-    ViewBag.Title = "Пастель";
+    ViewBag.Title = Model.FirstOrDefault().Album.Name;
 }
 
 <h2>@ViewBag.Title</h2>

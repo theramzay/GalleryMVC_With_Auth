@@ -149,7 +149,11 @@ namespace GalleryMVC_With_Auth.Controllers
                 if (result.Succeeded)
                 {
                     //Assign Role to user Here 
-                    await UserManager.AddToRoleAsync(user.Id, model.Name);
+                    if (model.Name!=null)
+                    {
+                        await UserManager.AddToRoleAsync(user.Id, model.Name);
+                    }
+                    await UserManager.AddToRoleAsync(user.Id, "User");
                     //Ends Here
                     await SignInManager.SignInAsync(user, false, false);
 

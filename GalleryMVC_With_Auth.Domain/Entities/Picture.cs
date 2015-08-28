@@ -6,7 +6,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
     public class Picture
     {
         [Key]
-        public int ImgId { get; set; }
+        public int Id { get; set; }
         public string Path { get; set; }
         public string TmbPath { get; set; }
 
@@ -35,7 +35,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
         [Display(Name = "Цена")]
         public decimal Price { get; set; }
 
-        public int AlbumAlbId { get; set; }
+        public int AlbumId { get; set; }
         public virtual Album Album { get; set; }
         public HttpPostedFileBase[] Files { get; set; }
     }

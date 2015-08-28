@@ -1,0 +1,18 @@
+﻿@model IQueryable<GalleryMVC_With_Auth.Domain.Entities.Album>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="grid">
+    @foreach (var a in Model)
+    {
+        <figure class="effect-lily">
+            <img src="@a.ImgPath" alt="img01"/>
+            <figcaption>
+                <h2><span>@a.Name</span></h2>
+                <p>@a.Description</p>
+                <a onclick="location.href = '@Url.Action("Universal", "Images", new {@a.Id})'">Открыть</a>
+            </figcaption>
+        </figure>
+    }
+</div>
