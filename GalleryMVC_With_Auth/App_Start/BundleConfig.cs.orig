@@ -33,8 +33,13 @@ namespace GalleryMVC_With_Auth
             bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/css/hover_effects/component.css",
                 "~/Content/css/hover_effects/normalize.css",
-                "~/Content/css/bootstrap.min.css",
+<<<<<<< HEAD
+                "~/Content/css/bootstrap.css",
 		        "~/Content/search.css",
+=======
+                "~/Content/css/bootstrap.min.css",
+                "~/Content/css/search.css",
+>>>>>>> Development
                 "~/Content/css/site.css",
                 "~/Content/css/transp_menu.css",
                 "~/Content/css/sticky-footer.css",
