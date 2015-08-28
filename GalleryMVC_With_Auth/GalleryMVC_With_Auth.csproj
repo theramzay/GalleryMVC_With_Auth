@@ -254,7 +254,6 @@
     <Content Include="Content\blueimp-gallery2\js\jquery.blueimp-gallery.js" />
     <Content Include="Content\blueimp-gallery2\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Content\blueimp-gallery2\___version.txt" />
-    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\hover_effects\component.css" />
     <Content Include="Content\css\hover_effects\normalize.css" />
@@ -343,7 +342,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\BlueimpGal.js" />
-    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\codropsicons\codropsicons.eot" />
     <Content Include="Content\fonts\codropsicons\codropsicons.ttf" />
@@ -366,20 +364,16 @@
     <None Include="Properties\PublishProfiles\somee.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jmelosegui.googlemap.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.lazyload.js" />
     <Content Include="Scripts\jquery.lazyload.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\markerclusterer.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\transp_menu_magic.js" />
     <Content Include="Scripts\_references.js" />
