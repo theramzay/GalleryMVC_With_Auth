@@ -1,5 +1,6 @@
 ﻿using System;
 using GalleryMVC_With_Auth.Models;
+using GalleryMVC_With_Auth.Resources;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -24,7 +25,7 @@ namespace GalleryMVC_With_Auth
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
+                LoginPath = new PathString(Defines.LoginPath),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.

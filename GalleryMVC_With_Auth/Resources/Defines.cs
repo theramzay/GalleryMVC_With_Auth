@@ -27,6 +27,7 @@
         public const string ExtLogiConfView = "ExternalLoginConfirmation";
         public const string ManageControllerName = "Manage";
         public const string LoginView = "Login";
+        public const string LoginPath = "/Account/Login";
         public const string ExtLoginFailView = "ExternalLoginFailure";
         public const string ManageLoginsView = "ManageLogins";
         public const string VerifPhoneNumbView = "VerifyPhoneNumber";

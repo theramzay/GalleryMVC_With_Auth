@@ -31,13 +31,13 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/jquery.lazyload.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/hover_effects/component.css",
-                "~/Content/hover_effects/normalize.css",
-                "~/Content/bootstrap.css",
-                "~/Content/search.css",
-                "~/Content/site.css",
-                "~/Content/transp_menu.css",
-                "~/Content/sticky-footer.css",
+                "~/Content/css/hover_effects/component.css",
+                "~/Content/css/hover_effects/normalize.css",
+                "~/Content/css/bootstrap.css",
+                "~/Content/css/search.css",
+                "~/Content/css/site.css",
+                "~/Content/css/transp_menu.css",
+                "~/Content/css/sticky-footer.css",
                 "~/Content/blueimp-gallery2/css/blueimp-gallery.min.css"));
         }
     }
