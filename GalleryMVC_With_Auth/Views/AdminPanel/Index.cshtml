@@ -4,7 +4,9 @@
 }
 
 <h2>@ViewBag.Title</h2>
-
-<li>@Html.ActionLink("Логи", "Index", new { controller = "elmah" })</li>
-<li>@Html.ActionLink("Статистика", "Index", new {controller = "glimpse.axd"})</li>
-<li>@Html.ActionLink("Заливка фотографий", "Upload", new { controller = "AdminPanel" })</li>
+<ul class="table">
+    <li>@Html.ActionLink("Логи", "Index", "elmah")</li>
+    <li>@Html.ActionLink("Статистика", "Index", "glimpse.axd")</li>
+    <li>@Html.ActionLink("Заливка фотографий", "Upload", "AdminPanel")</li>
+    <li>@Html.ActionLink("Роли","Index", "Roles")</li>
+</ul>
