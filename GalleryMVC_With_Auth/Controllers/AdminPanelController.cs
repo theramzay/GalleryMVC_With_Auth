@@ -70,8 +70,8 @@ namespace GalleryMVC_With_Auth.Controllers
                         Price = model.Price,
                         AlbumId = model.AlbumId
                     };
-                    _repository.context.Pictures.Add(p);
-                    _repository.context.SaveChanges();
+                    _repository.PicturesTable.Add(p);
+                    _repository.Context.SaveChanges();
                 }
                 return RedirectToAction("Upload");
             }

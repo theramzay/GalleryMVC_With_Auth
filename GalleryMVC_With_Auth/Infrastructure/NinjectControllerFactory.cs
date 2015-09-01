@@ -33,7 +33,7 @@ namespace GalleryMVC_With_Auth.Infrastructure
         private void AddBindings()
         {
             // конфигурирование контейнера 
-            ninjectKernel.Bind<IPicturesRepository>().To<EFPictureRepository>();
+            ninjectKernel.Bind<IPicturesRepository>().To<DBcon>();
         }
     }
 }
