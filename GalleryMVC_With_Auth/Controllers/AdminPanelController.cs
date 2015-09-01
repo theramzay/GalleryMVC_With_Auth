@@ -71,7 +71,7 @@ namespace GalleryMVC_With_Auth.Controllers
                         AlbumId = model.AlbumId
                     };
                     _repository.PicturesTable.Add(p);
-                    _repository.Context.SaveChanges();
+                    _repository.SaveState();
                 }
                 return RedirectToAction("Upload");
             }

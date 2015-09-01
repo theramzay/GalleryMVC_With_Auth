@@ -10,8 +10,12 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
         public DbSet<Picture> PicturesTable { get; set; }
         public DbSet<Album> AlbumsTable { get; set; }
         public Picture Picture { get; }
-        public DbContext Context { get; set; }
         public IQueryable<Album> Albums => AlbumsTable;
         public IQueryable<Picture> Pictures => PicturesTable;
+
+        public void SaveState()
+        {
+            SaveChanges();
+        }
     }
 }

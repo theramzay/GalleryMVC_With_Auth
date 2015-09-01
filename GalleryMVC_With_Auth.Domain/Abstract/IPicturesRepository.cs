@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using GalleryMVC_With_Auth.Domain.Entities;
 
@@ -11,6 +12,6 @@ namespace GalleryMVC_With_Auth.Domain.Abstract
         IQueryable<Album> Albums { get; }
         IQueryable<Picture> Pictures { get; }
         Picture Picture { get; }
-        DbContext Context { get; set; }
+        void SaveState();
     }
 }
