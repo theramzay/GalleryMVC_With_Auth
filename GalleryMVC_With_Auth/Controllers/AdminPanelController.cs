@@ -7,6 +7,7 @@ using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 using GalleryMVC_With_Auth.Helpers;
+using GalleryMVC_With_Auth.Resources;
 
 namespace GalleryMVC_With_Auth.Controllers
 {
@@ -19,12 +20,12 @@ namespace GalleryMVC_With_Auth.Controllers
             _repository = repository;
         }
 
-        [AuthLog(Roles = "Administrator")]
+        [AuthLog(Roles = Defines.AdminRole)]
         public ActionResult Index()
         {
             return View();
         }
-        [AuthLog(Roles = "Administrator")]
+        [AuthLog(Roles = Defines.AdminRole)]
         public ActionResult Upload()
         {
             ViewBag.alb = new List<Album>();
@@ -34,7 +35,7 @@ namespace GalleryMVC_With_Auth.Controllers
             }
             return View(_repository);
         }
-        [AuthLog(Roles = "Administrator")]
+        [AuthLog(Roles = Defines.AdminRole)]
         [HttpPost]
         public ActionResult Upload(Picture model)
         {
