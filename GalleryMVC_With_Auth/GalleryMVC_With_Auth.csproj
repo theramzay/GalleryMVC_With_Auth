@@ -360,6 +360,7 @@
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-indicator.min.js.map" />
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-fullscreen.min.js.map" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js.map" />
+    <None Include="Properties\PublishProfiles\belart-brest.by.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\somee.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
