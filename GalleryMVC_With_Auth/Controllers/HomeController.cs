@@ -19,24 +19,13 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "О сайте.";
-
             return View();
         }
 
         //[HttpGet]
-        public ActionResult Contact()
+        public ActionResult Contact(string lang = "ru")
         {
-            ViewBag.Message = "Наши контакты.";
-
             return View();
-        }
-
-        [HttpPost]
-        public ActionResult Contact(string lang)
-        {
-            ViewBag.Message = "Наши контакты.";
-            return View(model:lang);
         }
 
         

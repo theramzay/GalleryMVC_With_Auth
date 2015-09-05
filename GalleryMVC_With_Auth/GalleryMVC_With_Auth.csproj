@@ -332,8 +332,9 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="Content\css\search.css" />
     <Content Include="Content\css\transp_menu.css" />
+    <Content Include="Content\back.png" />
+    <Content Include="Content\white_back.png" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\codropsicons\codropsicons.svg" />
     <Content Include="Content\fonts\codropsicons\license.txt" />
