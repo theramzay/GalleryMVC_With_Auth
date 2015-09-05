@@ -12,6 +12,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             _repository = repository;
         }
+
         public ActionResult Index()
         {
             return View(_repository.Albums);
@@ -22,17 +23,19 @@ namespace GalleryMVC_With_Auth.Controllers
             return View();
         }
 
-        //[HttpGet]
         public ActionResult Contact(string lang = "ru")
         {
             return View();
         }
 
-        
+
         public ActionResult Found(string search)
         {
             if (search == "") return View();
-            return View("Found", search[0] == '#' ? _repository.Pictures.Where(p => p.Tag.Contains(search)) : _repository.Pictures.Where(p => p.Name.Contains(search)));
+            return View("Found",
+                search[0] == '#'
+                    ? _repository.Pictures.Where(p => p.Tag.Contains(search))
+                    : _repository.Pictures.Where(p => p.Name.Contains(search)));
         }
     }
 }
