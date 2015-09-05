@@ -44,14 +44,11 @@ namespace GalleryMVC_With_Auth.Controllers
                 foreach (var file in model.Files)
                 {
                     var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
-                    var path = Path.Combine(
-                        Server.MapPath(
-                            $"~/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/"),
-                        pic);
-                    var tmbpath = Path.Combine(
-                        Server.MapPath(
-                            $"~/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/tmb"),
-                        pic);
+                    var album = GetAlbumName(model);
+                    var pth = $"/Content/images/{album}/{pic}";
+                    var path = Server.MapPath($"{pth.Insert(0,"~")}");
+
+                    var tmbpath = Server.MapPath($"{pth.Insert(pth.Length-pic.Length,"tmb/").Insert(0, "~")}");
                     // file is uploaded
                     file.SaveAs(path);
 
@@ -60,10 +57,8 @@ namespace GalleryMVC_With_Auth.Controllers
                     //Upload info to DB
                     var p = new Picture
                     {
-                        Path =
-                            $"/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/{pic}",
-                        TmbPath =
-                            $"/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/tmb/{pic}",
+                        Path = pth,
+                        TmbPath = pth.Insert(pth.Length-pic.Length,"tmb/"),
                         Name = model.Name,
                         Description = model.Description,
                         Tag = model.Tag,
@@ -82,6 +77,11 @@ namespace GalleryMVC_With_Auth.Controllers
                 ViewBag.alb.Add(a);
             }
             return View(_repository);
+        }
+
+        private string GetAlbumName(Picture pic)
+        {
+            return _repository.Albums.Where(x => x.Id == pic.AlbumId).Select(x => x.Name).FirstOrDefault();
         }
     }
 }
