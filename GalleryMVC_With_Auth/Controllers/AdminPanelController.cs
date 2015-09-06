@@ -7,6 +7,7 @@ using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 using GalleryMVC_With_Auth.Helpers;
+using GalleryMVC_With_Auth.Models;
 using GalleryMVC_With_Auth.Resources;
 
 namespace GalleryMVC_With_Auth.Controllers
@@ -25,6 +26,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             return View();
         }
+
         [AuthLog(Roles = Defines.AdminRole)]
         public ActionResult Upload()
         {
@@ -35,9 +37,10 @@ namespace GalleryMVC_With_Auth.Controllers
             }
             return View(_repository);
         }
+
         [AuthLog(Roles = Defines.AdminRole)]
         [HttpPost]
-        public ActionResult Upload(Picture model)
+        public ActionResult Upload(PictureModel model)
         {
             if (ModelState.IsValid)
             {
@@ -46,9 +49,9 @@ namespace GalleryMVC_With_Auth.Controllers
                     var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
                     var album = GetAlbumName(model);
                     var pth = $"/Content/images/{album}/{pic}";
-                    var path = Server.MapPath($"{pth.Insert(0,"~")}");
+                    var path = Server.MapPath($"{pth.Insert(0, "~")}");
 
-                    var tmbpath = Server.MapPath($"{pth.Insert(pth.Length-pic.Length,"tmb/").Insert(0, "~")}");
+                    var tmbpath = Server.MapPath($"{pth.Insert(pth.Length - pic.Length, "tmb/").Insert(0, "~")}");
                     // file is uploaded
                     file.SaveAs(path);
 
@@ -58,7 +61,7 @@ namespace GalleryMVC_With_Auth.Controllers
                     var p = new Picture
                     {
                         Path = pth,
-                        TmbPath = pth.Insert(pth.Length-pic.Length,"tmb/"),
+                        TmbPath = pth.Insert(pth.Length - pic.Length, "tmb/"),
                         Name = model.Name,
                         Description = model.Description,
                         Tag = model.Tag,
@@ -79,7 +82,7 @@ namespace GalleryMVC_With_Auth.Controllers
             return View(_repository);
         }
 
-        private string GetAlbumName(Picture pic)
+        private string GetAlbumName(PictureModel pic)
         {
             return _repository.Albums.Where(x => x.Id == pic.AlbumId).Select(x => x.Name).FirstOrDefault();
         }
