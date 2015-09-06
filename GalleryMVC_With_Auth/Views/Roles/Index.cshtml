@@ -1,7 +1,4 @@
 ﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
-@{
-    ViewBag.Title = "Index";
-}
 
 <h2>Виды ролей</h2>
 
@@ -17,14 +14,14 @@
         </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @item.Name
-                    </td>
-                </tr>
-            }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+        }
         </tbody>
-</table>
+    </table>
 </div>
