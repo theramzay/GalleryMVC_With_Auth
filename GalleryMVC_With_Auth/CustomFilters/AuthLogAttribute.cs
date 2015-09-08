@@ -36,11 +36,12 @@ namespace GalleryMVC_With_Auth.CustomFilters
             if (filterContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 // var result = new ViewResult { ViewName = View };
-                var vr = new ViewResult();
-                vr.ViewName = View;
+                var vr = new ViewResult {ViewName = View};
 
-                var dict = new ViewDataDictionary();
-                dict.Add("Message", "Sorry you are not Authorized to Perform this Action");
+                var dict = new ViewDataDictionary
+                {
+                    {"Message", "Извините, но это действие не доступно для вашего уровня доступа!"}
+                };
 
                 vr.ViewData = dict;
 
