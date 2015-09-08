@@ -261,24 +261,6 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\hover_effects\component.css" />
     <Content Include="Content\css\hover_effects\normalize.css" />
-    <Content Include="Content\images\Batik\0.JPG" />
-    <Content Include="Content\images\Batik\1.JPG" />
-    <Content Include="Content\images\Batik\2.JPG" />
-    <Content Include="Content\images\Batik\3.JPG" />
-    <Content Include="Content\images\Batik\4.JPG" />
-    <Content Include="Content\images\Batik\5.jpg" />
-    <Content Include="Content\images\Batik\6.jpg" />
-    <Content Include="Content\images\Batik\7.jpg" />
-    <Content Include="Content\images\Batik\8.jpg" />
-    <Content Include="Content\images\Batik\tmb\0.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\1.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\2.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\3.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\4.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\5.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\6.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\7.thumb.jpg" />
-    <Content Include="Content\images\Batik\tmb\8.thumb.jpg" />
     <Content Include="Content\images\hover_test\1.jpg" />
     <Content Include="Content\images\hover_test\10.jpg" />
     <Content Include="Content\images\hover_test\11.jpg" />
@@ -431,8 +413,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\Gouache\tmb\" />
-    <Folder Include="Content\images\Graphics\tmb\" />
     <Folder Include="Content\images\Painting\tmb\" />
     <Folder Include="Content\images\Watercolor\tmb\" />
   </ItemGroup>

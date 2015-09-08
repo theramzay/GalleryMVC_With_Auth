@@ -47,8 +47,7 @@ namespace GalleryMVC_With_Auth.Controllers
                 foreach (var file in model.Files)
                 {
                     var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
-                    var album = GetAlbumName(model);
-                    var pth = $"/Content/images/{album}/{pic}";
+                    var pth = $"/Content/images/{pic}";
                     var path = Server.MapPath($"{pth.Insert(0, "~")}");
 
                     var tmbpath = Server.MapPath($"{pth.Insert(pth.Length - pic.Length, "tmb/").Insert(0, "~")}");
@@ -80,11 +79,6 @@ namespace GalleryMVC_With_Auth.Controllers
                 ViewBag.alb.Add(a);
             }
             return View(_repository);
-        }
-
-        private string GetAlbumName(PictureModel pic)
-        {
-            return _repository.Albums.Where(x => x.Id == pic.AlbumId).Select(x => x.Name).FirstOrDefault();
         }
     }
 }
