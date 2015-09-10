@@ -1,4 +1,17 @@
-﻿body {
+﻿@font-face {
+      font-family: 'BrushScript';
+  src: url('fonts/BrushScript/BrushScript.eot');
+  src: url('fonts/BrushScript/BrushScript.eot?#iefix') format('embedded-opentype'),
+       url('fonts/BrushScript/BrushScript.woff2') format('woff2'),
+       url('fonts/BrushScript/BrushScript.woff') format('woff'),
+       url('fonts/BrushScript/BrushScript.ttf') format('truetype'),
+       url('fonts/BrushScript/BrushScript.svg#BrushScript') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -9,6 +22,15 @@
 
 footer {
     color: gray;
+}
+
+.hd {
+    font-family: 'Garamond';
+}
+
+
+.fontstst {
+    font-family: 'BrushScript';
 }
 
 /*.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand {

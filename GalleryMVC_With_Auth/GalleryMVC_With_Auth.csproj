@@ -261,6 +261,7 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\hover_effects\component.css" />
     <Content Include="Content\css\hover_effects\normalize.css" />
+    <Content Include="Content\fonts\BrushScript\BrushScript.svg" />
     <Content Include="Content\images\hover_test\1.jpg" />
     <Content Include="Content\images\hover_test\10.jpg" />
     <Content Include="Content\images\hover_test\11.jpg" />
@@ -347,6 +348,10 @@
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-indicator.min.js.map" />
     <Content Include="Content\blueimp-gallery2\js\blueimp-gallery-fullscreen.min.js.map" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js.map" />
+    <Content Include="Content\fonts\BrushScript\BrushScript.eot" />
+    <Content Include="Content\fonts\BrushScript\BrushScript.ttf" />
+    <Content Include="Content\fonts\BrushScript\BrushScript.woff" />
+    <Content Include="Content\fonts\BrushScript\BrushScript.woff2" />
     <None Include="Properties\PublishProfiles\belart-brest.by.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\somee.pubxml" />
@@ -413,6 +418,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\fonts\arial\" />
     <Folder Include="Content\images\Painting\tmb\" />
     <Folder Include="Content\images\Watercolor\tmb\" />
   </ItemGroup>
