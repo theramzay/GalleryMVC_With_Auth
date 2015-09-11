@@ -188,3 +188,6 @@ input[type="checkbox"].input-validation-error {
     right: 8px;
     color: #be4c39;
 }
+
+input::-webkit-input-placeholder {color: #be4c39;}
+input:-moz-placeholder {color: #be4c39;}
