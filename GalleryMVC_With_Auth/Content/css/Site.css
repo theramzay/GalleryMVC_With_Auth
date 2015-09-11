@@ -186,4 +186,5 @@ input[type="checkbox"].input-validation-error {
     z-index: 2;
     top: 8px;
     right: 8px;
+    color: #be4c39;
 }
