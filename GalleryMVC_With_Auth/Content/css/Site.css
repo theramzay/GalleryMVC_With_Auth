@@ -28,8 +28,13 @@ footer {
     font-family: 'Garamond';
 }
 
+.logotypeM {
+    font-family: 'BrushScript';
+    font-size: 200%;
+    background: #BE4C39;
+}
 
-.fontstst {
+.logotype {
     font-family: 'BrushScript';
 }
 
@@ -55,14 +60,15 @@ footer {
 
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-    background-color: #E18728;
+    background-color: #BE4C39;
     color: white;
 }
 
 
 
 .navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home:focus {
-    background-color: #BE4C39;
+    /*background-color: #BE4C39;*/
+    background-color: #E18728;
     color: white;
 }
 
