@@ -189,5 +189,7 @@ input[type="checkbox"].input-validation-error {
     color: #be4c39;
 }
 
-input::-webkit-input-placeholder {color: #be4c39;}
-input:-moz-placeholder {color: #be4c39;}
+#search::-webkit-input-placeholder { color: #be4c39;}
+#search::-moz-placeholder          { color: #be4c39;}/* Firefox 19+ */
+#search:-moz-placeholder           { color: #be4c39;}/* Firefox 18- */
+#search:-ms-input-placeholder      { color: #be4c39;}
