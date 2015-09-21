@@ -68,23 +68,23 @@ footer {
 
 .navbar-inverse .navbar-nav > li > .home:hover, .navbar-inverse .navbar-nav > li > .home:focus {
     /*background-color: #BE4C39;*/
-    background-color: #E18728;
-    color: white;
+    /*background-color: #E18728;*/
+    color: #BE4C39;
 }
 
 .navbar-inverse .navbar-nav > li > .about:hover, .navbar-inverse .navbar-nav > li > .about:focus {
-    background-color: #9351A6;
-    color: white;
+    /*background-color: #9351A6;*/
+    color: #BE4C39;
 }
 
 .navbar-inverse .navbar-nav > li > .contacts:hover, .navbar-inverse .navbar-nav > li > .contacts:focus {
-    background-color: #4472B9;
-    color: white;
+    /*background-color: #4472B9;*/
+    color: #BE4C39;
 }
 
 .navbar-inverse .navbar-nav > li > .admin:hover, .navbar-inverse .navbar-nav > li > .admin:focus {
-    background-color: #4CA454;
-    color: white;
+    /*background-color: #4CA454;*/
+    color: #BE4C39;
 }
 
 /* Set padding to keep content from hitting the edges */
