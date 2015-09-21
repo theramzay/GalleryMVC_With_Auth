@@ -7,6 +7,8 @@ using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 using GalleryMVC_With_Auth.Helpers;
+using GalleryMVC_With_Auth.Models;
+using GalleryMVC_With_Auth.Resources;
 
 namespace GalleryMVC_With_Auth.Controllers
 {
@@ -19,12 +21,13 @@ namespace GalleryMVC_With_Auth.Controllers
             _repository = repository;
         }
 
-        [AuthLog(Roles = "Administrator")]
+        [AuthLog(Roles = Defines.AdminRole)]
         public ActionResult Index()
         {
             return View();
         }
-        [AuthLog(Roles = "Administrator")]
+
+        [AuthLog(Roles = Defines.AdminRole)]
         public ActionResult Upload()
         {
             ViewBag.alb = new List<Album>();
@@ -34,23 +37,20 @@ namespace GalleryMVC_With_Auth.Controllers
             }
             return View(_repository);
         }
-        [AuthLog(Roles = "Administrator")]
+
+        [AuthLog(Roles = Defines.AdminRole)]
         [HttpPost]
-        public ActionResult Upload(Picture model)
+        public ActionResult Upload(PictureModel model)
         {
             if (ModelState.IsValid)
             {
                 foreach (var file in model.Files)
                 {
                     var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
-                    var path = Path.Combine(
-                        Server.MapPath(
-                            $"~/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/"),
-                        pic);
-                    var tmbpath = Path.Combine(
-                        Server.MapPath(
-                            $"~/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/tmb"),
-                        pic);
+                    var pth = $"/Content/images/{pic}";
+                    var path = Server.MapPath($"{pth.Insert(0, "~")}");
+
+                    var tmbpath = Server.MapPath($"{pth.Insert(pth.Length - pic.Length, "tmb/").Insert(0, "~")}");
                     // file is uploaded
                     file.SaveAs(path);
 
@@ -59,10 +59,8 @@ namespace GalleryMVC_With_Auth.Controllers
                     //Upload info to DB
                     var p = new Picture
                     {
-                        Path =
-                            $"/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/{pic}",
-                        TmbPath =
-                            $"/Content/images/{_repository.Albums.Where(x => x.Id == model.AlbumId).Select(x => x.Name).FirstOrDefault()}/tmb/{pic}",
+                        Path = pth,
+                        TmbPath = pth.Insert(pth.Length - pic.Length, "tmb/"),
                         Name = model.Name,
                         Description = model.Description,
                         Tag = model.Tag,
@@ -70,8 +68,8 @@ namespace GalleryMVC_With_Auth.Controllers
                         Price = model.Price,
                         AlbumId = model.AlbumId
                     };
-                    _repository.context.Pictures.Add(p);
-                    _repository.context.SaveChanges();
+                    _repository.PicturesTable.Add(p);
+                    _repository.SaveState();
                 }
                 return RedirectToAction("Upload");
             }

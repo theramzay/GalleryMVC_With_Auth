@@ -1,9 +1,6 @@
 ﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Picture>
-@{
-    ViewBag.Title = Model.FirstOrDefault().Album.Name;
-}
 
-<h2>@ViewBag.Title</h2>
+<h2>@Model.FirstOrDefault().Album.Name</h2>
 
 @Html.Partial("_GalleryPartial")
 

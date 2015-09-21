@@ -4,7 +4,29 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name='yandex-verification' content='5f6e3bf559dea11f'/>
+    <meta name="keywords" content="Художественная галерея Беларт, галерея Беларт Брест, купить, картину, живопись, натюрморт, графика, акварель, офорт, литография, линогравюра, 
+батик, керамика, произведения, декоративно-прикладное искусство, багетная, мастерская, рамка">
+    <meta name="description" content="Художественная галерея Беларт. Купить картину в Бресте. Купить картину, живопись, натюрморт, графику, акварель, офорт, 
+литографию, линогравюру, батик, керамику, произведения декоративно-прикладного искусства. Багетная мастерская. Багетные рамки. Деревянный и пластиковый 
+багет. Мебель по индивидуальному заказу">
+    <!-- FB -->
+    <meta property="og:title" content="БелАрт галерея Брест" />
+    <meta property="og:url" content="http://belart-brest.by/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Галерея БелАрт в Бресте" />
+    <meta property="og:site_name" content="http://belart-brest.by/" />
+    <!-- FB End-->
+
+    <!-- VK -->
+    <meta property="vk:title" content="БелАрт галерея Брест" />
+    <meta property="vk:url" content="http://belart-brest.by/" />
+    <meta property="vk:image" content="" />
+    <meta property="vk:description" content="Галерея БелАрт в Бресте" />
+    <!-- VK End -->
+
+    <title>Галерея БелАрт Брест</title>
+
     @Styles.Render("~/Content/styles")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -18,13 +40,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Галерея", Defines.IndexView, Defines.HomeControllerName, null, new {@class = "navbar-brand"})
+            @Html.ActionLink("BA", Defines.IndexView, Defines.HomeControllerName, null, new {@class = "navbar-brand logotypeM", style= "color: white" })
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Домой", Defines.IndexView, new {controller = Defines.HomeControllerName}, new {@class = "home"})</li>
-                <li>@Html.ActionLink("О нас", "About", new {controller = Defines.HomeControllerName }, new {@class = "about"})</li>
-                <li>@Html.ActionLink("Контакты", "Contact", new {controller = Defines.HomeControllerName }, new {@class = "contacts"})</li>
+                <li>@Html.ActionLink("Главная", Defines.IndexView, new {controller = Defines.HomeControllerName}, new {@class = "home"})</li>
+                <li>@Html.ActionLink("О нас", "About", new {controller = Defines.HomeControllerName}, new {@class = "about"})</li>
+                <li>@Html.ActionLink("Контакты", "Contact", new {controller = Defines.HomeControllerName}, new {@class = "contacts"})</li>
                 <li>@Html.ActionLink("Админ панель", Defines.IndexView, new {controller = "AdminPanel"}, new {@class = "admin"})</li>
                 <li>
                     <div class="container">
@@ -47,8 +69,8 @@
 </div>
 <div class="splash">
     <div class="container" style="color: gray;">
-        <h1>Художественная галерея</h1>
-        <p class="lead">"Беларт"</p>
+        <h1 class="hd">художественная галерея</h1>
+        <p class="lead logotype" style="font-size: 420%;"><span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt</p>
     </div>
 </div>
 <div class="container body-content">

@@ -1,9 +1,6 @@
 ﻿@model GalleryMVC_With_Auth.Models.SendCodeViewModel
-@{
-    ViewBag.Title = "Send";
-}
 
-<h2>@ViewBag.Title.</h2>
+<h2>Отправка.</h2>
 
 @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
     @Html.AntiForgeryToken()

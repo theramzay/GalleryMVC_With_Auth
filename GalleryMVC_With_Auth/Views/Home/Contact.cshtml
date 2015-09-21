@@ -1,11 +1,7 @@
 ﻿@using System.Globalization
-@using Jmelosegui.Mvc.Googlemap
+@using Jmelosegui.Mvc.GoogleMap
 @model string
-@{
-    ViewBag.Title = "Контакты";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Контакты.</h2>
 
 <address>
     Беларусь<br />
@@ -20,7 +16,7 @@
           .Culture(CultureInfo.GetCultureInfoByIetfLanguageTag(Model ?? "ru")))
 
 </address>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Contact", "Home", FormMethod.Get))
 {
     @Html.DropDownList("lang", new SelectList(new[] {"ru", "en"}), "Выбрерите язык карты")
     <button type="submit" class="btn btn-default">Применить</button>

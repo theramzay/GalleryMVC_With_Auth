@@ -1,9 +1,6 @@
 ﻿@model GalleryMVC_With_Auth.Models.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
-}
 
-<h2>@ViewBag.Title.</h2>
+<h2>Регистрация.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
 {

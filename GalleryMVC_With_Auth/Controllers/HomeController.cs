@@ -12,6 +12,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             _repository = repository;
         }
+
         public ActionResult Index()
         {
             return View(_repository.Albums);
@@ -19,31 +20,22 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "О сайте.";
-
             return View();
         }
 
-        //[HttpGet]
-        public ActionResult Contact()
+        public ActionResult Contact(string lang = "ru")
         {
-            ViewBag.Message = "Наши контакты.";
-
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Contact(string lang)
-        {
-            ViewBag.Message = "Наши контакты.";
-            return View(model:lang);
-        }
 
-        
         public ActionResult Found(string search)
         {
             if (search == "") return View();
-            return View("Found", search[0] == '#' ? _repository.Pictures.Where(p => p.Tag.Contains(search)) : _repository.Pictures.Where(p => p.Name.Contains(search)));
+            return View("Found",
+                search[0] == '#'
+                    ? _repository.Pictures.Where(p => p.Tag.Contains(search))
+                    : _repository.Pictures.Where(p => p.Name.Contains(search)));
         }
     }
 }

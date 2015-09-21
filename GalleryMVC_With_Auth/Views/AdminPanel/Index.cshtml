@@ -1,12 +1,7 @@
-﻿
-@{
-    ViewBag.Title = "Панель Администрирования";
-}
-
-<h2>@ViewBag.Title</h2>
+﻿<h2>Панель Администрирования.</h2>
 <ul class="table">
     <li>@Html.ActionLink("Логи", "Index", "elmah")</li>
     <li>@Html.ActionLink("Статистика", "Index", "glimpse.axd")</li>
     <li>@Html.ActionLink("Заливка фотографий", "Upload", "AdminPanel")</li>
-    <li>@Html.ActionLink("Роли","Index", "Roles")</li>
+    <li>@Html.ActionLink("Роли", "Index", "Roles")</li>
 </ul>

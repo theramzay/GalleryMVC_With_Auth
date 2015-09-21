@@ -1,14 +1,17 @@
-﻿using System.Linq;
-using GalleryMVC_With_Auth.Domain.Concrete;
+﻿using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Linq;
 using GalleryMVC_With_Auth.Domain.Entities;
 
 namespace GalleryMVC_With_Auth.Domain.Abstract
 {
     public interface IPicturesRepository
     {
+        DbSet<Picture> PicturesTable { get; set; }
+        DbSet<Album> AlbumsTable { get; set; }
         IQueryable<Album> Albums { get; }
         IQueryable<Picture> Pictures { get; }
         Picture Picture { get; }
-        DBcon context { get; set; }
+        void SaveState();
     }
 }
