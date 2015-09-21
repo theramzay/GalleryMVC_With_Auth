@@ -10,7 +10,15 @@ namespace GalleryMVC_With_Auth.Helpers
         public static void ToTmb(string path, string tmbpath)
         {
             var thumb = Image.FromFile(path).GetThumbnailImage(250, 250, () => false, IntPtr.Zero);
-            var myEncoderParameters = new EncoderParameters(1){Param = {[0] = new EncoderParameter(Encoder.Quality, 50L)}};
+            var myEncoderParameters = new EncoderParameters(3)
+            {
+                Param =
+                {
+                    [0] = new EncoderParameter(Encoder.Quality, 100L),
+                    [1] = new EncoderParameter(Encoder.ScanMethod, (int) EncoderValue.ScanMethodInterlaced),
+                    [2] = new EncoderParameter(Encoder.RenderMethod, (int) EncoderValue.RenderProgressive)
+                }
+            };
             thumb.Save(tmbpath, GetEncoder(ImageFormat.Jpeg), myEncoderParameters);
         }
 
