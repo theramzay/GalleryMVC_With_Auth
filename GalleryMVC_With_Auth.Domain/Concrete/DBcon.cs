@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
@@ -13,8 +14,12 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
         public IQueryable<Album> Albums => AlbumsTable;
         public IQueryable<Picture> Pictures => PicturesTable;
 
-        public void SaveState()
+        public void SaveImagesToDb(List<Picture> pList)
         {
+            foreach (Picture pic in pList)
+            {
+                PicturesTable.Add(pic);
+            }
             SaveChanges();
         }
     }

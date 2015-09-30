@@ -44,33 +44,7 @@ namespace GalleryMVC_With_Auth.Controllers
         {
             if (ModelState.IsValid)
             {
-                foreach (var file in model.Files)
-                {
-                    var pic = Path.GetFileName($"{(file.FileName + DateTime.Now.Ticks).GetHashCode()}.jpg");
-                    var pth = $"/Content/images/{pic}";
-                    var path = Server.MapPath($"{pth.Insert(0, "~")}");
-
-                    var tmbpath = Server.MapPath($"{pth.Insert(pth.Length - pic.Length, "tmb/").Insert(0, "~")}");
-                    // file is uploaded
-                    file.SaveAs(path);
-
-                    ThumbnailCreater.ToTmb(path, tmbpath);
-
-                    //Upload info to DB
-                    var p = new Picture
-                    {
-                        Path = pth,
-                        TmbPath = pth.Insert(pth.Length - pic.Length, "tmb/"),
-                        Name = model.Name,
-                        Description = model.Description,
-                        Tag = model.Tag,
-                        Category = model.Category,
-                        Price = model.Price,
-                        AlbumId = model.AlbumId
-                    };
-                    _repository.PicturesTable.Add(p);
-                    _repository.SaveState();
-                }
+                _repository.SaveImagesToDb(ImagesHelper.GetListOfPictures(model));
                 return RedirectToAction("Upload");
             }
             ViewBag.alb = new List<Album>();
