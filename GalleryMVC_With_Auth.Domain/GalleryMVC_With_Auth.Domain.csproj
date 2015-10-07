@@ -64,6 +64,7 @@
     <Compile Include="Entities\C__MigrationHistory.cs" />
     <Compile Include="Concrete\DBcon.cs" />
     <Compile Include="Entities\Picture.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
