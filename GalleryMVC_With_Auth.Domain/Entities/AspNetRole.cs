@@ -6,26 +6,21 @@ namespace GalleryMVC_With_Auth.Domain.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Album
+    public partial class AspNetRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Album()
+        public AspNetRole()
         {
-            Pictures = new HashSet<Picture>();
+            AspNetUsers = new HashSet<AspNetUser>();
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
 
+        [Required]
+        [StringLength(256)]
         public string Name { get; set; }
 
-        [StringLength(50)]
-        public string Description { get; set; }
-
-        public string ImgPath { get; set; }
-
-        public string Link { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Picture> Pictures { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }
