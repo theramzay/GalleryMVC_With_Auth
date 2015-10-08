@@ -2,4 +2,7 @@
 
 <h2>Ошибка!</h2>
 
-@Server.GetLastError().Message
+@if (Server.GetLastError()!= null)
+{
+    <h3>Server.GetLastError().Message</h3>
+}
