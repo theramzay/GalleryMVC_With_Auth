@@ -1,12 +1,8 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace GalleryMVC_With_Auth.Domain.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    public partial class Comment
+    public class Comment
     {
         public string Id { get; set; }
 

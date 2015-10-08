@@ -1,13 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace GalleryMVC_With_Auth.Domain.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
     [Table("__MigrationHistory")]
-    public partial class C__MigrationHistory
+    public class C__MigrationHistory
     {
         [Key]
         [Column(Order = 0)]
