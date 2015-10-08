@@ -67,9 +67,42 @@
     <Compile Include="Entities\C__MigrationHistory.cs" />
     <Compile Include="Concrete\DBcon.cs" />
     <Compile Include="Entities\Picture.cs" />
+    <Compile Include="Entities\Tag.cs" />
     <Compile Include="Migrations\201510072004136_Initial.cs" />
     <Compile Include="Migrations\201510072004136_Initial.Designer.cs">
       <DependentUpon>201510072004136_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081620007_Add_Tags_Table.cs" />
+    <Compile Include="Migrations\201510081620007_Add_Tags_Table.Designer.cs">
+      <DependentUpon>201510081620007_Add_Tags_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081703357_Tags_Update.cs" />
+    <Compile Include="Migrations\201510081703357_Tags_Update.Designer.cs">
+      <DependentUpon>201510081703357_Tags_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081708180_Tags_Update_Nav.cs" />
+    <Compile Include="Migrations\201510081708180_Tags_Update_Nav.Designer.cs">
+      <DependentUpon>201510081708180_Tags_Update_Nav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081714348_Tags_Update_Nav1.cs" />
+    <Compile Include="Migrations\201510081714348_Tags_Update_Nav1.Designer.cs">
+      <DependentUpon>201510081714348_Tags_Update_Nav1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081715321_Tags_Update_Nav2.cs" />
+    <Compile Include="Migrations\201510081715321_Tags_Update_Nav2.Designer.cs">
+      <DependentUpon>201510081715321_Tags_Update_Nav2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081721138_Tags_Update_Nav3.cs" />
+    <Compile Include="Migrations\201510081721138_Tags_Update_Nav3.Designer.cs">
+      <DependentUpon>201510081721138_Tags_Update_Nav3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081929055_Tags_Update_Nav4.cs" />
+    <Compile Include="Migrations\201510081929055_Tags_Update_Nav4.Designer.cs">
+      <DependentUpon>201510081929055_Tags_Update_Nav4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081933138_Tags_Update_Nav5.cs" />
+    <Compile Include="Migrations\201510081933138_Tags_Update_Nav5.Designer.cs">
+      <DependentUpon>201510081933138_Tags_Update_Nav5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +114,30 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510072004136_Initial.resx">
       <DependentUpon>201510072004136_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081620007_Add_Tags_Table.resx">
+      <DependentUpon>201510081620007_Add_Tags_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081703357_Tags_Update.resx">
+      <DependentUpon>201510081703357_Tags_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081708180_Tags_Update_Nav.resx">
+      <DependentUpon>201510081708180_Tags_Update_Nav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081714348_Tags_Update_Nav1.resx">
+      <DependentUpon>201510081714348_Tags_Update_Nav1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081715321_Tags_Update_Nav2.resx">
+      <DependentUpon>201510081715321_Tags_Update_Nav2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081721138_Tags_Update_Nav3.resx">
+      <DependentUpon>201510081721138_Tags_Update_Nav3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081929055_Tags_Update_Nav4.resx">
+      <DependentUpon>201510081929055_Tags_Update_Nav4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081933138_Tags_Update_Nav5.resx">
+      <DependentUpon>201510081933138_Tags_Update_Nav5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GalleryMVC_With_Auth.Domain.Entities
@@ -19,9 +20,13 @@ namespace GalleryMVC_With_Auth.Domain.Entities
         [StringLength(50)]
         public string Description { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Tag { get; set; }
+        //[Required]
+        //[StringLength(50)]
+        //public string Tag { get; set; }
+
+        public int? TagId { get; set; }
+
+        public virtual Tag Tag { get; set; }
 
         [Required]
         [StringLength(50)]

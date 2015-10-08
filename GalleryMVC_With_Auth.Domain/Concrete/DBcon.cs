@@ -20,6 +20,7 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Album> Albums { get; set; }
         public virtual DbSet<Picture> Pictures { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
 
 
         public Picture Picture { get; set; }
