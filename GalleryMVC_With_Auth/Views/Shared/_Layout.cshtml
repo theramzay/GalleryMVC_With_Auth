@@ -5,11 +5,11 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name='yandex-verification' content='5f6e3bf559dea11f'/>
-    <meta name="keywords" content="Художественная галерея Беларт, галерея Беларт Брест, купить, картину, живопись, натюрморт, графика, акварель, офорт, литография, линогравюра, 
+    <meta name="keywords" content="Художественная галерея Беларт, Художественная галерея Брест, галерея Брест, галерея Беларт Брест, купить, картину, живопись, натюрморт, графика, акварель, офорт, литография, линогравюра, 
 батик, керамика, произведения, декоративно-прикладное искусство, багетная, мастерская, рамка">
     <meta name="description" content="Художественная галерея Беларт. Купить картину в Бресте. Купить картину, живопись, натюрморт, графику, акварель, офорт, 
 литографию, линогравюру, батик, керамику, произведения декоративно-прикладного искусства. Багетная мастерская. Багетные рамки. Деревянный и пластиковый 
-багет. Мебель по индивидуальному заказу">
+багет.">
     <!-- FB -->
     <meta property="og:title" content="БелАрт галерея Брест" />
     <meta property="og:url" content="http://belart-brest.by/" />
@@ -27,8 +27,9 @@
 
     <title>Галерея БелАрт Брест</title>
 
-    @Styles.Render("~/Content/styles")
-    @Scripts.Render("~/bundles/modernizr")
+    
+    @Styles.RenderFormat(@"<link href="" {0}"" lazyload rel=""stylesheet"">", "~/Content/styles")
+    @Scripts.RenderFormat(@"<script src="" {0}"" async></script>", "~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body id="home">
@@ -83,7 +84,7 @@
         <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
     </div>
 </footer>
-
+    
 @Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/magic")
 @RenderSection("scripts", false)

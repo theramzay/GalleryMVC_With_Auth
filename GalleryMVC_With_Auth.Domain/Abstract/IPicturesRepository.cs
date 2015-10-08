@@ -1,17 +1,15 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using GalleryMVC_With_Auth.Domain.Entities;
 
 namespace GalleryMVC_With_Auth.Domain.Abstract
 {
     public interface IPicturesRepository
     {
-        DbSet<Picture> PicturesTable { get; set; }
-        DbSet<Album> AlbumsTable { get; set; }
-        IQueryable<Album> Albums { get; }
-        IQueryable<Picture> Pictures { get; }
+        DbSet<Album> Albums { get; }
+        DbSet<Picture> Pictures { get; }
+        DbSet<Tag> Tags { get; }
         Picture Picture { get; }
-        void SaveState();
+        void SaveImagesToDb(List<Picture> pList);
     }
 }

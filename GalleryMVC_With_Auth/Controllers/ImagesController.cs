@@ -15,7 +15,7 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult Universal(int Id)
         {
-            return View(_repository.Pictures.Where(p => p.AlbumId == Id));
+            return View(_repository.Pictures.Where(p => p.AlbumId == Id).ToList());
         }
     }
 }

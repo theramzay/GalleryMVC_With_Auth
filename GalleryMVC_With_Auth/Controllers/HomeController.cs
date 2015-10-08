@@ -34,8 +34,8 @@ namespace GalleryMVC_With_Auth.Controllers
             if (search == "") return View();
             return View("Found",
                 search[0] == '#'
-                    ? _repository.Pictures.Where(p => p.Tag.Contains(search))
-                    : _repository.Pictures.Where(p => p.Name.Contains(search)));
+                    ? _repository.Pictures.Where(p => p.Tag.Name.Contains(search)).ToList()
+                    : _repository.Pictures.Where(p => p.Name.Contains(search)).ToList());
         }
     }
 }

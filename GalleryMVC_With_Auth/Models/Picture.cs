@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using GalleryMVC_With_Auth.Domain.Entities;
 
 namespace GalleryMVC_With_Auth.Models
 {
@@ -9,7 +10,7 @@ namespace GalleryMVC_With_Auth.Models
         public string TmbPath { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Tag { get; set; }
+        public Tag Tag { get; set; }
 
         public string Category { get; set; }
         public decimal Price { get; set; }

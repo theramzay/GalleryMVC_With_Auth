@@ -1,9 +1,4 @@
-﻿@using GalleryMVC_With_Auth.Domain.Entities
-@model GalleryMVC_With_Auth.Domain.Abstract.IPicturesRepository
-
-@{
-    var a = ViewBag.alb as List<Album>;
-}
+﻿@model GalleryMVC_With_Auth.Domain.Abstract.IPicturesRepository
 
 <h2>Загрузка изображений.</h2>
 
@@ -29,7 +24,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Picture.Tag, new {@class = "col-md-2 control-label"})
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Picture.Tag, new {@class = "form-control", Name = "Tag", id = "Tag"})
+            @Html.TextBoxFor(m => m.Picture.Tag.Name, new {@class = "form-control", Name = "Tag.Name", id = "Tag.Name"})
         </div>
     </div>
     <div class="form-group">
@@ -44,7 +39,7 @@
             @Html.TextBoxFor(m => m.Picture.Price, new {@class = "form-control", Name = "Price", id = "Price"})
         </div>
     </div>
-    @Html.DropDownListFor(m => m.Albums, new SelectList(a, "Id", "Name", a.First().Id), new {Name = "AlbumId", id = "AlbumId"})
+    @Html.DropDownListFor(m => m.Albums, new SelectList(Model.Albums, "Id", "Name", Model.Albums.First().Id), new {Name = "AlbumId", id = "AlbumId"})
     <button type="submit" class="btn btn-default">Применить</button>
 }
 
