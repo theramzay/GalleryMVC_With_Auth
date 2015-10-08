@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
@@ -30,11 +27,6 @@ namespace GalleryMVC_With_Auth.Controllers
         [AuthLog(Roles = Defines.AdminRole)]
         public ActionResult Upload()
         {
-            ViewBag.alb = new List<Album>();
-            foreach (var a in _repository.Albums)
-            {
-                ViewBag.alb.Add(a);
-            }
             return View(_repository);
         }
 
@@ -48,10 +40,6 @@ namespace GalleryMVC_With_Auth.Controllers
                 return RedirectToAction("Upload");
             }
             ViewBag.alb = new List<Album>();
-            foreach (var a in _repository.Albums)
-            {
-                ViewBag.alb.Add(a);
-            }
             return View(_repository);
         }
     }
