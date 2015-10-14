@@ -1,6 +1,12 @@
-﻿using System.Linq;
+﻿using System.Data.Entity.Migrations;
+using System.Linq;
 using System.Web.Mvc;
+using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
+using GalleryMVC_With_Auth.Domain.Entities;
+using GalleryMVC_With_Auth.Models;
+using GalleryMVC_With_Auth.Resources;
+using Microsoft.AspNet.Identity;
 
 namespace GalleryMVC_With_Auth.Controllers
 {
@@ -16,6 +22,22 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult Universal(int Id)
         {
             return View(_repository.Pictures.Where(p => p.AlbumId == Id).ToList());
+        }
+
+        [AuthLog(Roles = Defines.UserRole+","+ Defines.AdminRole)]
+        public ActionResult Comments(int Id)
+        {
+            return View(_repository.Comments.Where(c=>c.PictureID == Id).ToList());
+        }
+
+        [AuthLog(Roles = Defines.UserRole + "," + Defines.AdminRole)]
+        [HttpPost]
+        public ActionResult Comments(CommentModel comm,int Id)
+        {
+            if (!ModelState.IsValid) return View(_repository.Comments.Where(c => c.PictureID == Id).ToList());
+            _repository.Comments.Add(new Comment { PictureID = Id, UserId = User.Identity.GetUserId(), Text = comm.Text });
+            _repository.Save();
+            return View(_repository.Comments.Where(c => c.PictureID == Id).ToList());
         }
     }
 }
