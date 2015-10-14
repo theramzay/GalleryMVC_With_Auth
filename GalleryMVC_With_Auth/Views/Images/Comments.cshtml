@@ -1,0 +1,25 @@
+﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Comment>
+
+@{
+    ViewBag.Title = "Comments";
+}
+
+<h2>Comments</h2>
+
+@foreach (var item in Model)
+{
+    <p>Написал: @item.User.UserName</p>
+    <div style="background: gray; padding: 30px;">@item.Text</div>
+}
+
+@using (Html.BeginForm("Comments", "Images", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstOrDefault().Text, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstOrDefault().Text, new {@class = "form-control", Name = "Text", id = "Text"})
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default">Отправить</button>
+}
