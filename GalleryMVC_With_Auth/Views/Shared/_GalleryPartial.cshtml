@@ -14,10 +14,10 @@
         @foreach (Picture picture in Model)
         {
             <figure class="effect-milo">
-                <img class="lazy" data-original="@picture.TmbPath" alt="@picture.Category"/>
+                <img class="lazy" data-original="@picture.TmbPath" alt="@picture.Description"/>
                 <figcaption>
                     <h2>
-                        <span>@picture.Category</span></h2>
+                        <span>@picture.Description</span></h2>
                     <p style="color: red">Автор - @picture.Name.</p>
                     <p style="color: red">Тэг - @picture.Tag.Name</p>
                     <p style="color: red">Цена - @picture.Price бел.руб.</p>
