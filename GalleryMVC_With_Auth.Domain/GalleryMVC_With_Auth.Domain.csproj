@@ -104,6 +104,18 @@
     <Compile Include="Migrations\201510081933138_Tags_Update_Nav5.Designer.cs">
       <DependentUpon>201510081933138_Tags_Update_Nav5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510141601485_Comments.cs" />
+    <Compile Include="Migrations\201510141601485_Comments.Designer.cs">
+      <DependentUpon>201510141601485_Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510141627328_Comments1.cs" />
+    <Compile Include="Migrations\201510141627328_Comments1.Designer.cs">
+      <DependentUpon>201510141627328_Comments1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510141641377_Comments2.cs" />
+    <Compile Include="Migrations\201510141641377_Comments2.Designer.cs">
+      <DependentUpon>201510141641377_Comments2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510081933138_Tags_Update_Nav5.resx">
       <DependentUpon>201510081933138_Tags_Update_Nav5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510141601485_Comments.resx">
+      <DependentUpon>201510141601485_Comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510141627328_Comments1.resx">
+      <DependentUpon>201510141627328_Comments1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510141641377_Comments2.resx">
+      <DependentUpon>201510141641377_Comments2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

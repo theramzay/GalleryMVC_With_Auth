@@ -5,6 +5,11 @@ namespace GalleryMVC_With_Auth.Domain.Entities
 {
     public class Picture
     {
+
+        public Picture()
+        {
+            Comments = new List<Comment>();
+        }
         public int Id { get; set; }
 
         [Required]
@@ -37,5 +42,6 @@ namespace GalleryMVC_With_Auth.Domain.Entities
         public int? AlbumId { get; set; }
 
         public virtual Album Album { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

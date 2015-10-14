@@ -9,7 +9,9 @@ namespace GalleryMVC_With_Auth.Domain.Abstract
         DbSet<Album> Albums { get; }
         DbSet<Picture> Pictures { get; }
         DbSet<Tag> Tags { get; }
+        DbSet<Comment> Comments { get; }
         Picture Picture { get; }
         void SaveImagesToDb(List<Picture> pList);
+        void Save();
     }
 }

@@ -13,6 +13,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
             AspNetUserClaims = new HashSet<AspNetUserClaim>();
             AspNetUserLogins = new HashSet<AspNetUserLogin>();
             AspNetRoles = new HashSet<AspNetRole>();
+            Comments = new List<Comment>();
         }
 
         public string Id { get; set; }
@@ -50,5 +51,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
 
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

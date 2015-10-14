@@ -4,15 +4,18 @@ namespace GalleryMVC_With_Auth.Domain.Entities
 {
     public class Comment
     {
-        public string Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [Required]
-        [StringLength(128)]
         public string UserId { get; set; }
 
+        public virtual AspNetUser User { get; set; }
+
         [Required]
-        [StringLength(128)]
-        public string PictureID { get; set; }
+        public int? PictureID { get; set; }
+
+        public virtual Picture Picture { get; set; }
 
         [Required]
         [StringLength(255)]
