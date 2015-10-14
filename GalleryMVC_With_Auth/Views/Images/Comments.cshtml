@@ -8,8 +8,11 @@
 
 @foreach (var item in Model)
 {
-    <p>Написал: @item.User.UserName</p>
-    <div style="background: gray; padding: 30px;">@item.Text</div>
+
+    <div class="comment">
+        <span style="background: #2E2E2E; color: #be4c39; padding: 5px; margin-bottom: 300px;">Написал: @item.User.UserName</span>
+        <p>@item.Text</p>
+    </div>
 }
 
 @using (Html.BeginForm("Comments", "Images", FormMethod.Post, new {enctype = "multipart/form-data"}))
