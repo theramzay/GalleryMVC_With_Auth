@@ -116,6 +116,10 @@
     <Compile Include="Migrations\201510141641377_Comments2.Designer.cs">
       <DependentUpon>201510141641377_Comments2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510142133331_CleanUp.cs" />
+    <Compile Include="Migrations\201510142133331_CleanUp.Designer.cs">
+      <DependentUpon>201510142133331_CleanUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -159,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510141641377_Comments2.resx">
       <DependentUpon>201510141641377_Comments2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510142133331_CleanUp.resx">
+      <DependentUpon>201510142133331_CleanUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
