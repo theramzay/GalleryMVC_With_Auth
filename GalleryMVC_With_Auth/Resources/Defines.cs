@@ -39,5 +39,6 @@
         public const int Batik = 2;
         public const int Pastel = 4;
         public const string AdminRole = "Administrator";
+        public const string UserRole = "User";
     }
 }
