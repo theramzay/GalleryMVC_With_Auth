@@ -192,3 +192,22 @@ input[type="checkbox"].input-validation-error {
 #search::-moz-placeholder          { color: #be4c39;}/* Firefox 19+ */
 #search:-moz-placeholder           { color: #be4c39;}/* Firefox 18- */
 #search:-ms-input-placeholder      { color: #be4c39;}
+
+
+div.comment {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    margin: 25px;
+
+    -webkit-box-shadow: 0px 0px 31px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 31px 12px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 31px 12px rgba(0,0,0,0.75);
+    transition: box-shadow 0.5s, -moz-box-shadow 0.5s, -webkit-box-shadow 0.5s;
+}
+
+div.comment:hover {
+    -webkit-box-shadow: 0px 0px 31px 12px #be4c39;
+    -moz-box-shadow: 0px 0px 31px 12px #be4c39;
+    box-shadow: 0px 0px 31px 12px #be4c39;
+}
