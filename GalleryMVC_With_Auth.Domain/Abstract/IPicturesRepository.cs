@@ -13,5 +13,6 @@ namespace GalleryMVC_With_Auth.Domain.Abstract
         Picture Picture { get; }
         void SaveImagesToDb(List<Picture> pList);
         void Save();
+        void SendComment(Comment comm);
     }
 }

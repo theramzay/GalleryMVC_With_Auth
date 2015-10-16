@@ -35,8 +35,7 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult Comments(CommentModel comm,int Id)
         {
             if (!ModelState.IsValid) return View(_repository.Comments.Where(c => c.PictureID == Id).ToList());
-            _repository.Comments.Add(new Comment { PictureID = Id, UserId = User.Identity.GetUserId(), Text = comm.Text });
-            _repository.Save();
+            _repository.SendComment(new Comment { PictureID = Id, UserId = User.Identity.GetUserId(), Text = comm.Text });
             return View(_repository.Comments.Where(c => c.PictureID == Id).ToList());
         }
     }

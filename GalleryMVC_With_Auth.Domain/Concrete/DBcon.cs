@@ -32,6 +32,12 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
             SaveChanges();
         }
 
+        public void SendComment(Comment comm)
+        {
+            Comments.Add(comm);
+            SaveChanges();
+        }
+
         public void Save()
         {
             SaveChanges();
