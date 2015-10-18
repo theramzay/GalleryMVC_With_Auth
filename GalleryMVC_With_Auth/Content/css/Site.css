@@ -211,3 +211,9 @@ div.comment:hover {
     -moz-box-shadow: 0px 0px 31px 12px #be4c39;
     box-shadow: 0px 0px 31px 12px #be4c39;
 }
+
+TextArea#Text.comment {
+    height: 100px;
+    width: 1000px;
+    resize: none;
+}
