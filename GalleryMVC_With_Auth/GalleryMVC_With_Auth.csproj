@@ -245,6 +245,8 @@
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Defines.cs" />
+    <Compile Include="Resources\MultiAuth.cs" />
+    <Compile Include="Resources\UserRoles.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
