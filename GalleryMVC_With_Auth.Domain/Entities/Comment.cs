@@ -19,6 +19,7 @@ namespace GalleryMVC_With_Auth.Domain.Entities
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "Comment")]
         public string Text { get; set; }
     }
 }
