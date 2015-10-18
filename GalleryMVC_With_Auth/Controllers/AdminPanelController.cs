@@ -18,19 +18,19 @@ namespace GalleryMVC_With_Auth.Controllers
             _repository = repository;
         }
 
-        [AuthLog(Roles = Defines.AdminRole)]
+        [MultiAuth(UserRoles.Administrator)]
         public ActionResult Index()
         {
             return View();
         }
 
-        [AuthLog(Roles = Defines.AdminRole)]
+        [MultiAuth(UserRoles.Administrator)]
         public ActionResult Upload()
         {
             return View(_repository);
         }
 
-        [AuthLog(Roles = Defines.AdminRole)]
+        [MultiAuth(UserRoles.Administrator)]
         [HttpPost]
         public ActionResult Upload(PictureModel model)
         {

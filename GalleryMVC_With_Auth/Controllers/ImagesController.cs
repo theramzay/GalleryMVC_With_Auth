@@ -23,13 +23,14 @@ namespace GalleryMVC_With_Auth.Controllers
             return View(_repository.Pictures.Where(p => p.AlbumId == Id).ToList());
         }
 
-        [AuthLog(Roles = Defines.Roles)]
+        [MultiAuth(UserRoles.User,UserRoles.Administrator)]
         public ActionResult Comments(int Id)
         {
             return View(_repository.Comments.Where(c => c.PictureID == Id).ToList());
         }
 
-        [AuthLog(Roles = Defines.Roles)]
+        //[AuthLog(Roles = Defines.Roles)]
+        [MultiAuth(UserRoles.User, UserRoles.Administrator)]
         [HttpPost]
         public ActionResult Comments(CommentModel comm, int Id)
         {
