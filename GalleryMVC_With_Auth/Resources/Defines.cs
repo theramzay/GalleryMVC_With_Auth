@@ -40,5 +40,6 @@
         public const int Pastel = 4;
         public const string AdminRole = "Administrator";
         public const string UserRole = "User";
+        public const string Roles = AdminRole + "," + UserRole;
     }
 }
