@@ -1,4 +1,6 @@
-﻿namespace GalleryMVC_With_Auth.Resources
+﻿using System.Collections.Generic;
+
+namespace GalleryMVC_With_Auth.Resources
 {
     public static class Defines
     {
@@ -38,8 +40,5 @@
         public const int Graphics = 1;
         public const int Batik = 2;
         public const int Pastel = 4;
-        public const string AdminRole = "Administrator";
-        public const string UserRole = "User";
-        public const string Roles = AdminRole + "," + UserRole;
     }
 }
