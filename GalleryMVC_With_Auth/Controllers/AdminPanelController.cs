@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 using GalleryMVC_With_Auth.Helpers;
@@ -18,19 +17,19 @@ namespace GalleryMVC_With_Auth.Controllers
             _repository = repository;
         }
 
-        [AuthLog(Roles = Defines.AdminRole)]
+        [MultiAuth(UserRoles.Administrator)]
         public ActionResult Index()
         {
             return View();
         }
 
-        [AuthLog(Roles = Defines.AdminRole)]
+        [MultiAuth(UserRoles.Administrator)]
         public ActionResult Upload()
         {
             return View(_repository);
         }
 
-        [AuthLog(Roles = Defines.AdminRole)]
+        [MultiAuth(UserRoles.Administrator)]
         [HttpPost]
         public ActionResult Upload(PictureModel model)
         {

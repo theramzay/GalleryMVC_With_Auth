@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
-using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
 
@@ -13,7 +13,7 @@ namespace GalleryMVC_With_Auth.Controllers
     {
         public ActionResult Generate()
         {
-            var types = System.Reflection.Assembly.GetExecutingAssembly().GetTypes();
+            var types = Assembly.GetExecutingAssembly().GetTypes();
             var targets = new List<Type>();
             foreach (var t in types)
             {
@@ -31,8 +31,8 @@ namespace GalleryMVC_With_Auth.Controllers
                 var controller = t.Name.Substring(0, pos);
                 foreach (
                     var action in
-                        t.GetMethods(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance |
-                                     System.Reflection.BindingFlags.DeclaredOnly))
+                        t.GetMethods(BindingFlags.Public | BindingFlags.Instance |
+                                     BindingFlags.DeclaredOnly))
                 {
                     //  don't include POST methods
                     if (action.GetCustomAttributes(typeof (HttpPostAttribute), false).Count() > 0)

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using GalleryMVC_With_Auth.Resources;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -29,14 +30,16 @@ namespace GalleryMVC_With_Auth.Models
     public class SetPasswordViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Defines.PassMinLength)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.",
+            MinimumLength = Defines.PassMinLength)]
         [DataType(DataType.Password)]
         [Display(Name = Defines.NPasswd)]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = Defines.ConfNewPasswd)]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("NewPassword",
+            ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -48,14 +51,16 @@ namespace GalleryMVC_With_Auth.Models
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Defines.PassMinLength)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.",
+            MinimumLength = Defines.PassMinLength)]
         [DataType(DataType.Password)]
         [Display(Name = Defines.NPasswd)]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = Defines.ConfNewPasswd)]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("NewPassword",
+            ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -82,6 +87,6 @@ namespace GalleryMVC_With_Auth.Models
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }
-        public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
+        public ICollection<SelectListItem> Providers { get; set; }
     }
 }

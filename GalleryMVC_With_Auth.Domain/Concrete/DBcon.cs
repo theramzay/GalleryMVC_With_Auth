@@ -21,8 +21,6 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
         public virtual DbSet<Album> Albums { get; set; }
         public virtual DbSet<Picture> Pictures { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
-
-
         public Picture Picture { get; set; }
 
         public void SaveImagesToDb(List<Picture> pList)
@@ -31,6 +29,17 @@ namespace GalleryMVC_With_Auth.Domain.Concrete
             {
                 Pictures.Add(pic);
             }
+            SaveChanges();
+        }
+
+        public void SendComment(Comment comm)
+        {
+            Comments.Add(comm);
+            SaveChanges();
+        }
+
+        public void Save()
+        {
             SaveChanges();
         }
 

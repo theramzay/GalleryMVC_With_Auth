@@ -56,7 +56,6 @@ namespace GalleryMVC_With_Auth.Helpers
                     Name = model.Name,
                     Description = model.Description,
                     Tag = model.Tag,
-                    Category = model.Category,
                     Price = model.Price,
                     AlbumId = model.AlbumId
                 });
