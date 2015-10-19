@@ -53,6 +53,12 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GalleryMVC_With_Auth\GalleryMVC_With_Auth.csproj">
+      <Project>{dc0a5d71-9153-47b5-b5d0-2612752127e6}</Project>
+      <Name>GalleryMVC_With_Auth</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
