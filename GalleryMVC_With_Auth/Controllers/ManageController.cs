@@ -310,7 +310,8 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult LinkLogin(string provider)
         {
             // Request a redirect to the external login provider to link a login for the current user
-            return new AccountController.ChallengeResult(provider, Url.Action(Defines.LinkLoginCallbackView, Defines.ManageControllerName),
+            return new AccountController.ChallengeResult(provider,
+                Url.Action(Defines.LinkLoginCallbackView, Defines.ManageControllerName),
                 User.Identity.GetUserId());
         }
 

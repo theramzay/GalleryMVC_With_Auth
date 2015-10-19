@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace GalleryMVC_With_Auth.Resources
+﻿namespace GalleryMVC_With_Auth.Resources
 {
     public static class Defines
     {

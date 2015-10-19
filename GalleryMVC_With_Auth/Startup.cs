@@ -1,7 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using GalleryMVC_With_Auth;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(GalleryMVC_With_Auth.Startup))]
+[assembly: OwinStartup(typeof (Startup))]
+
 namespace GalleryMVC_With_Auth
 {
     public partial class Startup

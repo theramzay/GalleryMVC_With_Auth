@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using GalleryMVC_With_Auth.CustomFilters;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
 using GalleryMVC_With_Auth.Models;
@@ -23,7 +22,7 @@ namespace GalleryMVC_With_Auth.Controllers
             return View(_repository.Pictures.Where(p => p.AlbumId == Id).ToList());
         }
 
-        [MultiAuth(UserRoles.User,UserRoles.Administrator)]
+        [MultiAuth(UserRoles.User, UserRoles.Administrator)]
         public ActionResult Comments(int Id)
         {
             return View(_repository.Comments.Where(c => c.PictureID == Id).ToList());
