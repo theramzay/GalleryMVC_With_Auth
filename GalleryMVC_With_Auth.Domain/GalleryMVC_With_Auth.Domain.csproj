@@ -61,8 +61,6 @@
     <Compile Include="Entities\AspNetUser.cs" />
     <Compile Include="Entities\AspNetUserClaim.cs" />
     <Compile Include="Entities\AspNetUserLogin.cs" />
-    <Compile Include="Entities\backup\Album.cs" />
-    <Compile Include="Entities\backup\Picture.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\C__MigrationHistory.cs" />
     <Compile Include="Concrete\DBcon.cs" />
