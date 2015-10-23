@@ -32,7 +32,8 @@ namespace GalleryMVC_With_Auth.Resources
             if (!authorized)
             {
                 var url = new UrlHelper(context.RequestContext);
-                var logonUrl = url.Action("Http", "Error", new {Id = 401, Area = ""});
+                //var logonUrl = url.Action("Http", "Error", new {Id = 401, Area = ""});
+                var logonUrl = url.Action("Login", "Account");
                 context.Result = new RedirectResult(logonUrl);
             }
         }

@@ -24,7 +24,8 @@
                     <a class="pic" id="links" href="@picture.Path" title="@picture.Name"></a>
                 </figcaption>
             </figure>
-            <a style="margin: 10px" href="@Url.Action("Comments", "Images", new {@picture.Id})" onclick="location.href = '@Url.Action("Comments", "Images", new {@picture.Id})'">Комментарии</a>
+            <button type="button" class="btn btn-danger" onclick="location.href = '@Url.Action("Comments", "Images", new {@picture.Id})'">Комментарии</button>
+            @*<a style="margin: 10px" href="@Url.Action("Comments", "Images", new {@picture.Id})" onclick="location.href = '@Url.Action("Comments", "Images", new {@picture.Id})'">Комментарии</a>*@
             @*@Html.ActionLink("comments", "Comments", "Images", new {picture.Id}, new {@class = "comment", onclick= "window.open(url)" })*@
             
         }
