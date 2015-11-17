@@ -31,6 +31,9 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/BlueimpGal.js",
                 "~/Scripts/jquery.lazyload.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/reactJS").Include(
+                "~/Scripts/react/react-0.13.1.js"));
+
             bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/css/hover_effects/component.css",
                 "~/Content/css/hover_effects/normalize.css",
