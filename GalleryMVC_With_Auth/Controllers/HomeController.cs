@@ -31,6 +31,15 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public ActionResult Found(string search)
         {
+            var s = Request.IsAjaxRequest();
+            if (Request.IsAjaxRequest())
+            {
+                if (search == "") return PartialView();
+                return PartialView("Found",
+                    search[0] == '#'
+                        ? _repository.Pictures.Where(p => p.Tag.Name.Contains(search)).ToList()
+                        : _repository.Pictures.Where(p => p.Name.Contains(search)).ToList());
+            }
             if (search == "") return View();
             return View("Found",
                 search[0] == '#'
