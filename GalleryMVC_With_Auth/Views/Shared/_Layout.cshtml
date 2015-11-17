@@ -11,26 +11,27 @@
 литографию, линогравюру, батик, керамику, произведения декоративно-прикладного искусства. Багетная мастерская. Багетные рамки. Деревянный и пластиковый 
 багет.">
     <!-- FB -->
-    <meta property="og:title" content="БелАрт галерея Брест" />
-    <meta property="og:url" content="http://belart-brest.by/" />
-    <meta property="og:image" content="" />
-    <meta property="og:description" content="Галерея БелАрт в Бресте" />
-    <meta property="og:site_name" content="http://belart-brest.by/" />
+    <meta property="og:title" content="БелАрт галерея Брест"/>
+    <meta property="og:url" content="http://belart-brest.by/"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Галерея БелАрт в Бресте"/>
+    <meta property="og:site_name" content="http://belart-brest.by/"/>
     <!-- FB End-->
 
     <!-- VK -->
-    <meta property="vk:title" content="БелАрт галерея Брест" />
-    <meta property="vk:url" content="http://belart-brest.by/" />
-    <meta property="vk:image" content="" />
-    <meta property="vk:description" content="Галерея БелАрт в Бресте" />
+    <meta property="vk:title" content="БелАрт галерея Брест"/>
+    <meta property="vk:url" content="http://belart-brest.by/"/>
+    <meta property="vk:image" content=""/>
+    <meta property="vk:description" content="Галерея БелАрт в Бресте"/>
     <!-- VK End -->
 
     <title>Галерея БелАрт Брест</title>
 
-    
+
     @Styles.RenderFormat(@"<link href="" {0}"" lazyload rel=""stylesheet"">", "~/Content/styles")
     @Scripts.RenderFormat(@"<script src="" {0}"" async></script>", "~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
 </head>
 <body id="home">
 <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
@@ -41,7 +42,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("BA", Defines.IndexView, Defines.HomeControllerName, null, new {@class = "navbar-brand logotypeM", style= "color: white" })
+            @Html.ActionLink("BA", Defines.IndexView, Defines.HomeControllerName, null, new {@class = "navbar-brand logotypeM", style = "color: white"})
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -52,7 +53,9 @@
                 <li>
                     <div class="container">
                         <div class="row">
+                            @*@using (Ajax.BeginForm("Found", null, new AjaxOptions {UpdateTargetId = "results", HttpMethod = "Get"}, new {@class = "search-form", action = "/home/Found"}))*@
                             @using (Html.BeginForm("Found", Defines.HomeControllerName, FormMethod.Get, new {@class = "search-form"}))
+
                             {
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Поиск</label>
@@ -71,10 +74,11 @@
 <div class="splash">
     <div class="container" style="color: gray;">
         <h1 class="hd">художественная галерея</h1>
-        <p class="lead logotype" style="font-size: 420%;"><span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt</p>
+        <p class="lead logotype" style="font-size: 420%;"><span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt
+        </p>
     </div>
 </div>
-<div class="container body-content">
+<div class="container body-content" id="results">
     @RenderBody()
     <hr/>
 
@@ -84,7 +88,7 @@
         <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
     </div>
 </footer>
-    
+@*@Scripts.Render("~/bundles/galmagic")*@
 @Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/magic")
 @RenderSection("scripts", false)
