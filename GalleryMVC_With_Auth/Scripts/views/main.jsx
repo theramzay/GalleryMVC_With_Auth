@@ -12,7 +12,7 @@
         return { data: [] };
     },
     componentDidMount: function () {
-        this.loadHumansFromServer();
+        this.loadAlbumsFromServer();
         window.setInterval(this.loadAlbumsFromServer, this.props.pollInterval);
     },
     render: function () {
