@@ -28,6 +28,11 @@ namespace GalleryMVC_With_Auth.Controllers
             return View();
         }
 
+        public ActionResult Tests()
+        {
+            return View();
+        }
+
 
         public ActionResult Found(string search)
         {
