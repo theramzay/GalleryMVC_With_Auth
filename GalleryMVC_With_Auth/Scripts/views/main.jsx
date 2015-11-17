@@ -1,5 +1,5 @@
 ﻿var Content = React.createClass({
-    loadHumansFromServer: function () {
+    loadAlbumsFromServer: function () {
         var xhr = new XMLHttpRequest();
         xhr.open('get', this.props.url, true);
         xhr.onload = function () {
@@ -13,7 +13,7 @@
     },
     componentDidMount: function () {
         this.loadHumansFromServer();
-        window.setInterval(this.loadHumansFromServer, this.props.pollInterval);
+        window.setInterval(this.loadAlbumsFromServer, this.props.pollInterval);
     },
     render: function () {
         return (
