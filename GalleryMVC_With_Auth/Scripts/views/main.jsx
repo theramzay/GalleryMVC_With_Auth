@@ -22,7 +22,7 @@
                     function(a) {
                     return (
                         <figure className="effect-lily">
-            <img src="{a.ImgPath}" alt="img01" />
+            <img src={a.ImgPath} alt="img01" />
             <figcaption>
                 <h2><span>{a.Name}</span></h2>
                 <p>{a.Description}</p>
