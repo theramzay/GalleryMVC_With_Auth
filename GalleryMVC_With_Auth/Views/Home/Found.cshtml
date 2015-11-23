@@ -2,7 +2,17 @@
 
 <h2>Поиск</h2>
 
-@Html.Partial("_GalleryPartial")
+<div id="content"></div>
+
+<script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>
+
+<script>
+    $(function() {
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
+    });
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/galmagic")
