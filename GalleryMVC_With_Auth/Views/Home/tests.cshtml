@@ -7,3 +7,15 @@
 <div class="grid" id="content"></div>
 
 <script src="@Url.Content("~/Scripts/views/main.jsx")"></script>
+<script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>
+
+<script>
+    $('#search').on('oninput', function(e) {
+        e.preventDefault();
+        Rend();
+    });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/galmagic")
+}
