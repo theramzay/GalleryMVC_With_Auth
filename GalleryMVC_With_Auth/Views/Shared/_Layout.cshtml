@@ -55,15 +55,13 @@
                     <div class="container">
                         <div class="row">
                             @*@using (Ajax.BeginForm("Found", null, new AjaxOptions {UpdateTargetId = "results", HttpMethod = "Get"}, new {@class = "search-form", action = "/home/Found"}))*@
-                            @using (Html.BeginForm("Found", Defines.HomeControllerName, FormMethod.Get, new {@class = "search-form"}))
-
-                            {
+                            <div class="search-form">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Поиск</label>
-                                    @Html.TextBox("search", "", new {@class = "form-control", Name = "search", id = "search", placeholder = "Поиск"})
+                                    @Html.TextBox("search", "", new { @class = "form-control", Name = "search", id = "search", placeholder = "Поиск" })
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                 </div>
-                            }
+                            </div>
                         </div>
                     </div>
                 </li>
