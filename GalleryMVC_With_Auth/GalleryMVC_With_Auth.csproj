@@ -545,6 +545,7 @@
     <Content Include="Views\Images\Comments.cshtml" />
     <Content Include="Scripts\views\main.jsx" />
     <Content Include="Views\Home\tests.cshtml" />
+    <Content Include="Scripts\views\Found.jsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
