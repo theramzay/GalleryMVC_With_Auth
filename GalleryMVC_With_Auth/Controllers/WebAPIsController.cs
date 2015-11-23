@@ -37,33 +37,38 @@ namespace GalleryMVC_With_Auth.Controllers
 
         public List<PictureModel> GetFound(string search)
         {
-            return search[0] == '#'
-                ? _repository.Pictures.Where(p => p.Tag.Name.Contains(search))
-                    .Select(
-                        p =>
-                            new PictureModel
-                            {
-                                Id = p.Id,
-                                Name = p.Name,
-                                Description = p.Description,
-                                Price = p.Price,
-                                Path = p.Path,
-                                TmbPath = p.TmbPath
-                            })
-                    .ToList()
-                : _repository.Pictures.Where(p => p.Name.Contains(search))
-                    .Select(
-                        p =>
-                            new PictureModel
-                            {
-                                Id = p.Id,
-                                Name = p.Name,
-                                Description = p.Description,
-                                Price = p.Price,
-                                Path = p.Path,
-                                TmbPath = p.TmbPath
-                            })
-                    .ToList();
+            if (search !=null)
+            {
+                return search[0] == '#'
+    ? _repository.Pictures.Where(p => p.Tag.Name.Contains(search))
+        .Select(
+            p =>
+                new PictureModel
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    Path = p.Path,
+                    TmbPath = p.TmbPath
+                })
+        .ToList()
+    : _repository.Pictures.Where(p => p.Name.Contains(search))
+        .Select(
+            p =>
+                new PictureModel
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    Path = p.Path,
+                    TmbPath = p.TmbPath
+                })
+        .ToList();
+            }
+            return new List<PictureModel>();
+
         }
     }
 }
