@@ -12,13 +12,12 @@
     getInitialState: function () {
         return { data: [] };
     },
-    componentDidMount: function () {
+    componentWillReceiveProps: function () {
         this.loadFromServer();
-        window.setInterval(this.loadFromServer, this.props.pollInterval);
     },
     render: function () {
         return (
-            <div className="grid">
+            <div>
     <div id="links">
         {this.state.data.map(function(p) {
         return (
@@ -40,16 +39,7 @@
     }
 });
 
-function Rend() {
-    React.render(<Content url="/api/WebApis/GetFound" pollInterval={200000} />, document.getElementById("content"));
-}
 
-//$('body').on('change','#search',(function (e) {
-//    e.preventDefault();
-//    React.render(<Content url="/api/WebApis/GetFound" pollInterval={200000} />, document.getElementById("content"));
-//}));
-
-$('.navbar-collapse').on('input', '#search', function (e) {
-    e.preventDefault();
-     React.render(<Content url="/api/WebApis/GetFound" pollInterval={200000} />, document.getElementById("content"));
-});
+$('body').on('input','#search',(function () {
+    React.render(<Content url="/api/WebApis/GetFound" />, document.getElementById("content"));
+}));
