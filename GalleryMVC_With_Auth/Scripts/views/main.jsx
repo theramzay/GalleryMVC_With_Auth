@@ -15,6 +15,9 @@
         this.loadAlbumsFromServer();
         window.setInterval(this.loadAlbumsFromServer, this.props.pollInterval);
     },
+    //componentWillReceiveProps: function () {  //TODO: create one get
+    //    this.loadFromServer();
+    //},
     render: function () {
         return (
             <div>
