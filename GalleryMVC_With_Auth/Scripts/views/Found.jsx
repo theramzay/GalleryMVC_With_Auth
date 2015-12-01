@@ -22,7 +22,7 @@
         {this.state.data.map(function(p) {
         return (
         <figure className="effect-milo">
-            <img className="lazy" data-original={p.TmbPath} alt={p.Description} />
+            <img className="lazy" src={p.TmbPath} data-original={p.TmbPath} alt={p.Description} />
             <figcaption>
                 <h2>
                     <span>{p.Description}</span>
@@ -40,6 +40,7 @@
 });
 
 
-$('body').on('input','#search',(function () {
-    React.render(<Content url="/api/WebApis/GetFound" />, document.getElementById("content"));
+$('body').on('input', '#search', (function () {
+    $.getScript("/bundles/galmagic?v=i3kUWqQQpdXyuxIE00qkjs5ynWxapRWXXmicTk_JDKE1");
+    React.render(<Content url="/api/WebApis/GetFound" />, document.getElementById("images"));
 }));
