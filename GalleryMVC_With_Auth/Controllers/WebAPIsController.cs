@@ -35,6 +35,23 @@ namespace GalleryMVC_With_Auth.Controllers
             return "U in web api controller!";
         }
 
+        public List<PictureModel> GetAllPictures()
+        {
+            return _repository.Pictures
+                .Select(
+                    p =>
+                        new PictureModel
+                        {
+                            Id = p.Id,
+                            Name = p.Name,
+                            Description = p.Description,
+                            Price = p.Price,
+                            Path = p.Path,
+                            TmbPath = p.TmbPath
+                        })
+                .ToList();
+        }
+
         public List<PictureModel> GetPictures(int id)
         {
             return _repository.Pictures.Where(p => p.AlbumId == id)
