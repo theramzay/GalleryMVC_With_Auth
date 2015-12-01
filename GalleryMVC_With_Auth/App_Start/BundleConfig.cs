@@ -32,7 +32,9 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/jquery.lazyload.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/reactJS").Include(
-                "~/Scripts/react/react-0.13.1.js"));
+                "~/Scripts/react/react-0.13.1.js",
+                "~/Scripts/react/JSXTransformer-0.13.1",
+                "~/Scripts/react/react-with-addons-0.13.1"));
 
             bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/css/hover_effects/component.css",
