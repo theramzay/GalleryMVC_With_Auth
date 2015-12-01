@@ -1,20 +1,49 @@
-﻿@model dynamic
-
-@{
+﻿@{
     ViewBag.Title = "Test";
 }
 
-    <div class="grid" id="albums"></div>
-    <script src="@Url.Content("~/Scripts/views/main.jsx")"></script>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<div id="albums"></div>
+<div class="grid" id="images"></div>
+
+<script src="@Url.Content("~/Scripts/views/main.jsx")"></script>
 <script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>
 
-<div class="grid" id="pictures" style="background-color: wheat "></div>
-
-
-<a href="#content" class="btn btn-info btn-lg">
+<a href="#albums" class="btn btn-info btn-lg smoothScroll">
     <span class="glyphicon glyphicon-arrow-up"></span> Up
 </a>
 
+<script>
+    $(function() {
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+    $('.smoothScroll').click(function(event) {
+        event.preventDefault();
+        var href = $(this).attr('href');
+        var target = $(href);
+        var top = target.offset().top;
+        var bottom = $(window).scrollTop() + $(window).height();
+        $('html, body').animate({
+            scrollTop: top
+        }, 1500);
+        //$('html, body').animate({
+        //    scrollTop: bottom
+        //}, 1000);
+    });
+</script>
 
 
 @section Scripts {
