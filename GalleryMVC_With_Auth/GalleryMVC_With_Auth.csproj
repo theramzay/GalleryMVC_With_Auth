@@ -479,6 +479,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\markerclusterer.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Parallax.js" />
     <Content Include="Scripts\react\JSXTransformer-0.13.1.js" />
     <Content Include="Scripts\react\react-0.13.1.js" />
     <Content Include="Scripts\react\react-0.13.1.min.js" />
@@ -546,6 +547,7 @@
     <Content Include="Scripts\views\main.jsx" />
     <Content Include="Views\Home\tests.cshtml" />
     <Content Include="Scripts\views\Found.jsx" />
+    <Content Include="Scripts\views\About.jsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

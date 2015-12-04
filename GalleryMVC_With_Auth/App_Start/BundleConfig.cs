@@ -9,6 +9,7 @@ namespace GalleryMVC_With_Auth
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-2.1.4.min.js",
+                "~/Scripts/Parallax.js",
                 "~/scripts/jquery.unobtrusive-ajax.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.validate.min.js"));

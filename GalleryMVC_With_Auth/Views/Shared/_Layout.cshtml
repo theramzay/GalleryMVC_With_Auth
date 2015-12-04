@@ -43,14 +43,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("BA", Defines.IndexView, Defines.HomeControllerName, null, new {@class = "navbar-brand logotypeM", style = "color: white"})
+            @Html.ActionLink("BA", "Tests", Defines.HomeControllerName, null, new {@class = "navbar-brand logotypeM", style = "color: white"})
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Главная", Defines.IndexView, new {controller = Defines.HomeControllerName}, new {@class = "home"})</li>
+                <li>@Html.ActionLink("Главная", "Tests", new {controller = Defines.HomeControllerName}, new {@class = "home"})</li>
                 <li>@Html.ActionLink("О нас", "About", new {controller = Defines.HomeControllerName}, new {@class = "about"})</li>
                 <li>@Html.ActionLink("Контакты", "Contact", new {controller = Defines.HomeControllerName}, new {@class = "contacts"})</li>
                 <li>@Html.ActionLink("Админ панель", Defines.IndexView, new {controller = "AdminPanel"}, new {@class = "admin"})</li>
+                <li><a href="#about">О нас(SPA)</a></li>
                 <li>
                     <div class="container">
                         <div class="row">
@@ -82,11 +83,57 @@
     <hr/>
 
 </div>
+<div class="bAbout" style="background-image: url('../Content/images/265795374.jpg'); color: white; font-size: 1em; box-shadow: 0 0 50px rgba(0, 0, 0, .8);" data-speed="5" data-type="background">
+    <div class="container">
+        <div class="row">
+            <div id="about" class="col-md-4"></div>
+            <script src="@Url.Content("~/Scripts/views/About.jsx")"></script>
+            <div class="col-md-4"> И ещё какая либо инфа</div>
+            <div class="col-md-4"> И ещё тута инфа</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">VK</div>
+            <div class="col-md-4">FB</div>
+        </div>
+    </div>
+</div>
+
+    <div class="grid container body-content" id="images"></div>
+
+    <script src="@Url.Content("~/Scripts/views/main.jsx")"></script>
+<script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>
+
+    <a href="#albums" class="btn btn-info btn-lg smoothScroll">
+        <span class="glyphicon glyphicon-arrow-up"></span> Up
+    </a>
+
 <footer class="footer">
     <div class="container">
         <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
     </div>
 </footer>
+    <script>
+    $(function() {
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+    $('.smoothScroll').click(function(event) {
+        event.preventDefault();
+        var href = $(this).attr('href');
+        var target = $(href);
+        var top = target.offset().top;
+        var bottom = $(window).scrollTop() + $(window).height();
+        $('html, body').animate({
+            scrollTop: top
+        }, 1500);
+        //$('html, body').animate({
+        //    scrollTop: bottom
+        //}, 1000);
+    });
+    </script>
 @*@Scripts.Render("~/bundles/galmagic")*@
 @Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/magic")
