@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Jmelosegui.Mvc.GoogleMap
+@{
     ViewBag.Title = "Test";
 }
 
@@ -13,41 +14,86 @@
     <ol class="indicator"></ol>
 </div>
 
-<div id="albums"></div>
-@*<div class="grid" id="images"></div>
+
+<div class="container body-content" id="albums"></div>
+<hr/>
+<div class="bAbout" id="S1" style="background-image: url('../Content/images/265795374.jpg'); box-shadow: 0 0 35px rgba(0, 0, 0, .8); color: white; font-size: 1.2em;" data-speed="5" data-type="background">
+    <div class="container">
+        <div class="row">
+            <div id="about" class="col-md-4">
+                Художественная галерея ОДО “БелАрт” создана в 1992 году. Со дня основания которой руководство и управление осуществляет ди-ректор–Людмила Крапивная
+                ОДО “БелАрт” сочетает в себе художественный мага- зин, продающий произведе- ния современной живописи, графики, скульптуры более 150 профессиональных ху-дожников и народных мастеров из Беларуси и ряда стран СНГ; выставочную галерею, где за истекшее десятилетие прошло более трех десятков вернисажей белорусских и зарубежных художников; мастерскую, в которой по заказу изготавливаются все виды ху-дожественной продукции, оформляются работы.
+                Широко представлены все виды декоративно – прикладного искусства - керамика, соломка, лоза, резьба по дереву, гобелены, батик, сувенирные изде-лия из натуральной кожи, художественная ковка, бижутерия из полудрагоценных камней.
+                В галерее имеется большой выбор художествен-ных материалов, столярных изделий, а также буки-нистическая литература по искусству и архитек-туре.
+                На протяжении всего своего существования ОДО “БелАрт” также занимается культурно-просвети-тельской, информационной и консультативной дея-тельностью.
+            </div>
+            <div class="col-md-4"> И ещё какая либо инфа</div>
+            <div class="col-md-4">
+                Art gallery “BelArt” was founded in 1992 year by its director Ludmila Krapivnaya.
+                “BelArt” combines an art shop which sells modern painyings, graphics, sculpture of more then 150 profes-sional and folk artiats from Belarus and outside, an exi-bition gallery, where were carried out more than 30 per-sonal exibitions and art studio where you can make an order for all kinds of art prodution and desighn. Here you can find wide spectrum of decorative-applied art-works – cersmics, straw, twig, carwing by wood, tapes-try, souvenirs of natural skin, art forge, jewelry with natural stones.
+                In the gallery there’s wide choice of artists materi-als,joiner’s works and also a literature about art and ar-chitecture.
+                Since its foundation the art gallery “BelArt” takes up culture-educational, informational and consultative activity.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">VK</div>
+            <div class="col-md-4">FB</div>
+        </div>
+    </div>
+</div>
+
+<div class="grid container body-content" id="images"></div>
 
 <script src="@Url.Content("~/Scripts/views/main.jsx")"></script>
-<script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>*@
+<script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>
 
-@*<a href="#albums" class="btn btn-info btn-lg smoothScroll">
+<div class="container body-content" id="contacts">
+
+    <h2>Контакты.</h2>
+
+    <address>
+        Беларусь<br/>
+        Брест, набярэжная Францыска Скарыны 2<br/>
+        <abbr title="Phone">Тел:</abbr>
+        8 0162 20-45-95
+        @(Html.GoogleMap().Name("Brest")
+              .Width(600)
+              .Height(500)
+              .Center(c => c.Address("Беларусь, Брест, набярэжная Францыска Скарыны 2"))
+              .Markers(m => m.Add()).Zoom(15))
+    </address>
+
+</div>
+
+<a href="#albums" class="btn btn-info btn-lg smoothScroll">
     <span class="glyphicon glyphicon-arrow-up"></span> Up
-</a>*@
-
-
-
-@*<script>
-    $(function() {
-        $("img.lazy").lazyload({
-            effect: "fadeIn"
-        });
-    });
-
-    $('.smoothScroll').click(function(event) {
-        event.preventDefault();
-        var href = $(this).attr('href');
-        var target = $(href);
-        var top = target.offset().top;
-        var bottom = $(window).scrollTop() + $(window).height();
-        $('html, body').animate({
-            scrollTop: top
-        }, 1500);
-        //$('html, body').animate({
-        //    scrollTop: bottom
-        //}, 1000);
-    });
-</script>*@
+</a>
 
 
 @section Scripts {
+    @(Html.GoogleMap().ScriptRegistrar())
     @Scripts.Render("~/bundles/galmagic")
+    <script>
+        $(function() {
+            $("img.lazy").lazyload({
+                effect: "fadeIn"
+            });
+        });
+
+        $('.smoothScroll').click(function(event) {
+            event.preventDefault();
+            var href = $(this).attr('href');
+            var target = $(href);
+            var top = target.offset().top;
+            $('html, body').animate({
+                scrollTop: top
+            }, 1500);
+            //$('html, body').animate({
+            //    scrollTop: bottom
+            //}, 1000);
+        });
+    </script>
+    @Scripts.Render("~/bundles/magic")
+
 }
