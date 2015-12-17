@@ -90,6 +90,5 @@ function ImageSwitch(id) {
     
     React.render(<Pictures url="/api/WebApis/GetPictures/?id=" id={id}  />, document.getElementById('images'));
 }
-//React.render(<Pictures url="/api/WebApis/GetPictures/?id=" id={3}  />, document.getElementById('images'));
 
 React.render(<Albums url="/api/WebApis/GetAlbums" pollInterval={200000} />, document.getElementById('albums'));
