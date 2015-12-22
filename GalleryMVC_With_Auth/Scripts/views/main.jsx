@@ -85,10 +85,10 @@ var Pictures = React.createClass({
 
 
 function ImageSwitch(id) {
+    React.unmountComponentAtNode(document.getElementById('images'));
     console.log("Debug log, ID is: " + id);
     $.getScript("/bundles/galmagic?v=i3kUWqQQpdXyuxIE00qkjs5ynWxapRWXXmicTk_JDKE1");
-    
-    React.render(<Pictures url="/api/WebApis/GetPictures/?id=" id={id}  />, document.getElementById('images'));
+    React.render(<Pictures url="/api/WebApis/GetPictures/?id=" id={id} time={Date.now()} />, document.getElementById('images'));
 }
 
-React.render(<Albums url="/api/WebApis/GetAlbums" pollInterval={200000} />, document.getElementById('albums'));
+React.render(<Albums url="/api/WebApis/GetAlbums"  />, document.getElementById('albums'));
