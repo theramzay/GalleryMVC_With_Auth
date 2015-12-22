@@ -96,23 +96,27 @@
 <script src="@Url.Content("~/Scripts/views/main.jsx")"></script>
 <script src="@Url.Content("~/Scripts/views/Found.jsx")"></script>
 
-<div class="container body-content" id="contacts">
+<div class="container" id="contacts">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
 
-    <h2>Контакты.</h2>
+            <h2>Контакты.</h2>
 
-    <address>
-        Беларусь<br/>
-        Брест, набярэжная Францыска Скарыны 2<br/>
-        <abbr title="Phone">Тел:</abbr>
-        8 0162 20-45-95
-        @(Html.GoogleMap().Name("Brest")
+            <address>
+                Беларусь<br />
+                Брест, набярэжная Францыска Скарыны 2<br />
+                <abbr title="Phone">Тел:</abbr>
+                8 0162 20-45-95
+                @(Html.GoogleMap().Name("Brest")
               .Width(600)
               .Height(500)
               .Center(c => c.Address("Беларусь, Брест, набярэжная Францыска Скарыны 2"))
               .Markers(m => m.Add()).Zoom(15))
-    </address>
-
-</div>
+            </address>
+        </div>
+    </div>
+    </div>
 
 <a href="#albums" class="btn btn-info btn-lg smoothScroll">
     <span class="glyphicon glyphicon-arrow-up"></span> Up
