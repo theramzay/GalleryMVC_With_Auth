@@ -328,6 +328,7 @@
     <None Include="ClearScript.V8\v8-x64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="favicon.ico" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.js" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js" />
     <Content Include="Content\blueimp-gallery2\css\blueimp-gallery-indicator.css" />
@@ -428,7 +429,7 @@
     <Content Include="Content\css\transp_menu.css" />
     <Content Include="Content\back.png" />
     <Content Include="Content\white_back.png" />
-    <Content Include="favicon.ico" />
+    <None Include="favicon.ico.back" />
     <Content Include="Content\fonts\codropsicons\codropsicons.svg" />
     <Content Include="Content\fonts\codropsicons\license.txt" />
     <Content Include="Content\fonts\feathericons\feathericons.svg" />
