@@ -2,6 +2,7 @@
     loadFromServer: function () {
         var xhr = new XMLHttpRequest();
         xhr.open('get', this.props.url, true);
+        xhr.setRequestHeader("Accept", "application/json");
         xhr.onload = function () {
             var data = JSON.parse(xhr.responseText);
             this.setState({ data: data });
@@ -17,9 +18,6 @@
     componentWillMount: function () {
         this.loadFromServer();
     },
-    //componentWillReceiveProps: function () {  //TODO: create one get
-    //    this.loadFromServer();
-    //},
     render: function () {
         return (
             <div className="grid">
@@ -45,6 +43,7 @@ var Pictures = React.createClass({
     loadFromServer: function () {
         var xhr = new XMLHttpRequest();
         xhr.open("get", this.props.url + this.props.id, true);
+        xhr.setRequestHeader("Accept", "application/json");
         xhr.onload = function () {
             var data = JSON.parse(xhr.responseText);
             this.setState({ data: data });

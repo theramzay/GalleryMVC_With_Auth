@@ -3,6 +3,7 @@
         var xhr = new XMLHttpRequest();
         var req = $("#search").val();
         xhr.open("get", this.props.url + "/?search=" + req, true);
+        xhr.setRequestHeader("Accept", "application/json");
         xhr.onload = function () {
             var data = JSON.parse(xhr.responseText);
             this.setState({ data: data });
