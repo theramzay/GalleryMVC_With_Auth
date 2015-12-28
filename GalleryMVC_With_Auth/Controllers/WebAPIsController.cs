@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Models;
@@ -15,9 +17,9 @@ namespace GalleryMVC_With_Auth.Controllers
             _repository = repository;
         }
 
-        public List<AlbumModel> GetAlbums()
+        public async Task<List<AlbumModel>> GetAlbums()
         {
-            return
+            return await 
                 _repository.Albums.Select(
                     a =>
                         new AlbumModel
@@ -27,7 +29,7 @@ namespace GalleryMVC_With_Auth.Controllers
                             ImgPath = a.ImgPath,
                             Link = a.Link,
                             Name = a.Name
-                        }).ToList();
+                        }).ToListAsync();
         }
 
         public string Get()
@@ -35,9 +37,26 @@ namespace GalleryMVC_With_Auth.Controllers
             return "U in web api controller!";
         }
 
-        public List<PictureModel> GetAllPictures()
+        //public List<PictureModel> GetAllPictures()
+        //{
+        //    return _repository.Pictures
+        //        .Select(
+        //            p =>
+        //                new PictureModel
+        //                {
+        //                    Id = p.Id,
+        //                    Name = p.Name,
+        //                    Description = p.Description,
+        //                    Price = p.Price,
+        //                    Path = p.Path,
+        //                    TmbPath = p.TmbPath
+        //                })
+        //        .ToList();
+        //}
+
+        public async Task<List<PictureModel>> GetAllPictures()
         {
-            return _repository.Pictures
+            return await _repository.Pictures
                 .Select(
                     p =>
                         new PictureModel
@@ -49,12 +68,12 @@ namespace GalleryMVC_With_Auth.Controllers
                             Path = p.Path,
                             TmbPath = p.TmbPath
                         })
-                .ToList();
+                .ToListAsync();
         }
 
-        public List<PictureModel> GetPictures(int id)
+        public async Task<List<PictureModel>> GetPictures(int id)
         {
-            return _repository.Pictures.Where(p => p.AlbumId == id)
+            return await _repository.Pictures.Where(p => p.AlbumId == id)
                 .Select(
                     p =>
                         new PictureModel
@@ -66,7 +85,7 @@ namespace GalleryMVC_With_Auth.Controllers
                             Path = p.Path,
                             TmbPath = p.TmbPath
                         })
-                .ToList();
+                .ToListAsync();
         }
 
         public List<PictureModel> GetFound(string search)
