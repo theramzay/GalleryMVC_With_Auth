@@ -328,6 +328,11 @@
     <None Include="ClearScript.V8\v8-x64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="Content\images\carusel\1.jpg" />
+    <Content Include="Content\images\carusel\2.jpg" />
+    <Content Include="Content\images\carusel\3.jpg" />
+    <Content Include="Content\images\carusel\4.jpg" />
+    <Content Include="Content\images\parallax\1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.js" />
     <Content Include="Content\blueimp-gallery2\ans-blueimp-gallery2-set.min.js" />
