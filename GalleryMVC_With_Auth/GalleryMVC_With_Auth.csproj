@@ -526,8 +526,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\Errors\NotFound.cshtml" />
@@ -536,7 +534,6 @@
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\AdminPanel\Index.cshtml" />
     <Content Include="Views\AdminPanel\Upload.cshtml" />
-    <Content Include="Views\Home\Found.cshtml" />
     <Content Include="Views\Shared\_GalleryPartial.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
     <Content Include="Views\Images\Universal.cshtml" />
@@ -551,7 +548,6 @@
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Views\Images\Comments.cshtml" />
     <Content Include="Scripts\views\main.jsx" />
-    <Content Include="Views\Home\tests.cshtml" />
     <Content Include="Scripts\views\Found.jsx" />
     <Content Include="Scripts\views\About.jsx" />
   </ItemGroup>
