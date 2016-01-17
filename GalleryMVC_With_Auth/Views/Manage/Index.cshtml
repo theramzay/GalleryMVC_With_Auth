@@ -5,8 +5,9 @@
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
+    <p><canvas id="AvatarCanvas" data-user="@User.Identity.Name"></canvas></p>
     <h4>Смена настроек вашей учётной записи</h4>
-    <hr />
+    <hr/>
     <dl class="dl-horizontal">
         <dt>Пароль:</dt>
         <dd>
@@ -27,7 +28,7 @@
             @Html.ActionLink(Defines.ManageControllerName, Defines.ManageLoginsView) ]
         </dd>
         <dt>Админ Панель</dt>
-        <dd>@Html.ActionLink("Админ панель", Defines.IndexView, new { controller = "AdminPanel" }, new { @class = "admin" })</dd>
+        <dd>@Html.ActionLink("Админ панель", Defines.IndexView, new {controller = "AdminPanel"}, new {@class = "admin"})</dd>
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
              
@@ -82,3 +83,7 @@
         </dd>
     </dl>
 </div>
+
+@section Scripts {
+@Scripts.Render("~/bundles/Avatar")
+}
