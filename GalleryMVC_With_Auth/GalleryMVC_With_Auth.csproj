@@ -442,6 +442,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\css\Site.css" />
     <Content Include="robots.txt" />
+    <Content Include="Scripts\AvatarGenerator.js" />
     <Content Include="Scripts\BlueimpGal.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\codropsicons\codropsicons.eot" />
@@ -486,6 +487,7 @@
     <Content Include="Scripts\markerclusterer.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Parallax.js" />
+    <Content Include="Scripts\processing.min.js" />
     <Content Include="Scripts\react\JSXTransformer-0.13.1.js" />
     <Content Include="Scripts\react\react-0.13.1.js" />
     <Content Include="Scripts\react\react-0.13.1.min.js" />
