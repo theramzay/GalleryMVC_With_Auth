@@ -1,0 +1,70 @@
+﻿@model IEnumerable<GalleryMVC_With_Auth.Domain.Entities.Picture>
+
+@{
+    ViewBag.Title = "Все фотографии";
+}
+<div class="container">
+    <h2>Все все фотографии</h2>
+
+    <p>
+        @Html.ActionLink("Добавить", "Upload", "AdminPanel", new { @class = "btn btn-default" })
+    </p>
+    <p>
+        @Html.ActionLink("Назад","Index","Manage", new { @class = "btn btn-default" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Альбом
+            </th>
+            <th>
+                Тэг
+            </th>
+            <th>
+                Миниатюра
+            </th>
+            <th>
+                Автор
+            </th>
+            <th>
+                Описание
+            </th>
+            <th>
+                Цена
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Album.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tag.Name)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.TmbPath)*@
+                    <img src="@item.TmbPath" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
