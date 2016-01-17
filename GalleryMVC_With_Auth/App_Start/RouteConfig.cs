@@ -11,7 +11,7 @@ namespace GalleryMVC_With_Auth
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute("Default", "{controller}/{action}/{id}",
-                new {controller = Defines.HomeControllerName, action = "Tests", id = UrlParameter.Optional}
+                new {controller = Defines.HomeControllerName, action = Defines.IndexView, id = UrlParameter.Optional}
                 );
         }
     }
