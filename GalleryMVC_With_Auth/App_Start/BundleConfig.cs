@@ -37,6 +37,11 @@ namespace GalleryMVC_With_Auth
                 "~/Scripts/react/JSXTransformer-0.13.1",
                 "~/Scripts/react/react-with-addons-0.13.1"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Avatar").Include(
+                "~/Scripts/processing.min.js",
+                "~/Scripts/AvatarGenerator.js"
+                ));
+
             bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/css/hover_effects/component.css",
                 "~/Content/css/hover_effects/normalize.css",
