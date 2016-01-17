@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using GalleryMVC_With_Auth.Domain.Abstract;
 using GalleryMVC_With_Auth.Domain.Entities;
@@ -27,6 +28,23 @@ namespace GalleryMVC_With_Auth.Controllers
         public ActionResult Upload()
         {
             return View(_repository);
+        }
+
+        [MultiAuth(UserRoles.Administrator)]
+        public ActionResult ListOfAllImages()
+        {
+            return View(_repository.Pictures.ToList());
+        }
+
+        [MultiAuth(UserRoles.Administrator)]
+        public ActionResult Delete(int id)
+        {
+            var picToDel = _repository.Pictures.FirstOrDefault(p => p.Id == id);
+            if (!System.IO.File.Exists(Server.MapPath(picToDel.Path))) return RedirectToAction("ListOfAllImages");
+            System.IO.File.Delete(Server.MapPath(picToDel.Path));
+            _repository.Pictures.Remove(picToDel);
+            _repository.Save();
+            return RedirectToAction("ListOfAllImages");
         }
 
         [MultiAuth(UserRoles.Administrator)]
