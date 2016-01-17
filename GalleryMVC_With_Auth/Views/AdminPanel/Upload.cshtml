@@ -2,12 +2,13 @@
 
 <h2>Загрузка изображений.</h2>
 
-@using (Html.BeginForm("Upload", "AdminPanel", FormMethod.Post, new {enctype = "multipart/form-data"}))
+@using (Html.BeginForm("Upload", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <input type="file" name="files" id="files" style="width: 100%;" multiple="multiple" accept="image/*"/>
     <p/>
+    <img id="image" style="width: 250px;height: auto"/>
     @Html.ValidationSummary("", new {@class = "text-danger"})
     <div class="form-group">
         @Html.LabelFor(m => m.Picture.Name, new {@class = "col-md-2 control-label"})
@@ -39,4 +40,17 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        document.getElementById("files").onchange = function () {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                // get loaded data and render thumbnail.
+                document.getElementById("image").src = e.target.result;
+            };
+
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        };
+    </script>
 }
