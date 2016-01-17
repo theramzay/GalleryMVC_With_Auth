@@ -1,7 +1,10 @@
-﻿<h2>Панель Администрирования.</h2>
-<ul class="table">
-    <li>@Html.ActionLink("Логи", "Index", "elmah")</li>
-    <li>@Html.ActionLink("Статистика", "Index", "glimpse.axd")</li>
-    <li>@Html.ActionLink("Заливка фотографий", "Upload", "AdminPanel")</li>
-    <li>@Html.ActionLink("Роли", "Index", "Roles")</li>
-</ul>
+﻿<div class="container">
+    <h2>Панель Администрирования.</h2>
+    <ul class="table">
+        <li>@Html.ActionLink("Логи", "Index", "elmah")</li>
+        <li>@Html.ActionLink("Статистика", "Index", "glimpse.axd")</li>
+        <li>@Html.ActionLink("Заливка фотографий", "Upload", "AdminPanel")</li>
+        <li>@Html.ActionLink("Все фотографий", "ListOfAllImages", "AdminPanel")</li>
+        <li>@Html.ActionLink("Роли", "Index", "Roles")</li>
+    </ul>
+</div>
