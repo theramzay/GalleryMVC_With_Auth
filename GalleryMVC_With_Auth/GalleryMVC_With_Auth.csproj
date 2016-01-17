@@ -552,6 +552,7 @@
     <Content Include="Scripts\views\main.jsx" />
     <Content Include="Scripts\views\Found.jsx" />
     <Content Include="Scripts\views\About.jsx" />
+    <Content Include="Views\AdminPanel\ListOfAllImages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
