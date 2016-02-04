@@ -16,7 +16,8 @@ body {
 }
 
 #home {
-    background: #212121 url('../Content/white_back.png') repeat top left;
+    /*background: #212121 url('../Content/white_back.pngH') repeat top left;*/
+    background: White url('../Content/white_back.pngH') repeat top left;
 }
 
 footer {

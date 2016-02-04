@@ -8,7 +8,9 @@ namespace GalleryMVC_With_Auth
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/jquery-2.1.4.min.js"));
+                "~/Scripts/jquery-2.1.4.min.js",
+                "~/Scripts/Parallax.js",
+                "~/scripts/jquery.unobtrusive-ajax.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.validate.min.js"));
 
@@ -29,6 +31,16 @@ namespace GalleryMVC_With_Auth
                 "~/Content/blueimp-gallery2/js/blueimp-gallery.min.js",
                 "~/Scripts/BlueimpGal.js",
                 "~/Scripts/jquery.lazyload.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/reactJS").Include(
+                "~/Scripts/react/react-0.13.1.js",
+                "~/Scripts/react/JSXTransformer-0.13.1",
+                "~/Scripts/react/react-with-addons-0.13.1"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Avatar").Include(
+                "~/Scripts/processing.min.js",
+                "~/Scripts/AvatarGenerator.js"
+                ));
 
             bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/css/hover_effects/component.css",
