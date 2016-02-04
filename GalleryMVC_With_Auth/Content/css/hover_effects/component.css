@@ -27,7 +27,8 @@
 	margin: -0.135em;
 	width: 33.333%;
 	height: 400px;
-	background: #3085a3;
+	/*background: #3085a3;*/
+    background: black;
 	text-align: center;
 	cursor: pointer;
 }
@@ -106,8 +107,8 @@ figure.effect-lily img {
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(-40px,0, 0);
 	transform: translate3d(-40px,0,0);
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
+    /*-webkit-filter: grayscale(100%);*/
 }
 
 figure.effect-lily figcaption {
@@ -139,8 +140,8 @@ figure.effect-lily p {
 figure.effect-lily:hover img,
 figure.effect-lily:hover p {
 	opacity: 1;
-    filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
+    /*filter: grayscale(0%);*/
+    /*-webkit-filter: grayscale(0%);*/
 }
 
 figure.effect-lily:hover img,
@@ -166,13 +167,13 @@ figure.effect-milo {
 	/*background: #2e5d5a;*/
     /*background: rgb(192, 237, 171);*/
     background: none;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
+    /*-webkit-filter: grayscale(100%);*/
 }
 
 figure.effect-milo:hover {
-    filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
+    /*filter: grayscale(0%);*/
+    /*-webkit-filter: grayscale(0%);*/
 }
 
 figure.effect-milo img {

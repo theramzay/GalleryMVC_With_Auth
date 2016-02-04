@@ -1,42 +1,88 @@
 ﻿@model GalleryMVC_With_Auth.Domain.Abstract.IPicturesRepository
+<div class="container">
+    <h2>Загрузка изображений.</h2>
 
-<h2>Загрузка изображений.</h2>
+    @using (Html.BeginForm("Upload", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm("Upload", "AdminPanel", FormMethod.Post, new {enctype = "multipart/form-data"}))
-{
-    @Html.AntiForgeryToken()
-
-    <input type="file" name="files" id="files" style="width: 100%;" multiple="multiple" accept="image/*"/>
-    <p/>
-    @Html.ValidationSummary("", new {@class = "text-danger"})
-    <div class="form-group">
-        @Html.LabelFor(m => m.Picture.Name, new {@class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Picture.Name, new {@class = "form-control", Name = "Name", id = "Name"})
+        <input type="file" name="files" id="files" style="width: 100%;" multiple="multiple" accept="image/*" />
+        <p />
+        <output id="list"></output>
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Picture.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Picture.Name, new { @class = "form-control", Name = "Name", id = "Name" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Picture.Description, new {@class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Picture.Description, new {@class = "form-control", Name = "Description", id = "Description"})
+        <div class="form-group">
+            @Html.LabelFor(m => m.Picture.Description, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Picture.Description, new { @class = "form-control", Name = "Description", id = "Description" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Picture.Tag, new {@class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Picture.Tag.Name, new {@class = "form-control", Name = "Tag.Name", id = "Tag.Name"})
+        <div class="form-group">
+            @Html.LabelFor(m => m.Picture.Tag, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Picture.Tag.Name, new { @class = "form-control", Name = "Tag.Name", id = "Tag.Name" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Picture.Price, new {@class = "col-md-2 control-label"})
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Picture.Price, new {@class = "form-control", Name = "Price", id = "Price"})
+        <div class="form-group">
+            @Html.LabelFor(m => m.Picture.Price, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Picture.Price, new { @class = "form-control", Name = "Price", id = "Price" })
+            </div>
         </div>
-    </div>
-    @Html.DropDownListFor(m => m.Albums, new SelectList(Model.Albums, "Id", "Name", Model.Albums.First().Id), new {Name = "AlbumId", id = "AlbumId"})
-    <button type="submit" class="btn btn-default">Применить</button>
-}
+        @Html.DropDownListFor(m => m.Albums, new SelectList(Model.Albums, "Id", "Name", Model.Albums.First().Id), new { Name = "AlbumId", id = "AlbumId" })
+        <br style="margin: 15px"/>
+        <p>
+            <button type="submit" class="btn btn-default">Применить</button>
+        </p>
+    }
+    <p>
+        @Html.ActionLink("Назад", "Index", "Manage", new { @class = "btn btn-default" })
+    </p>
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function handleFileSelect(evt) {
+            var files = evt.target.files;
+
+            // Loop through the FileList and render image files as thumbnails.
+            for (var i = 0, f; f = files[i]; i++) {
+
+                // Only process image files.
+                if (!f.type.match('image.*')) {
+                    continue;
+                }
+
+                var reader = new FileReader();
+
+                // Closure to capture the file information.
+                reader.onload = (function (theFile) {
+                    return function (e) {
+                        // Render thumbnail.
+                        var span = document.createElement('span');
+                        span.innerHTML =
+                        [
+                          '<img style="height: 75px; border: 1px solid #000; margin: 5px" src="',
+                          e.target.result,
+                          '" title="', escape(theFile.name),
+                          '"/>'
+                        ].join('');
+
+                        document.getElementById('list').insertBefore(span, null);
+                    };
+                })(f);
+
+                // Read in the image file as a data URL.
+                reader.readAsDataURL(f);
+            }
+        }
+
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    </script>
 }

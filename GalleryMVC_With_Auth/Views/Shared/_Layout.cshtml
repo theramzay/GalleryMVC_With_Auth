@@ -32,6 +32,7 @@
     @Scripts.RenderFormat(@"<script src="" {0}"" async></script>", "~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("~/bundles/reactJS")
 </head>
 <body id="home">
 <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
@@ -46,23 +47,23 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Главная", Defines.IndexView, new {controller = Defines.HomeControllerName}, new {@class = "home"})</li>
-                <li>@Html.ActionLink("О нас", "About", new {controller = Defines.HomeControllerName}, new {@class = "about"})</li>
-                <li>@Html.ActionLink("Контакты", "Contact", new {controller = Defines.HomeControllerName}, new {@class = "contacts"})</li>
-                <li>@Html.ActionLink("Админ панель", Defines.IndexView, new {controller = "AdminPanel"}, new {@class = "admin"})</li>
+                @*<li>@Html.ActionLink("Главная", "Tests", new {controller = Defines.HomeControllerName}, new {@class = "home"})</li>*@
+                <li><a href="#home" class="home smoothScroll">Главная</a></li>
+                @*<li>@Html.ActionLink("О нас", "About", new {controller = Defines.HomeControllerName}, new {@class = "about"})</li>*@
+                <li><a href="#S1" class="smoothScroll">О нас</a></li>
+                @*<li>@Html.ActionLink("Контакты", "Contact", new {controller = Defines.HomeControllerName}, new {@class = "contacts"})</li>*@
+                <li><a href="#contacts" class="smoothScroll">Контакты</a></li>
                 <li>
                     <div class="container">
                         <div class="row">
                             @*@using (Ajax.BeginForm("Found", null, new AjaxOptions {UpdateTargetId = "results", HttpMethod = "Get"}, new {@class = "search-form", action = "/home/Found"}))*@
-                            @using (Html.BeginForm("Found", Defines.HomeControllerName, FormMethod.Get, new {@class = "search-form"}))
-
-                            {
+                            <div class="search-form">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Поиск</label>
                                     @Html.TextBox("search", "", new {@class = "form-control", Name = "search", id = "search", placeholder = "Поиск"})
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                 </div>
-                            }
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -71,26 +72,22 @@
         </div>
     </div>
 </div>
-<div class="splash">
-    <div class="container" style="color: gray;">
-        <h1 class="hd">художественная галерея</h1>
-        <p class="lead logotype" style="font-size: 420%;"><span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt
-        </p>
+    <div class="splash">
+        <div class="container" style="color: gray;">
+            <h1 class="hd">художественная галерея</h1>
+            <p class="lead logotype" style="font-size: 420%;">
+                <span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt
+            </p>
+        </div>
     </div>
-</div>
-<div class="container body-content" id="results">
-    @RenderBody()
-    <hr/>
+@RenderBody()
 
-</div>
 <footer class="footer">
     <div class="container">
         <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
     </div>
 </footer>
-@*@Scripts.Render("~/bundles/galmagic")*@
 @Scripts.Render("~/bundles/bootstrap")
-@Scripts.Render("~/bundles/magic")
 @RenderSection("scripts", false)
 @Html.Partial("_GoogleAnalytics")
 </body>
