@@ -127,12 +127,7 @@
                 <br/>
                 <button class="btn btn-info" data-toggle="collapse" data-target="#map">Открыть Карту</button>
                 <div id="map" class="collapse">
-                    @(Html.GoogleMap().Name("Brest")
-                          .Width(600)
-                          .Height(500)
-                          .Center(c => c.Address("Беларусь, Брест, набярэжная Францыска Скарыны 2"))
-                          .Markers(m => m.Add()).Zoom(15))
-                </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.807652117206!2d23.69639661600375!3d52.08323127625738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47210bf55d145f93%3A0x8229cf7f3b25a75e!2z0L3QsNCxLiDQpNGA0LDQvdGG0LjRgdC60LAg0KHQutC-0YDQuNC90YsgMiwg0JHRgNC10YHRgg!5e0!3m2!1sru!2sby!4v1455984504624" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
             </address>
             <a href="#albums" class="btn btn-info btn-lg smoothScroll">
                 <span class="glyphicon glyphicon-arrow-up"></span> Up
