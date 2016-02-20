@@ -35,6 +35,15 @@
     @Scripts.Render("~/bundles/reactJS")
 </head>
 <body id="home">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4904734407131000"
+         data-ad-slot="7866276777"
+         data-ad-format="auto"></ins>
+    <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
     <div class="container">
         <div class="navbar-header">
@@ -72,21 +81,26 @@
         </div>
     </div>
 </div>
-    <div class="splash">
-        <div class="container" style="color: gray;">
-            <h1 class="hd">художественная галерея</h1>
-            <p class="lead logotype" style="font-size: 420%;">
-                <span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt
-            </p>
-        </div>
+<div class="splash">
+    <div class="container" style="color: gray;">
+        <h1 class="hd">художественная галерея</h1>
+        <p class="lead logotype" style="font-size: 420%;">
+            <span style="color: #BE4C39">B</span>el<span style="color: #BE4C39">A</span>rt
+        </p>
     </div>
+</div>
 @RenderBody()
 
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">&copy; @DateTime.Now.Year - ramzzzay@gmail.com</p>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                2015 - @DateTime.Now.Year <br />
+                Разработал <a href="https://www.linkedin.com/in/anton-burkin-59b62b114">Буркин Антон Владимирович</a>.&copy; <br />
+                Все исходные тексты принадлежат <a href="https://www.linkedin.com/in/anton-burkin-59b62b114">Буркину Антону Владимировичу</a> <a href="mailto:ramzzzay@gmail.com">ramzzzay@gmail.com</a>&copy; <br/>
+                Проект лицензирован под <a href="https://github.com/ramzzzay/GalleryMVC_With_Auth/blob/master/LICENSE.md">Apache License Version 2.0, January 2004 http://www.apache.org/licenses/ </a>&copy; <br/>
+            </p>
+        </div>
+    </footer>
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", false)
 @Html.Partial("_GoogleAnalytics")
